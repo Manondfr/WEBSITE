@@ -25,9 +25,15 @@ h1 {
 
 @media all and (min-width: 443px) {
   h1 {
-    padding: 0;
-    font-size: 1.6rem;
+    padding: 0 20px;
     font-weight: 400;
+    font-size: 1.6em;
+  }
+}
+
+@media all and (min-width: 993px) {
+  h1 {
+    font-size: 1.6em;
   }
 }
 
@@ -40,22 +46,29 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 20px 40px 50% 40px;
+  margin: 20px 40px 45% 40px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-weight: 900;
 }
 
-@media all and (min-width: 993px) {
+@media all and (min-width: 443px) {
   header {
-    margin: 20px 40px 80px 40px;
+    margin-bottom: 28%;
   }
 }
 
 @media all and (min-width: 993px) {
+  header {
+    margin-bottom: 80px;
+  }
+}
+
+@media all and (min-width: 443px) {
   header nav {
-    width: 45%;
+    width: 600px;
+    text-align: center;
   }
 }
 
@@ -63,7 +76,7 @@ header ul {
   display: none;
 }
 
-@media all and (min-width: 993px) {
+@media all and (min-width: 443px) {
   header ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -72,9 +85,15 @@ header ul {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: 0.9em;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+  }
+}
+
+@media all and (min-width: 993px) {
+  header ul {
+    font-size: 1.2em;
   }
 }
 
@@ -106,14 +125,14 @@ header svg {
 
 @media all and (min-width: 443px) {
   #heroSection p strong {
-    font-size: 7em;
+    font-size: 8em;
     padding: 0;
   }
 }
 
 @media all and (min-width: 993px) {
   #heroSection p strong {
-    font-size: 14em;
+    font-size: 12em;
     letter-spacing: 30px;
   }
 }
@@ -144,6 +163,16 @@ header svg {
   }
 }
 
+.desktopOnly {
+  display: none;
+}
+
+@media all and (min-width: 443px) {
+  .desktopOnly {
+    display: initial;
+  }
+}
+
 .fill {
   -o-object-fit: cover;
      object-fit: cover;
@@ -157,6 +186,13 @@ header svg {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 20px;
+}
+
+@media all and (min-width: 443px) {
+  #mobileLine__Container {
+    display: block;
+    padding: 0;
+  }
 }
 
 #mobileLine {

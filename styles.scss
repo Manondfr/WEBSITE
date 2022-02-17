@@ -22,6 +22,7 @@ $tertiary-typo:"Segoe UI", Arial;
     }
 }
 
+
 body {
     margin:0;
     padding:0;
@@ -46,9 +47,12 @@ h1 {
     letter-spacing:1.5px;
     font-weight:300;
     @include tabletstyle() {
-        padding:0;
-        font-size: 1.6rem;
+        padding:0 20px;
         font-weight:400;
+        font-size:1.6em;
+    }
+    @include desktopstyle() {
+        font-size: 1.6em;
     }
 }
 
@@ -61,31 +65,37 @@ button {
 
 header {
     display:flex;
-    margin:20px 40px 50% 40px;
+    margin:20px 40px 45% 40px;
     justify-content:space-between;
     font-weight:900;
+    @include tabletstyle() {
+        margin-bottom:28%
+    }
     @include desktopstyle() {
-    margin:20px 40px 80px 40px;
+        margin-bottom:80px;
     }
 
     & nav
     {
-        @include desktopstyle() {
-            width:45%;
+        @include tabletstyle() {
+            width:600px;
+            text-align:center;
         }
     } 
     
         & ul {
             display:none;
-
-            @include desktopstyle() {
+            @include tabletstyle() {
                 display: flex;
                 list-style-type: none;
                 justify-content: space-between;
-                font-size:1.2rem;
+                font-size:0.9em;
                 letter-spacing:0.5px;
                 text-transform: uppercase;
-        }
+            }
+            @include desktopstyle() {
+                font-size:1.2em;
+            }
     }
 
     img {
@@ -110,11 +120,11 @@ header {
         letter-spacing:10px;
         padding:0 20px 0 40px;
         @include tabletstyle() {
-            font-size:7em;
+            font-size:8em;
             padding:0;
         }
         @include desktopstyle() {
-            font-size:14em;
+            font-size:12em;
             letter-spacing:30px;
         }
     }
@@ -146,6 +156,13 @@ header {
     }
 }
 
+.desktopOnly {
+    display:none;
+    @include tabletstyle() {
+        display: initial;
+    }
+}
+
 .fill {
     object-fit:cover;
 }
@@ -154,6 +171,10 @@ header {
     display:flex;
     align-items:center;
     padding-top:20px;
+    @include tabletstyle() {
+        display: block;
+        padding:0;
+    }
 }
 
 #mobileLine {
