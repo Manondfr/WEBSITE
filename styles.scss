@@ -1,0 +1,161 @@
+// VARIABLES //
+// Couleurs
+$background-color: #FDF9F9;
+$text-color:#464646;
+
+// Typographies
+$primary-typo:'Sitka Heading', Arial;
+$secondary-typo:'Raleway';
+$tertiary-typo:"Segoe UI", Arial;
+
+
+// MIXINS //
+@mixin tabletstyle {
+    @media all and (min-width:443px){
+        @content;
+    }
+}
+
+@mixin desktopstyle {
+    @media all and (min-width:993px){
+        @content;
+    }
+}
+
+body {
+    margin:0;
+    padding:0;
+    background-color: $background-color;
+    font-family:$primary-typo;
+}
+
+p, h1, button {
+    margin:0;
+    padding:0;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+h1 {
+    font-size:1em;
+    padding:0px 0 0 40px;
+    line-height: 3;
+    letter-spacing:1.5px;
+    font-weight:300;
+    @include tabletstyle() {
+        padding:0;
+        font-size: 1.6rem;
+        font-weight:400;
+    }
+}
+
+button {
+    background-color: transparent;
+    border:none;
+}
+
+
+
+header {
+    display:flex;
+    margin:20px 40px 50% 40px;
+    justify-content:space-between;
+    font-weight:900;
+    @include desktopstyle() {
+    margin:20px 40px 80px 40px;
+    }
+
+    & nav
+    {
+        @include desktopstyle() {
+            width:45%;
+        }
+    } 
+    
+        & ul {
+            display:none;
+
+            @include desktopstyle() {
+                display: flex;
+                list-style-type: none;
+                justify-content: space-between;
+                font-size:1.2rem;
+                letter-spacing:0.5px;
+                text-transform: uppercase;
+        }
+    }
+
+    img {
+        max-width:50px;
+    }
+
+    svg {
+        margin-top:10px;
+    }
+}
+
+#heroSection {
+    color:white;
+    width:100%;
+    @include tabletstyle() {
+        text-align: center;
+    }
+
+    & p strong {
+        font-family:$secondary-typo;
+        font-size:5em;
+        letter-spacing:10px;
+        padding:0 20px 0 40px;
+        @include tabletstyle() {
+            font-size:7em;
+            padding:0;
+        }
+        @include desktopstyle() {
+            font-size:14em;
+            letter-spacing:30px;
+        }
+    }
+
+    &__video{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100%;
+        z-index:-1;
+
+        & + p svg {
+                position: absolute;
+                bottom:0px;
+                left:50%;      
+        }
+    }
+
+    & + section {
+        position:absolute;
+        bottom:-20%;
+    }
+}
+
+.mobileOnly {
+    @include tabletstyle() {
+        display:none;
+    }
+}
+
+.fill {
+    object-fit:cover;
+}
+
+#mobileLine__Container {
+    display:flex;
+    align-items:center;
+    padding-top:20px;
+}
+
+#mobileLine {
+    margin-top:5px;
+}
