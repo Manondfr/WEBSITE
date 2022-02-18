@@ -60,6 +60,30 @@
   }
 }
 
+@-webkit-keyframes typewriter {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes typewriter {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -155,7 +179,7 @@ header {
 
 @media all and (min-width: 993px) {
   header {
-    margin-bottom: 80px;
+    margin-bottom: 150px;
   }
 }
 
@@ -216,20 +240,31 @@ header svg {
   font-size: 5em;
   letter-spacing: 10px;
   padding: 0 20px 0 40px;
+  position: relative;
 }
 
 @media all and (min-width: 443px) {
   #heroSection p strong {
-    font-size: 8em;
+    font-size: 10em;
     padding: 0;
   }
 }
 
 @media all and (min-width: 993px) {
   #heroSection p strong {
-    font-size: 12em;
+    font-size: 8em;
     letter-spacing: 30px;
   }
+}
+
+#heroSection p strong::after {
+  content: "";
+  width: 1px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid white;
+  -webkit-animation: typewriter 700ms infinite;
+          animation: typewriter 700ms infinite;
 }
 
 #heroSection__video {

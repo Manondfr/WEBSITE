@@ -50,6 +50,18 @@ $tertiary-typo:"Segoe UI", Arial;
     }
 }
 
+@keyframes typewriter {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
 
 
 body {
@@ -129,7 +141,7 @@ header {
         margin-bottom:28%
     }
     @include desktopstyle() {
-        margin-bottom:80px;
+        margin-bottom:150px;
     }
 
     & nav
@@ -177,13 +189,23 @@ header {
         font-size:5em;
         letter-spacing:10px;
         padding:0 20px 0 40px;
+        position:relative;
         @include tabletstyle() {
-            font-size:8em;
+            font-size:10em;
             padding:0;
         }
         @include desktopstyle() {
-            font-size:12em;
+            font-size:8em;
             letter-spacing:30px;
+        }
+
+        &::after {
+            content:"";
+            width:1px;
+            height:30px;
+            background-color:white;
+            border:1px solid white;
+            animation:typewriter 700ms infinite;
         }
     }
 

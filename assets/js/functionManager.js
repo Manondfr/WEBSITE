@@ -1,7 +1,7 @@
 // Fonction effet machine à écrire (hero)
 function typewriter(number) {
     console.log(number);
-    const array = ["LOGO.", "SITES WEB", "PROSPECTION", "SEO"];
+    const array = ["LOGO.", "SITES WEB.", "PROSPECTION.", "SEO."];
     setTimeout(() => {
         writeWord(array[number], 0, number)
     }, 500)
@@ -12,7 +12,7 @@ function writeWord(word, index, number) {
         setTimeout(() => {
             document.querySelector('p strong').innerHTML += `${word[index]}`;
             writeWord(word, index + 1, number)
-        }, 300)
+        }, 80 + 150 * Math.random())
     } else {
         console.log(word);
         console.log(index);
@@ -22,11 +22,17 @@ function writeWord(word, index, number) {
 
 function eraseWord(word, index, number) {
     console.log(number);
-    if(index !== 0) {
+    if(index == word.length) {
         setTimeout(() => {
             document.querySelector('p strong').innerHTML = `${word.slice(0, index - 1)}`;
             eraseWord(word, index - 1, number)
-        }, 300)
+        }, 1200)
+    }
+    else if(index < word.length && index !== 0) {
+        setTimeout(() => {
+            document.querySelector('p strong').innerHTML = `${word.slice(0, index - 1)}`;
+            eraseWord(word, index - 1, number)
+        }, 100)
     } else {
         if(number !== 3) {
             number ++;
