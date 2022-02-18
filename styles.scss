@@ -24,7 +24,31 @@ $tertiary-typo:"Segoe UI", Arial;
 }
 
 // KEYFRAMES //
+@keyframes mouseLine {
+    0% {
+        transform: scale(0);
+        opacity:0.8;
+    }
+    30% {
+        transform: scale(0.2);
+        opacity:0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity:0.6;
+    }
+}
 
+@keyframes mouse {
+    0% {
+        opacity:0.9;
+        transform:translateY(0);
+    }
+    100% {
+        opacity:1;
+        transform:translateY(2px);
+    }
+}
 
 
 
@@ -49,7 +73,7 @@ a {
 
     &:hover {
         &::after {
-            opacity:0.5;
+            opacity:0.7;
             transform:scale(1);
         }
     }
@@ -173,7 +197,7 @@ header {
         & + p svg {
                 position: absolute;
                 bottom:0px;
-                left:50%;      
+                left:50%;
         }
     }
 
@@ -213,3 +237,22 @@ header {
 #mobileLine {
     margin-top:5px;
 }
+
+#svgParagraph svg {
+    animation:mouse 900ms infinite;
+    animation-direction:alternate;
+}
+
+#svgParagraph::after {
+        content:"";
+        height:55px;
+        position:absolute;
+        border: white 0.5px solid;
+        background-color:white;
+        bottom:0px;
+        left:50%;
+        margin-left:12px;
+        animation:mouseLine 1200ms infinite;
+        transform-origin:top;
+}
+
