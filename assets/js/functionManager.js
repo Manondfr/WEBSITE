@@ -1,7 +1,7 @@
 // Fonction effet machine à écrire (hero)
 function typewriter(number) {
     console.log(number);
-    const array = ["LOGO.", "SITE WEB.", "EMAILING.", "SEO.", "PROSPECTION", "SOCIAL MEDIA"];
+    const array = ["LOGO.", "SITE WEB.", "EMAILING.", "SEO.", "PROSPECTION.", "SOCIAL MEDIA."];
     setTimeout(() => {
         writeWord(array[number], 0, number)
     }, 500)
