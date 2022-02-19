@@ -3,6 +3,7 @@
 $background-color: #FDF9F9;
 $text-color:#464646;
 $underline-color:#FFB3B3;
+$background-h2-color : #E7E7E7;
 
 // Typographies
 $primary-typo:'Sitka Heading', Arial;
@@ -12,13 +13,13 @@ $tertiary-typo:"Segoe UI", Arial;
 
 // MIXINS //
 @mixin tabletstyle {
-    @media all and (min-width:443px){
+    @media all and (min-width:443px) {
         @content;
     }
 }
 
 @mixin desktopstyle {
-    @media all and (min-width:993px) {
+    @media all and (min-width:1025px) {
         @content;
     }
 }
@@ -62,6 +63,15 @@ $tertiary-typo:"Segoe UI", Arial;
     }
 }
 
+@keyframes movingBackground {
+    0% {
+        transform:translateX(-1000px);
+    }
+    100% {
+        transform:translateX(1450px);
+    }
+}
+
 
 
 body {
@@ -69,11 +79,28 @@ body {
     padding:0;
     background-color: $background-color;
     font-family:$primary-typo;
+    overflow-x: hidden;
 }
+
 
 p, h1, button {
     margin:0;
     padding:0;
+}
+
+h2 {
+    z-index:-1;
+    font-family: $tertiary-typo;
+    color:rgba(0,0,0,0.6);
+    opacity:0.8;
+    margin:10vh auto auto auto;
+    font-size:8em;
+    letter-spacing: 30px;
+    //animation: movingBackground 15000ms linear infinite;
+}
+
+h3 {
+    margin-top:100vh;
 }
 
 a {
@@ -85,7 +112,7 @@ a {
 
     &:hover {
         &::after {
-            opacity:0.7;
+            opacity:0.6;
             transform:scale(1);
         }
     }
@@ -154,15 +181,9 @@ button {
 
 header {
     display:flex;
-    margin:20px 40px 45% 40px;
+    margin:20px 40px 25vh 40px;
     justify-content:space-between;
     font-weight:900;
-    @include tabletstyle() {
-        margin-bottom:28%
-    }
-    @include desktopstyle() {
-        margin-bottom:150px;
-    }
 
     & nav
     {
@@ -194,31 +215,36 @@ header {
 
     svg {
         margin-top:10px;
-        margin-right:30px;
     }
 }
 
 #heroSection {
     color:white;
     width:100%;
+    display:flex;
+    flex-direction:column;
     @include tabletstyle() {
         text-align: center;
     }
 
     & p strong {
+     
         font-family:$secondary-typo;
         font-size:2.2em;
         letter-spacing:5px;
         padding:0 20px 0 40px;
         position:relative;
+        margin:auto;
         text-shadow: 5px 2px rgba(0,0,0, 0.6);
+        transform: translateY(-50%);
         @include tabletstyle() {
             font-size:4em;
             padding:0;
-            text-shadow: 10px 5px rgba(0,0,0, 0.6);
             letter-spacing:10px;
+            text-shadow: 6px 3px rgba(0,0,0, 0.6);
         }
         @include desktopstyle() {
+            text-shadow: 10px 5px rgba(0,0,0, 0.6);
             font-size:8em;
             letter-spacing:30px;
         }
@@ -303,3 +329,11 @@ header {
         transform-origin:top;
 }
 
+
+#servicesSection {
+    text-align: center;
+    width:100%;
+    border: yellow solid 1px;
+    position:relative;
+    top:100%;
+}
