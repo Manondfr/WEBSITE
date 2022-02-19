@@ -86,23 +86,23 @@
 
 @-webkit-keyframes movingBackground {
   0% {
-    -webkit-transform: translateX(-1000px);
-            transform: translateX(-1000px);
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
   }
   100% {
-    -webkit-transform: translateX(1450px);
-            transform: translateX(1450px);
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
   }
 }
 
 @keyframes movingBackground {
   0% {
-    -webkit-transform: translateX(-1000px);
-            transform: translateX(-1000px);
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
   }
   100% {
-    -webkit-transform: translateX(1450px);
-            transform: translateX(1450px);
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
   }
 }
 
@@ -111,7 +111,7 @@ body {
   padding: 0;
   background-color: #FDF9F9;
   font-family: "Sitka Heading", Arial;
-  overflow-x: hidden;
+  height: auto;
 }
 
 p, h1, button {
@@ -122,15 +122,17 @@ p, h1, button {
 h2 {
   z-index: -1;
   font-family: "Segoe UI", Arial;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.1);
   opacity: 0.8;
-  margin: 10vh auto auto auto;
-  font-size: 8em;
-  letter-spacing: 30px;
+  margin: 10vh auto 0 auto;
+  font-size: 9em;
+  letter-spacing: 10px;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
 }
 
 h3 {
-  margin-top: 100vh;
+  margin-top: 10vh;
 }
 
 a {
@@ -177,8 +179,8 @@ h1 {
   font-weight: 500;
   line-height: 2.5;
   position: relative;
-  color: rgba(0, 0, 0, 0.9);
-  font-variant: common-ligatures;
+  color: rgba(0, 0, 0, 0.8);
+  font-variant: small-caps;
   font-family: "Sitka Heading", Arial;
   /*&::after {
         content:"";
@@ -206,7 +208,7 @@ h1 {
 
 @media all and (min-width: 1025px) {
   h1 {
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-weight: 600;
   }
 }
@@ -415,5 +417,11 @@ header svg {
   border: yellow solid 1px;
   position: relative;
   top: 100%;
+}
+
+.blackContainer {
+  background-color: black;
+  width: 100vw;
+  height: 1000vh;
 }
 /*# sourceMappingURL=styles.css.map */

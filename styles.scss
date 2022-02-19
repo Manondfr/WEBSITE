@@ -65,10 +65,10 @@ $tertiary-typo:"Segoe UI", Arial;
 
 @keyframes movingBackground {
     0% {
-        transform:translateX(-1000px);
+        transform:translateX(-5px);
     }
     100% {
-        transform:translateX(1450px);
+        transform:translateX(5px);
     }
 }
 
@@ -79,7 +79,8 @@ body {
     padding:0;
     background-color: $background-color;
     font-family:$primary-typo;
-    overflow-x: hidden;
+    //overflow-x: hidden;
+    height:auto;
 }
 
 
@@ -91,16 +92,18 @@ p, h1, button {
 h2 {
     z-index:-1;
     font-family: $tertiary-typo;
-    color:rgba(0,0,0,0.6);
+    color:rgba(0,0,0,0.1);
     opacity:0.8;
-    margin:10vh auto auto auto;
-    font-size:8em;
-    letter-spacing: 30px;
-    //animation: movingBackground 15000ms linear infinite;
+    margin:10vh auto 0 auto;
+    font-size:9em;
+    letter-spacing: 10px;
+    filter: blur(1px);
+    //text-shadow: 10px 5px rgba(0,0,0,0.05);
+    //animation: movingBackground 1000ms infinite alternate;
 }
 
 h3 {
-    margin-top:100vh;
+    margin-top:10vh;
 }
 
 a {
@@ -143,8 +146,8 @@ h1 {
     font-weight:500;
     line-height:2.5;
     position:relative;
-    color:rgba(0,0,0,0.9);
-    font-variant: common-ligatures;
+    color:rgba(0,0,0,0.8);
+    font-variant:small-caps;
     font-family:$primary-typo;
     @include tabletstyle() {
         padding:0 20px;
@@ -153,7 +156,7 @@ h1 {
         line-height: 3;
     }
     @include desktopstyle() {
-        font-size: 1.6em;
+        font-size: 1.5em;
         font-weight:600;
     }
 
@@ -336,4 +339,10 @@ header {
     border: yellow solid 1px;
     position:relative;
     top:100%;
+}
+
+.blackContainer {
+    background-color: black;
+    width:100vw;
+    height:1000vh;
 }
