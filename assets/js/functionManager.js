@@ -21,6 +21,14 @@ function writeWord(word, index, number) {
     }
 }
 
+function writeH2(array, index, number) {
+        if(index < array[number-1].length) {
+        setTimeout(() => {
+            document.querySelector(`h2 span:nth-child(${number})`).style.visibility = "visible";
+            writeH2(array, index, number + 1)
+        }, 30)
+}};
+
 function eraseWord(word, index, number) {
     if(index == word.length) {
         setTimeout(() => {
