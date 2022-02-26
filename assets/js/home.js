@@ -100,7 +100,7 @@ window.addEventListener("wheel", function(e) {
     }
 }, false);
 
-window.addEventListener("DOMMouseScroll", function(e) {
+window.addEventListener("touchmove", function(e) {
     if(e.deltaY > 0 && e.pageY >= 700) {
         let H2Array = document.querySelector('h2').textContent.split('');
         writeH2(H2Array, 0, 1);
