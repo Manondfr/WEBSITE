@@ -154,11 +154,11 @@ h2 {
   text-align: center;
   z-index: -2;
   font-family: "Segoe UI", Arial;
-  visibility: hidden;
   width: 100%;
   -webkit-filter: blur(0px);
           filter: blur(0px);
-  color: black;
+  color: rgba(0, 0, 0, 0.75);
+  text-shadow: 5px 2px 3px rgba(0, 0, 0, 0.3);
   font-size: 3rem;
 }
 
@@ -170,7 +170,6 @@ h2 {
     width: 100%;
     top: 0px;
     position: fixed;
-    color: rgba(0, 0, 0, 0.75);
   }
 }
 
@@ -454,17 +453,28 @@ header svg {
 }
 
 #visualIdentity {
-  margin-top: 150vh;
-  visibility: hidden;
+  margin-top: 20vh;
+}
+
+@media all and (min-width: 1025px) {
+  #visualIdentity {
+    margin-top: 150vh;
+    visibility: hidden;
+  }
 }
 
 #visualIdentityBlock {
-  -webkit-box-shadow: 0 5px 10px black;
-          box-shadow: 0 5px 10px black;
-  height: 80%;
   width: 100%;
-  position: relative;
-  border-bottom: transparent 1px solid;
+}
+
+@media all and (min-width: 1025px) {
+  #visualIdentityBlock {
+    -webkit-box-shadow: 0 5px 10px black;
+            box-shadow: 0 5px 10px black;
+    height: 80%;
+    position: relative;
+    border-bottom: transparent 1px solid;
+  }
 }
 
 #visualIdentityBlock__AppearanceDiv {
