@@ -1,3 +1,4 @@
+<!-- Métas (à revoir) -->
 <!doctype html>
 <html lang="FR">
 <head>
@@ -41,75 +42,82 @@
     <main>
         <!-- Section Hero -->
         <section id="heroSection">
-            <video src="assets/videos/try.mp4" id="heroSection__video" class="fill" preload autoplay loop muted>
+            <video src="assets/videos/try.mp4" id="heroSection__video" preload autoplay loop muted>
                 <p>Votre navigateur ne prend pas en charge les vidéos.</p>
             </video> 
-            <p id="svgParagraph">
+            <p id="heroSection__mouseSvg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="131.5" viewBox="0 0 37 131.5">
                     <g transform="translate(-758 -949)" style="isolation: isolate">
-                        <rect class="desktopOnly" id="Rectangle_30" data-name="Rectangle 30" width="37" height="61" rx="18.5" transform="translate(758 951)" fill="#fff" opacity="0.35"/>
-                        <path class="desktopOnly" id="Rectangle_30_-_Contour" data-name="Rectangle 30 - Contour" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v24A16.5,16.5,0,0,0,30.167,54.167,16.392,16.392,0,0,0,35,42.5v-24A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v24a18.5,18.5,0,0,1-37,0v-24A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 951)" fill="#fff"/>
-                        <rect class="desktopOnly" id="Rectangle_31" data-name="Rectangle 31" width="37" height="63" rx="18.5" transform="translate(758 949)" fill="none"/>
-                        <path class="desktopOnly" id="Rectangle_31_-_Contour" data-name="Rectangle 31 - Contour" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v26A16.5,16.5,0,0,0,30.167,56.167,16.392,16.392,0,0,0,35,44.5v-26A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v26a18.5,18.5,0,0,1-37,0v-26A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 949)" fill="#fff"/>
-                        <path class="desktopOnly" id="Ligne_3" data-name="Ligne 3" d="M1,22H-1V0H1Z" transform="translate(776.5 951.5)" fill="#fff"/>
-                        <!-- <path id="mouseLine" d="M1,68H-1V0H1Z" transform="translate(776.5 1012.5)" fill="#fff"/> -->
+                        <rect class="desktopOnly" width="37" height="61" rx="18.5" transform="translate(758 951)" fill="#fff" opacity="0.35"/>
+                        <path class="desktopOnly" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v24A16.5,16.5,0,0,0,30.167,54.167,16.392,16.392,0,0,0,35,42.5v-24A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v24a18.5,18.5,0,0,1-37,0v-24A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 951)" fill="#fff"/>
+                        <rect class="desktopOnly" width="37" height="63" rx="18.5" transform="translate(758 949)" fill="none"/>
+                        <path class="desktopOnly" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v26A16.5,16.5,0,0,0,30.167,56.167,16.392,16.392,0,0,0,35,44.5v-26A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v26a18.5,18.5,0,0,1-37,0v-26A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 949)" fill="#fff"/>
+                        <path class="desktopOnly" d="M1,22H-1V0H1Z" transform="translate(776.5 951.5)" fill="#fff"/>
                     </g>
                 </svg>
             </p>
-            <p id="try"><strong></strong></p>
-            <div id="mobileLine__Container" class="mobileOnly">
+            <p><strong></strong></p>
+            <div id="heroSection__mobileLineContainer" class="mobileOnly">
                 <h1>Mimouche, l'agence de communication à Lyon qui dynamise ton business.</h1>
-                <p class="mobileOnly" id="mobileLine">
+                <p class="mobileOnly" id="heroSection__mobileLine">
                     <svg xmlns="http://www.w3.org/2000/svg" width="126" height="15" viewBox="0 0 156 15">
-                        <rect id="Rectangle_586" data-name="Rectangle 586" width="15" height="156" transform="translate(156) rotate(90)" fill="#fff"/>
+                        <rect width="15" height="156" transform="translate(156) rotate(90)" fill="#fff"/>
                     </svg>                  
                 </p>  
             </div> 
         </section>
+        <!-- Fin de la section Hero -->
 
+        <!-- Section Prestations -->
         <section id="servicesSection">
-            <h2 id="somediv"><span>P</span><span>R</span><span>E</span><span>S</span><span>T</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span><span>S</span></h2>
-            <article class="blackContainer">
-                <div id="blackContainer__Appearance" ></div>
-                <h3 id="visualIdentity">Identité <br><span>visuelle</span></h3>
-                <div class="h4Container">
-                    <hr><h4>Création de logo</h4><hr>
+            <h2><span>P</span><span>R</span><span>E</span><span>S</span><span>T</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span><span>S</span></h2>
+            
+            <!-- Identité visuelle -->
+            <article id="visualIdentity">
+                <div id="visualIdentityBlock">
+                    <div id="visualIdentityBlock__AppearanceDiv"></div>
+                    <h3>Identité <br><span>visuelle</span></h3>
+                    <div class="h4Container">
+                        <hr><h4>Création de logo</h4><hr>
+                    </div>
+                    <p>
+                        Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
+                    </p>
+                    <button class="knowMoreButton">EN SAVOIR PLUS</button>
+                    <div class="carrouselIcons">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
+                            <g id="Groupe_105" data-name="Groupe 105" transform="translate(-889.136 -3118.535)">
+                              <g id="Ellipse_44" data-name="Ellipse 44" transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="0">
+                                <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                                <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                              </g>
+                              <g id="Ellipse_45" data-name="Ellipse 45" transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                                <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                                <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                              </g>
+                              <g id="Ellipse_46" data-name="Ellipse 46" transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                                <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                                <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                              </g>
+                              <g id="Groupe_30" data-name="Groupe 30" transform="translate(12.166 1196.119)">
+                                <line id="Ligne_10" data-name="Ligne 10" x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                                <line id="Ligne_11" data-name="Ligne 11" x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                              </g>
+                              <g id="Groupe_104" data-name="Groupe 104" transform="translate(1056.666 3122.035)">
+                                <line id="Ligne_10-2" data-name="Ligne 10" x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
+                                <line id="Ligne_11-2" data-name="Ligne 11" x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
+                              </g>
+                            </g>
+                          </svg>                                    
+                    </div>
+                    <img src="assets/img/Creative Process _Monochromatic (12).png"/>
+                    <video src="assets/videos/Composition 1_2.mp4" class="fill" preload autoplay loop muted>
+                        <p>Votre navigateur ne prend pas en charge les vidéos.</p>
+                    </video> 
                 </div>
-                <p>
-                    Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
-                </p>
-                <button class="knowMoreButton">EN SAVOIR PLUS</button>
-                <div class="carrouselIcons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
-                        <g id="Groupe_105" data-name="Groupe 105" transform="translate(-889.136 -3118.535)">
-                          <g id="Ellipse_44" data-name="Ellipse 44" transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="0">
-                            <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                            <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                          </g>
-                          <g id="Ellipse_45" data-name="Ellipse 45" transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                            <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                            <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                          </g>
-                          <g id="Ellipse_46" data-name="Ellipse 46" transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                            <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                            <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                          </g>
-                          <g id="Groupe_30" data-name="Groupe 30" transform="translate(12.166 1196.119)">
-                            <line id="Ligne_10" data-name="Ligne 10" x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                            <line id="Ligne_11" data-name="Ligne 11" x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                          </g>
-                          <g id="Groupe_104" data-name="Groupe 104" transform="translate(1056.666 3122.035)">
-                            <line id="Ligne_10-2" data-name="Ligne 10" x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
-                            <line id="Ligne_11-2" data-name="Ligne 11" x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
-                          </g>
-                        </g>
-                      </svg>                                    
-                </div>
-                <img src="assets/img/Creative Process _Monochromatic (12).png"/>
-                <video src="assets/videos/Composition 1_2.mp4" class="fill" preload autoplay loop muted>
-                    <p>Votre navigateur ne prend pas en charge les vidéos.</p>
-                </video> 
             </article>
+
+            <!-- Développement Web -->
             <article id="webDevelopementSection">
                 <svg xmlns="http://www.w3.org/2000/svg" width="5" height="122" viewBox="0 0 5 122">
                     <line id="Ligne_40" data-name="Ligne 40" y2="122" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="5" stroke-dasharray="10 10"/>
@@ -151,6 +159,8 @@
                     <p>Votre navigateur ne prend pas en charge les vidéos.</p>
                 </video> 
             </article>
+
+            <!-- Référencement -->
             <article>
                 <div id="h3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="5" height="122" viewBox="0 0 5 122">
@@ -178,6 +188,8 @@
 
                 </div>
             </article>
+
+            <!-- Réseaux sociaux -->
             <article>
                 <!--<h3><span class="span">R</span><span class="span">é</span><span class="span">s</span><span class="span">e</span><span class="span">a</span><span class="span">u</span><span class="span">x</span><br><span class="span">s</span><span class="span">o</span><span class="span">c</span><span class="span">i</span><span class="span">a</span><span class="span">u</span><span class="span">x</span></h3>-->
                 <h3>
@@ -200,12 +212,14 @@
                         </g>
                       </svg>                      
                 </h3>
+                
                 <div class="h4Container">
                     <hr><h4>Création de logo</h4><hr>
                 </div>
                 <p>
                     Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
                 </p>
+                <div id="flex">
                 <button class="knowMoreButton">EN SAVOIR PLUS</button>
                 <div class="carrouselIcons">
                     <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
@@ -232,8 +246,52 @@
                           </g>
                         </g>
                       </svg>                                    
-                </div>                  
+                </div> 
+                </div>                 
                 <video src="assets/videos/socialmedia-video1.mp4" class="fill" preload autoplay loop muted>
+                    <p>Votre navigateur ne prend pas en charge les vidéos.</p>
+                </video> 
+            </article>
+
+            <!-- Développement commercial -->
+            <article>
+                <svg xmlns="http://www.w3.org/2000/svg" width="5" height="122" viewBox="0 0 5 122">
+                    <line id="Ligne_40" data-name="Ligne 40" y2="122" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="5" stroke-dasharray="10 10"/>
+                  </svg>                  
+                <h3>Développement Web</h3>
+                <h4>Site vitrine</h4>
+                <p>
+                    Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
+                </p>
+                <button class="knowMoreButton">EN SAVOIR PLUS</button>
+                <div class="carrouselIcons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
+                        <g id="Groupe_105" data-name="Groupe 105" transform="translate(-889.136 -3118.535)">
+                          <g id="Ellipse_44" data-name="Ellipse 44" transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="1">
+                            <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                            <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                          </g>
+                          <g id="Ellipse_45" data-name="Ellipse 45" transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                            <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                            <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                          </g>
+                          <g id="Ellipse_46" data-name="Ellipse 46" transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                            <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                            <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                          </g>
+                          <g id="Groupe_30" data-name="Groupe 30" transform="translate(12.166 1196.119)">
+                            <line id="Ligne_10" data-name="Ligne 10" x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                            <line id="Ligne_11" data-name="Ligne 11" x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                          </g>
+                          <g id="Groupe_104" data-name="Groupe 104" transform="translate(1056.666 3122.035)">
+                            <line id="Ligne_10-2" data-name="Ligne 10" x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
+                            <line id="Ligne_11-2" data-name="Ligne 11" x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
+                          </g>
+                        </g>
+                      </svg>                                    
+                </div>
+                <img src="assets/img/macbook.png"/>
+                <video src="assets/videos/Composition1.mp4" class="fill" preload muted>
                     <p>Votre navigateur ne prend pas en charge les vidéos.</p>
                 </video> 
             </article>
