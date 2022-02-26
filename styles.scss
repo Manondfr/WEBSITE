@@ -413,6 +413,11 @@ header {
 
     & h4, p {
         color:white;
+        border:blue solid 1px;
+    }
+
+    & p {
+        width:90%;
     }
 
     & hr {
@@ -422,8 +427,11 @@ header {
     }
 
     & .h4Container {
-        display:flex;
-        align-items: center;
+        text-align: center;
+        @include desktopstyle() {
+            display:flex;
+            align-items: center;
+        }
     }
 
     & img {
@@ -459,9 +467,13 @@ header {
 
 
 h4 + p, #visualIdentity p {
-    width:50%;
+    width:90%;
     margin: 40px auto 0 auto;
-    line-height:2;
+    line-height:1.5;
+    @include desktopstyle() {
+        width:50%;
+        line-height:2;
+    }
 }
 
 

@@ -509,6 +509,11 @@ header svg {
 
 #visualIdentity h4, #visualIdentity p {
   color: white;
+  border: blue solid 1px;
+}
+
+#visualIdentity p {
+  width: 90%;
 }
 
 #visualIdentity hr {
@@ -520,12 +525,18 @@ header svg {
 }
 
 #visualIdentity .h4Container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
+}
+
+@media all and (min-width: 1025px) {
+  #visualIdentity .h4Container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 #visualIdentity img {
@@ -556,9 +567,16 @@ header svg {
 }
 
 h4 + p, #visualIdentity p {
-  width: 50%;
+  width: 90%;
   margin: 40px auto 0 auto;
-  line-height: 2;
+  line-height: 1.5;
+}
+
+@media all and (min-width: 1025px) {
+  h4 + p, #visualIdentity p {
+    width: 50%;
+    line-height: 2;
+  }
 }
 
 article:nth-child(3) {
