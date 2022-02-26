@@ -124,7 +124,7 @@ window.addEventListener("touchmove", function(e) {
         });
         this.document.querySelector('h2').style.filter = `blur(0px)`;
     }
-});
+}, false);
 
 window.addEventListener('wheel', function(e) {
     if(e.deltaY > 0 && e.pageY >= 900 && this.document.querySelector('#visualIdentity').style.visibility !== "visible" && !this.document.querySelector('#visualIdentityBlock__AppearanceDiv').style.transform) {
