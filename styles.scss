@@ -179,7 +179,10 @@ h3 {
 h4 {
     font-size: 1.3rem;
     font-family:$tertiary-typo;
-    margin: auto 20px;
+    margin: 50px 20px auto 20px;
+    @include desktopstyle() {
+        margin: auto 20px;
+    }
 }
 
 section {
@@ -376,7 +379,7 @@ header {
 
 .desktopOnly {
     display:none;
-    @include tabletstyle() {
+    @include desktopstyle() {
         display: initial;
     }
 }
@@ -393,7 +396,7 @@ header {
 // Identité visuelle
 #visualIdentity {
     margin-top:20vh;
-    overflow-x:hidden;
+    //overflow-x:hidden;
     @include desktopstyle() {
         margin-top:150vh;
         visibility:hidden;
@@ -479,14 +482,15 @@ header {
     }
 }
 
-h4 + p, #visualIdentity p {
+h4 + p, #visualIdentity p, #webDevelopementSection p {
     width:90%;
-    margin: 40px auto 0 auto;
+    margin:30px auto 0 auto;
     line-height:3;
     font-size:0.9rem;
     @include desktopstyle() {
         width:50%;
         font-size:1rem;
+        margin: 40px auto 0 auto;
     }
 }
 
@@ -506,9 +510,12 @@ h4 + p, #visualIdentity p {
 
 .carrouselIcons {
     position:absolute;
-    bottom:30px;
+    bottom:60px;
     left:0;
     right:0;
+    @include desktopstyle() {
+        bottom:30px;
+    }
 }
 
 
@@ -527,10 +534,11 @@ h4 + p, #visualIdentity p {
 article:nth-child(3) {
     //border:$background-color solid 1px;
     //padding: 0 50px 50px 50px;
+    border:blue solid 1px;
     position:relative;
     background-color: rgba(253, 249, 249, 0.8);
     //background-color: transparent;
-    margin-top:0px;
+    margin-top:-80px;
     z-index:-1;
     position:relative;
     @include desktopstyle() {
@@ -556,7 +564,7 @@ article:nth-child(3) {
     }
 
     & svg {
-        margin:0;
+        margin:0px;
     }
 }
 
@@ -572,17 +580,15 @@ article:nth-child(4) {
     & #h3 {
         position:absolute;
         right:-120px;
+        height:100vh;
         @include desktopstyle() {
             order:0;
             position:initial;
         }
 
-        & svg {
-            margin:100px;
-        }
-
-        & svg:nth-child(1) {
-            margin-top:0;
+        & h3 {
+            display:block;
+            background-color: $background-color;
         }
     }
 
@@ -603,6 +609,10 @@ article:nth-child(4) {
 
     & #h41 {
         order:-1;
+        padding-top:15vw;
+        @include desktopstyle() {
+            padding-top: initial;
+        }
     }
 
     & #h42 {

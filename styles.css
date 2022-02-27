@@ -226,7 +226,13 @@ h3 span {
 h4 {
   font-size: 1.3rem;
   font-family: "Segoe UI", Arial;
-  margin: auto 20px;
+  margin: 50px 20px auto 20px;
+}
+
+@media all and (min-width: 1025px) {
+  h4 {
+    margin: auto 20px;
+  }
 }
 
 section {
@@ -467,7 +473,7 @@ header svg {
   display: none;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 1025px) {
   .desktopOnly {
     display: initial;
   }
@@ -485,7 +491,6 @@ header svg {
 
 #visualIdentity {
   margin-top: 20vh;
-  overflow-x: hidden;
 }
 
 @media all and (min-width: 1025px) {
@@ -595,17 +600,18 @@ header svg {
   z-index: 2;
 }
 
-h4 + p, #visualIdentity p {
+h4 + p, #visualIdentity p, #webDevelopementSection p {
   width: 90%;
-  margin: 40px auto 0 auto;
+  margin: 30px auto 0 auto;
   line-height: 3;
   font-size: 0.9rem;
 }
 
 @media all and (min-width: 1025px) {
-  h4 + p, #visualIdentity p {
+  h4 + p, #visualIdentity p, #webDevelopementSection p {
     width: 50%;
     font-size: 1rem;
+    margin: 40px auto 0 auto;
   }
 }
 
@@ -623,15 +629,22 @@ h4 + p, #visualIdentity p {
 
 .carrouselIcons {
   position: absolute;
-  bottom: 30px;
+  bottom: 60px;
   left: 0;
   right: 0;
 }
 
+@media all and (min-width: 1025px) {
+  .carrouselIcons {
+    bottom: 30px;
+  }
+}
+
 article:nth-child(3) {
+  border: blue solid 1px;
   position: relative;
   background-color: rgba(253, 249, 249, 0.8);
-  margin-top: 0px;
+  margin-top: -80px;
   z-index: -1;
   position: relative;
 }
@@ -661,7 +674,7 @@ article:nth-child(3) p {
 }
 
 article:nth-child(3) svg {
-  margin: 0;
+  margin: 0px;
 }
 
 article:nth-child(4) {
@@ -683,6 +696,7 @@ article:nth-child(4) {
 article:nth-child(4) #h3 {
   position: absolute;
   right: -120px;
+  height: 100vh;
 }
 
 @media all and (min-width: 1025px) {
@@ -694,12 +708,9 @@ article:nth-child(4) #h3 {
   }
 }
 
-article:nth-child(4) #h3 svg {
-  margin: 100px;
-}
-
-article:nth-child(4) #h3 svg:nth-child(1) {
-  margin-top: 0;
+article:nth-child(4) #h3 h3 {
+  display: block;
+  background-color: #FDF9F9;
 }
 
 article:nth-child(4) .SEO__h4Containers {
@@ -726,6 +737,13 @@ article:nth-child(4) #h41 {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
+  padding-top: 15vw;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) #h41 {
+    padding-top: initial;
+  }
 }
 
 article:nth-child(4) #h42 {
