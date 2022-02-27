@@ -1,10 +1,39 @@
 const heroWord = document.querySelector("p strong");
 let topi = 0;
 
+let currentMousePos = {
+    x: -1,
+    y: -1
+  };
+
 typewriter(0);
 
-// left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+
+// Cercle suivant le curseur
+window.addEventListener("mousemove", function(e) {
+    positionUpdate(e);
+})
+  
+    function positionUpdate(event) { 
+      var x_cursor = event.pageX;
+      var y_cursor = event.pageY;
+      var x_box = document.querySelector("#cube").getBoundingClientRect().left;
+      var y_box = document.querySelector("#cube").getBoundingClientRect().top;
+      console.log(x_cursor);
+      console.log(x_box);
+  
+      document.querySelector("#cube").animate({
+        left: event.pageX + "px",
+        top: event.pageY + "px"
+      }, {
+        duration: 500
+    });
+    document.querySelector("#cube").style.left = event.pageX + "px";
+    document.querySelector("#cube").style.top =  event.pageY + "px";
+    };
+
+
+// Stop scroll
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {

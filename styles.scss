@@ -73,6 +73,28 @@ $tertiary-typo:"Segoe UI", Arial;
 }
 
 
+#cube {
+    height:22px;
+    width:22px;
+    margin-top:-9px;
+    margin-left:-9px;
+    background:$underline-color;
+    opacity:0.4;
+    box-shadow: 2px 3px 3px black;
+    position:absolute;
+    top:50%;
+    left:50%;  
+  }
+  .circleBase {
+      border-radius: 50%;
+  }
+  .roundCursor {
+      width: 20px;
+      height: 20px;
+      background: red;
+      border: 0px solid #000;
+  }
+
 // Général
 body {
     margin:0;
@@ -80,6 +102,7 @@ body {
     background-color: $background-color;
     font-family:$primary-typo;
     overflow-x: hidden;
+    width:100vw;
     height:auto;
 }
 
@@ -136,11 +159,14 @@ h3 {
     color:#393939;
     text-shadow: 5px 2px #E2DEDE;
     text-transform: uppercase;
-    font-size: 2.5rem;
     letter-spacing:2px;
     line-height:1.3;
     font-family:$tertiary-typo;
     font-weight:700;
+    font-size:2rem;
+    @include desktopstyle() {
+        font-size: 2.5rem;
+    }
 
     & span {
         position:relative;
@@ -160,7 +186,6 @@ section {
     width:100%;
     text-align: center;
     width:100vw;
-    border:blue solid 1px;
 }
 
 article {
@@ -368,6 +393,7 @@ header {
 // Identité visuelle
 #visualIdentity {
     margin-top:20vh;
+    overflow-x:hidden;
     @include desktopstyle() {
         margin-top:150vh;
         visibility:hidden;
@@ -375,10 +401,11 @@ header {
 
     &Block {
         width:100%;
+        height:90%;
+        position:relative;
         @include desktopstyle() {
             box-shadow: 0 5px 10px black;
             height:80%;
-            position:relative;
             border-bottom: transparent 1px solid;
         }
     }
@@ -405,19 +432,28 @@ header {
     }
 
     & h3 {
-        text-align:left;
-        margin-left:40px;
+        text-align: center;
         position:relative;
-        top:-53px;
+        top:-40px;
+        @include desktopstyle() {
+            text-align:left;
+            margin-left:40px;
+            top:-63px;
+        }
+
+        & span {
+            left:5px;
+            @include desktopstyle() {
+                position:relative;
+                color:#CFD0D1;
+                left:70px;
+                text-shadow:none;
+            }
+        }
     }
 
     & h4, p {
         color:white;
-        border:blue solid 1px;
-    }
-
-    & p {
-        width:90%;
     }
 
     & hr {
@@ -436,10 +472,21 @@ header {
 
     & img {
         position: absolute;
-        top: 50%;
+        top: 60%;
         right: 0;
         max-width:40%;
         z-index:2;
+    }
+}
+
+h4 + p, #visualIdentity p {
+    width:90%;
+    margin: 40px auto 0 auto;
+    line-height:3;
+    font-size:0.9rem;
+    @include desktopstyle() {
+        width:50%;
+        font-size:1rem;
     }
 }
 
@@ -466,15 +513,7 @@ header {
 
 
 
-h4 + p, #visualIdentity p {
-    width:90%;
-    margin: 40px auto 0 auto;
-    line-height:1.5;
-    @include desktopstyle() {
-        width:50%;
-        line-height:2;
-    }
-}
+
 
 
 
@@ -487,14 +526,16 @@ h4 + p, #visualIdentity p {
 
 article:nth-child(3) {
     //border:$background-color solid 1px;
-    padding: 0 50px 50px 50px;
+    //padding: 0 50px 50px 50px;
     position:relative;
     background-color: rgba(253, 249, 249, 0.8);
     //background-color: transparent;
     margin-top:0px;
     z-index:-1;
-    visibility: hidden;
     position:relative;
+    @include desktopstyle() {
+        padding: 0 50px 50px 50px;
+    }
 
     & img {
         max-width:25%;
@@ -521,12 +562,20 @@ article:nth-child(3) {
 
 article:nth-child(4) {
     background-color: rgba(253, 249, 249, 0.95);
-    display:flex;
-    justify-content:space-around;
-    position:relative;
+    position: relative;
+    @include desktopstyle() {
+        display:flex;
+        justify-content:space-around;
+        position:relative;
+    }
     
     & #h3 {
-        order:0;
+        position:absolute;
+        right:-120px;
+        @include desktopstyle() {
+            order:0;
+            position:initial;
+        }
 
         & svg {
             margin:100px;
@@ -537,44 +586,88 @@ article:nth-child(4) {
         }
     }
 
+    & .SEO__h4Containers {
+        font-size:0.9rem;
+        margin:auto 15vw auto auto;
+        padding: 15px 0 30px 0;
+        width:80%;
+        @include desktopstyle() {
+            font-size: 1rem;
+            flex:1;
+            margin:auto;
+            font-family: $primary-typo;
+            padding:auto;
+            width:unset;
+        }
+    }
+
     & #h41 {
         order:-1;
     }
 
-    #h41, #h41 + div {
-        flex:1;
-        margin:auto;
+    & #h42 {
+        background-color: $text-color;
+
+        @include desktopstyle() {
+            width:unset;
+            background-color: transparent;
+        }
+
+        & p {
+            color:white;
+            width:90%;
+            margin:auto;
+            text-align: center;
+            @include desktopstyle() {
+                color:$text-color;
+                flex:1;
+                width:auto;
+                margin:initial;
+                margin: auto 10%;
+            }
+        }
     }
 
 
-
-
     & h4 {
-        display:block;
-        margin:auto;
-        width:120px;
         background:$text-color;
         color:pink;
-        font-size: 2.5rem;
-        letter-spacing:2px;
+        font-size:2rem;
+        width:90px;
+        letter-spacing:1.5px;
         line-height:1.3;
         font-family:$tertiary-typo;
         font-weight:700;
-        flex:1;
+        margin:auto;
+        @include desktopstyle() {
+            display:block;
+            width:120px;
+            letter-spacing:2px;
+            flex:1;
+        }
     }
     
     & h3 {
         transform: rotate(90deg);
-        order:1;
-        display:block;
+        @include desktopstyle() {
+            display:block;
+            order:1;
+        }
     }
+
+
 
     & .lineThrough {
         border: rgba(253,249,249,0.9) solid 1px;
-        position:relative;
-        width:120px;
-        top:-32.5px;
         background-color: rgba(253,249,249,0.9);
+        position:relative;
+        width:100%;
+        top: -28px;
+        @include desktopstyle() {
+            width:120px;
+            top:-32.5px;
+        }
+
     }
 
     & p {

@@ -106,12 +106,38 @@
   }
 }
 
+#cube {
+  height: 22px;
+  width: 22px;
+  margin-top: -9px;
+  margin-left: -9px;
+  background: #FFB3B3;
+  opacity: 0.4;
+  -webkit-box-shadow: 2px 3px 3px black;
+          box-shadow: 2px 3px 3px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.circleBase {
+  border-radius: 50%;
+}
+
+.roundCursor {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border: 0px solid #000;
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: #FDF9F9;
   font-family: "Sitka Heading", Arial;
   overflow-x: hidden;
+  width: 100vw;
   height: auto;
 }
 
@@ -177,11 +203,17 @@ h3 {
   color: #393939;
   text-shadow: 5px 2px #E2DEDE;
   text-transform: uppercase;
-  font-size: 2.5rem;
   letter-spacing: 2px;
   line-height: 1.3;
   font-family: "Segoe UI", Arial;
   font-weight: 700;
+  font-size: 2rem;
+}
+
+@media all and (min-width: 1025px) {
+  h3 {
+    font-size: 2.5rem;
+  }
 }
 
 h3 span {
@@ -201,7 +233,6 @@ section {
   width: 100%;
   text-align: center;
   width: 100vw;
-  border: blue solid 1px;
 }
 
 article {
@@ -454,6 +485,7 @@ header svg {
 
 #visualIdentity {
   margin-top: 20vh;
+  overflow-x: hidden;
 }
 
 @media all and (min-width: 1025px) {
@@ -465,6 +497,8 @@ header svg {
 
 #visualIdentityBlock {
   width: 100%;
+  height: 90%;
+  position: relative;
 }
 
 @media all and (min-width: 1025px) {
@@ -472,7 +506,6 @@ header svg {
     -webkit-box-shadow: 0 5px 10px black;
             box-shadow: 0 5px 10px black;
     height: 80%;
-    position: relative;
     border-bottom: transparent 1px solid;
   }
 }
@@ -501,19 +534,34 @@ header svg {
 }
 
 #visualIdentity h3 {
-  text-align: left;
-  margin-left: 40px;
+  text-align: center;
   position: relative;
-  top: -53px;
+  top: -40px;
+}
+
+@media all and (min-width: 1025px) {
+  #visualIdentity h3 {
+    text-align: left;
+    margin-left: 40px;
+    top: -63px;
+  }
+}
+
+#visualIdentity h3 span {
+  left: 5px;
+}
+
+@media all and (min-width: 1025px) {
+  #visualIdentity h3 span {
+    position: relative;
+    color: #CFD0D1;
+    left: 70px;
+    text-shadow: none;
+  }
 }
 
 #visualIdentity h4, #visualIdentity p {
   color: white;
-  border: blue solid 1px;
-}
-
-#visualIdentity p {
-  width: 90%;
 }
 
 #visualIdentity hr {
@@ -541,10 +589,24 @@ header svg {
 
 #visualIdentity img {
   position: absolute;
-  top: 50%;
+  top: 60%;
   right: 0;
   max-width: 40%;
   z-index: 2;
+}
+
+h4 + p, #visualIdentity p {
+  width: 90%;
+  margin: 40px auto 0 auto;
+  line-height: 3;
+  font-size: 0.9rem;
+}
+
+@media all and (min-width: 1025px) {
+  h4 + p, #visualIdentity p {
+    width: 50%;
+    font-size: 1rem;
+  }
 }
 
 .knowMoreButton {
@@ -566,27 +628,18 @@ header svg {
   right: 0;
 }
 
-h4 + p, #visualIdentity p {
-  width: 90%;
-  margin: 40px auto 0 auto;
-  line-height: 1.5;
-}
-
-@media all and (min-width: 1025px) {
-  h4 + p, #visualIdentity p {
-    width: 50%;
-    line-height: 2;
-  }
-}
-
 article:nth-child(3) {
-  padding: 0 50px 50px 50px;
   position: relative;
   background-color: rgba(253, 249, 249, 0.8);
   margin-top: 0px;
   z-index: -1;
-  visibility: hidden;
   position: relative;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(3) {
+    padding: 0 50px 50px 50px;
+  }
 }
 
 article:nth-child(3) img {
@@ -613,18 +666,32 @@ article:nth-child(3) svg {
 
 article:nth-child(4) {
   background-color: rgba(253, 249, 249, 0.95);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   position: relative;
 }
 
+@media all and (min-width: 1025px) {
+  article:nth-child(4) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    position: relative;
+  }
+}
+
 article:nth-child(4) #h3 {
-  -webkit-box-ordinal-group: 1;
-      -ms-flex-order: 0;
-          order: 0;
+  position: absolute;
+  right: -120px;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) #h3 {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    position: initial;
+  }
 }
 
 article:nth-child(4) #h3 svg {
@@ -635,50 +702,112 @@ article:nth-child(4) #h3 svg:nth-child(1) {
   margin-top: 0;
 }
 
+article:nth-child(4) .SEO__h4Containers {
+  font-size: 0.9rem;
+  margin: auto 15vw auto auto;
+  padding: 15px 0 30px 0;
+  width: 80%;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) .SEO__h4Containers {
+    font-size: 1rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: auto;
+    font-family: "Sitka Heading", Arial;
+    padding: auto;
+    width: unset;
+  }
+}
+
 article:nth-child(4) #h41 {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
 }
 
-article:nth-child(4) #h41, article:nth-child(4) #h41 + div {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+article:nth-child(4) #h42 {
+  background-color: #464646;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) #h42 {
+    width: unset;
+    background-color: transparent;
+  }
+}
+
+article:nth-child(4) #h42 p {
+  color: white;
+  width: 90%;
   margin: auto;
+  text-align: center;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) #h42 p {
+    color: #464646;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: auto;
+    margin: initial;
+    margin: auto 10%;
+  }
 }
 
 article:nth-child(4) h4 {
-  display: block;
-  margin: auto;
-  width: 120px;
   background: #464646;
   color: pink;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
+  font-size: 2rem;
+  width: 90px;
+  letter-spacing: 1.5px;
   line-height: 1.3;
   font-family: "Segoe UI", Arial;
   font-weight: 700;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  margin: auto;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) h4 {
+    display: block;
+    width: 120px;
+    letter-spacing: 2px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 
 article:nth-child(4) h3 {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  display: block;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) h3 {
+    display: block;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
 }
 
 article:nth-child(4) .lineThrough {
   border: rgba(253, 249, 249, 0.9) solid 1px;
-  position: relative;
-  width: 120px;
-  top: -32.5px;
   background-color: rgba(253, 249, 249, 0.9);
+  position: relative;
+  width: 100%;
+  top: -28px;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) .lineThrough {
+    width: 120px;
+    top: -32.5px;
+  }
 }
 
 article:nth-child(4) p {

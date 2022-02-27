@@ -26,7 +26,7 @@ function writeH2(array, index, number) {
         setTimeout(() => {
             document.querySelector(`h2 span:nth-child(${number})`).style.visibility = "visible";
             writeH2(array, index, number + 1)
-        }, 30)
+        }, /*30*/ 60)
 }};
 
 function eraseWord(word, index, number) {
