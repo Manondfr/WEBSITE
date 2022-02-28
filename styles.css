@@ -511,7 +511,7 @@ header svg {
 
 #visualIdentityBlock {
   width: 100%;
-  height: 90%;
+  height: 85%;
   position: relative;
   background-color: black;
   z-index: -1;
@@ -788,7 +788,6 @@ article:nth-child(4) #h41 {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
-  margin-top: -5vh;
   border-top: #464646 solid 0.5px;
   border-bottom: #464646 solid 0.5px;
 }
