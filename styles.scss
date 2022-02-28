@@ -12,6 +12,12 @@ $tertiary-typo:"Segoe UI", Arial;
 
 
 // MIXINS //
+@mixin smalltabletstyle {
+    @media all and (min-width:443px) {
+        @content;
+    }
+}
+
 @mixin tabletstyle {
     @media all and (min-width:443px) {
         @content;
@@ -19,7 +25,7 @@ $tertiary-typo:"Segoe UI", Arial;
 }
 
 @mixin desktopstyle {
-    @media all and (min-width:1025px) {
+    @media all and (min-width:1024px) {
         @content;
     }
 }
@@ -102,7 +108,7 @@ body {
     background-color: $background-color;
     font-family:$primary-typo;
     overflow-x: hidden;
-    width:100vw;
+    width:100%;
     height:auto;
 }
 
@@ -398,12 +404,14 @@ header {
 // Identité visuelle
 #visualIdentity {
     margin-top:20vh;
-    //overflow-x:hidden;
+    overflow-x:hidden;
     border:blue solid 1px;
     background-color: rgba(253, 249, 249, 0.8);
+    width:100%;
     @include desktopstyle() {
         margin-top:150vh;
         visibility:hidden;
+        // overflow-x:initial;
         z-index:-2;
     }
 
@@ -444,15 +452,12 @@ header {
         bottom: 0;
         right:0;
         height:100%;
-        @include desktopstyle() {
-            height:100%;
-        }
     }
 
     & h3 {
         text-align: center;
         position:relative;
-        top:-40px;
+        top:-35px;
         @include desktopstyle() {
             text-align:left;
             margin-left:40px;
@@ -492,15 +497,16 @@ header {
 
     & img {
         position: absolute;
+        right:0;
+        z-index:2;
+        max-width:40%;
         top: 60%;
         right: 0;
-        max-width:40%;
-        z-index:2;
     }
 
     & #text {
         position:absolute;
-        top:0;
+        top:5px;
         display:flex;
         flex-direction:column;
         justify-content: center;
@@ -515,7 +521,7 @@ header {
             width:50%;
             margin-left: auto;
             margin-right:auto;
-            @include desktopstyle() {
+            @include tabletstyle() {
                 width:initial;
             }
         }
@@ -527,7 +533,7 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
     margin:7% auto 0 auto;
     line-height:3;
     font-size:0.9rem;
-    @include desktopstyle() {
+    @include tabletstyle() {
         width:50%;
         font-size:1rem;
         margin: 40px auto 0 auto;
@@ -546,8 +552,8 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
     font-family: $tertiary-typo;
     letter-spacing:2px;
     font-weight:600;
-    margin-top:10%;
-    margin-bottom:10%;
+    margin-top:10vh;
+    margin-bottom:7vh;
     @include desktopstyle() {
         margin-top:30px;
         margin-bottom:35px;
