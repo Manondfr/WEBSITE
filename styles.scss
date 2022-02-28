@@ -399,6 +399,7 @@ header {
 #visualIdentity {
     margin-top:20vh;
     //overflow-x:hidden;
+    border:blue solid 1px;
     background-color: rgba(253, 249, 249, 0.8);
     @include desktopstyle() {
         margin-top:150vh;
@@ -413,7 +414,7 @@ header {
 
     &Block {
         width:100%;
-        height:83%;
+        height:100%;
         position:relative;
         background-color: black;
         z-index:-1;
@@ -443,6 +444,9 @@ header {
         bottom: 0;
         right:0;
         height:100%;
+        @include desktopstyle() {
+            height:100%;
+        }
     }
 
     & h3 {
@@ -478,10 +482,11 @@ header {
 
     & .h4Container {
         text-align: center;
-        margin-top:-20px;
+        margin-top:-5vh;
         @include desktopstyle() {
             display:flex;
             align-items: center;
+            margin-top:-10px;
         }
     }
 
@@ -492,17 +497,41 @@ header {
         max-width:40%;
         z-index:2;
     }
+
+    & #text {
+        position:absolute;
+        top:0;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        height:100%;
+        @include desktopstyle() {
+            position:initial;
+            display:initial;
+            height:initial;
+        }
+
+        & button {
+            width:50%;
+            margin-left: auto;
+            margin-right:auto;
+            @include desktopstyle() {
+                width:initial;
+            }
+        }
+    }
 }
 
 h4 + p, #visualIdentity p, #webDevelopementSection p {
     width:90%;
     margin:7% auto 0 auto;
-    line-height:2.5;
+    line-height:3;
     font-size:0.9rem;
     @include desktopstyle() {
         width:50%;
         font-size:1rem;
         margin: 40px auto 0 auto;
+        line-height:3;
     }
 }
 
@@ -517,8 +546,8 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
     font-family: $tertiary-typo;
     letter-spacing:2px;
     font-weight:600;
-    margin-top:40px;
-    margin-bottom:40px;
+    margin-top:10%;
+    margin-bottom:10%;
     @include desktopstyle() {
         margin-top:30px;
         margin-bottom:35px;
@@ -540,10 +569,11 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
 
 article:nth-child(3), article:nth-child(6) {
     position:relative;
+    border:green solid 2px;
     background-color: rgba(253, 249, 249, 0.8);
     height:100vh;
-    margin-top:-80px;
     position:relative;
+    z-index:-3;
     @include desktopstyle() {
         padding: 0;
         margin-top:0;
