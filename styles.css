@@ -644,12 +644,11 @@ article:nth-child(3), article:nth-child(6) {
   height: 100vh;
   margin-top: -80px;
   position: relative;
-  border: yellow 1px solid;
 }
 
 @media all and (min-width: 1025px) {
   article:nth-child(3), article:nth-child(6) {
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     margin-top: 0;
     z-index: -4;
   }
@@ -694,6 +693,7 @@ article:nth-child(4) {
 article:nth-child(4) #h3 {
   position: absolute;
   right: -120px;
+  top: 30vh;
   height: 100vh;
 }
 
@@ -703,6 +703,7 @@ article:nth-child(4) #h3 {
         -ms-flex-order: 0;
             order: 0;
     position: initial;
+    margin-top: -70px;
   }
 }
 
@@ -714,7 +715,6 @@ article:nth-child(4) #h3 {
 
 article:nth-child(4) #h3 h3 {
   display: block;
-  background-color: #FDF9F9;
 }
 
 @media all and (min-width: 1025px) {
@@ -725,10 +725,48 @@ article:nth-child(4) #h3 h3 {
   }
 }
 
+article:nth-child(4) #h3 h3::before {
+  content: "";
+  height: 1px;
+  width: 20vh;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  left: -21vh;
+  top: 20px;
+  z-index: -1;
+  border: none;
+  border-top: dotted 4px black;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) #h3 h3::before {
+    display: none;
+  }
+}
+
+article:nth-child(4) #h3 h3::after {
+  content: "";
+  height: 1px;
+  width: 20vh;
+  background-color: transparent;
+  position: absolute;
+  right: -21vh;
+  top: 20px;
+  z-index: -1;
+  border: none;
+  border-top: dotted 4px black;
+}
+
+@media all and (min-width: 1025px) {
+  article:nth-child(4) #h3 h3::after {
+    display: none;
+  }
+}
+
 article:nth-child(4) .SEO__h4Containers {
   font-size: 0.9rem;
-  margin: auto 15vw auto auto;
-  padding: 15px 0 30px 0;
+  margin: 5vh 15vw auto auto;
   width: 80%;
 }
 
@@ -749,13 +787,8 @@ article:nth-child(4) #h41 {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
-  padding-top: 15vw;
-}
-
-@media all and (min-width: 1025px) {
-  article:nth-child(4) #h41 {
-    padding-top: initial;
-  }
+  border-top: #464646 solid 0.5px;
+  border-bottom: #464646 solid 0.5px;
 }
 
 article:nth-child(4) #h42 {
@@ -847,7 +880,6 @@ article:nth-child(4) p {
 
 article:nth-child(5) {
   position: relative;
-  border: green solid 1px;
   background-color: rgba(253, 249, 249, 0.8);
   z-index: -3;
 }
