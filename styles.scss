@@ -138,7 +138,7 @@ h2 {
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: $background-color;    
     text-align:center; 
-    z-index:-2;
+    z-index:-4;
     font-family: $tertiary-typo;
     width:100%;
     filter:blur(0px);
@@ -196,6 +196,7 @@ article {
     position:relative;
     height:100vh;
     width:100vw;
+    z-index:-2;
 }
 
 video {
@@ -397,15 +398,24 @@ header {
 #visualIdentity {
     margin-top:20vh;
     //overflow-x:hidden;
+    background-color: rgba(253, 249, 249, 0.8);
     @include desktopstyle() {
         margin-top:150vh;
         visibility:hidden;
+        z-index:-2;
+    }
+
+    & svg {
+        margin:5px;
+        z-index:2
     }
 
     &Block {
         width:100%;
         height:90%;
         position:relative;
+        background-color: black;
+        z-index:-1;
         @include desktopstyle() {
             box-shadow: 0 5px 10px black;
             height:80%;
@@ -506,16 +516,7 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
     letter-spacing:2px;
     font-weight:600;
     margin-top:40px;
-}
-
-.carrouselIcons {
-    position:absolute;
-    bottom:60px;
-    left:0;
-    right:0;
-    @include desktopstyle() {
-        bottom:30px;
-    }
+    margin-bottom:40px;
 }
 
 
@@ -531,45 +532,42 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
 
 
 
-article:nth-child(3) {
-    //border:$background-color solid 1px;
-    //padding: 0 50px 50px 50px;
-    border:blue solid 1px;
+article:nth-child(3), article:nth-child(6) {
     position:relative;
     background-color: rgba(253, 249, 249, 0.8);
-    //background-color: transparent;
+    height:100vh;
     margin-top:-80px;
-    z-index:-1;
     position:relative;
+    border:yellow 1px solid;
     @include desktopstyle() {
-        padding: 0 50px 50px 50px;
+        padding: 0px 0px 0px 0px;
+        margin-top:0;
+        z-index:-4;
     }
 
     & img {
         max-width:25%;
         position:absolute;
-        bottom:65px;;
+        bottom:150px;;
         left: 80px;
     }
 
     & video {
         bottom:0;
-        height:100%;
-        max-width:100vw;
-        opacity:0.7;
+        opacity:0.3;
     }
 
     & p {
         margin-top: 20px;
     }
 
-    & svg {
-        margin:0px;
+    & h3 {
+        margin-top:15vh;
     }
 }
 
 article:nth-child(4) {
-    background-color: rgba(253, 249, 249, 0.95);
+    background-color: rgba(253, 249, 249, 0.8);
     position: relative;
     @include desktopstyle() {
         display:flex;
@@ -586,9 +584,20 @@ article:nth-child(4) {
             position:initial;
         }
 
+        & svg:nth-child(1) {
+            @include desktopstyle() {
+                margin-top:-50px;
+            }
+        }
+
         & h3 {
             display:block;
             background-color: $background-color;
+            @include desktopstyle() {
+                background-color: transparent;
+                margin-top:150px;
+                margin-bottom:150px;
+            }
         }
     }
 
@@ -689,19 +698,27 @@ article:nth-child(4) {
 
 article:nth-child(5) {
     position:relative;
-    //padding-top:130px;
-    //max-height:430px;
+    border: green solid 1px;
+    background-color: rgba(253, 249, 249, 0.8);
+    z-index:-3;
 
     & video {
         max-width:100%;
         opacity:0.95;
         bottom:0;
         right:0;
+        @include desktopstyle() {
+            margin-top: 150px;
+        }
+
+        & + svg {
+            margin-top:50px;
+        }
     }
 
     & h3 svg {
         position:absolute;
-        top:0px;
+        top:45px;
         z-index:2;
         transform:rotate(-3deg);
         width:25%;
@@ -718,7 +735,7 @@ article:nth-child(5) {
     }
 
     & .h4Container {
-        margin-top:230px;
+        margin-top:260px;
         display:flex;
         align-items: center;
     }
