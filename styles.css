@@ -131,17 +131,12 @@
   border: 0px solid #000;
 }
 
-* {
-  border: blue solid 1px;
-}
-
 body {
   margin: 0;
   padding: 0;
   background-color: #FDF9F9;
   font-family: "Sitka Heading", Arial;
   height: auto;
-  width: 100%;
   overflow: hidden;
 }
 
@@ -242,7 +237,7 @@ h4 {
 section {
   width: 100%;
   text-align: center;
-  width: 100%;
+  overflow-x: hidden;
 }
 
 article {
@@ -415,7 +410,7 @@ header svg {
 }
 
 #heroSection__video {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -500,7 +495,6 @@ header svg {
   margin-top: 20vh;
   overflow: hidden;
   background-color: rgba(253, 249, 249, 0.8);
-  width: 100%;
 }
 
 @media all and (min-width: 1024px) {
@@ -697,7 +691,6 @@ article:nth-child(3), article:nth-child(6) {
   position: relative;
   background-color: rgba(253, 249, 249, 0.8);
   height: 100vh;
-  position: relative;
   z-index: -3;
 }
 
@@ -732,7 +725,6 @@ article:nth-child(3) h3, article:nth-child(6) h3 {
 article:nth-child(4) {
   background-color: rgba(253, 249, 249, 0.8);
   position: relative;
-  overflow: hidden;
 }
 
 @media all and (min-width: 1024px) {
