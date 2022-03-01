@@ -29,6 +29,7 @@ function writeH2(array, index, number) {
         }, /*30*/ 60)
 }};
 
+
 function eraseWord(word, index, number) {
     if(index == word.length) {
         setTimeout(() => {

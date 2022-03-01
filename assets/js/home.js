@@ -34,7 +34,7 @@ window.addEventListener("mousemove", function(e) {
 
 
 // Stop scroll
-/*var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
   e.preventDefault();
@@ -45,10 +45,10 @@ function preventDefaultForScrollKeys(e) {
     preventDefault(e);
     return false;
   }
-}*/
+}
 
 // modern Chrome requires { passive: false } when adding event
-/*var supportsPassive = false;
+var supportsPassive = false;
 try {
   window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
     get: function () { supportsPassive = true; } 
@@ -56,39 +56,49 @@ try {
 } catch(e) {}
 
 var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';*/
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
 // call this to Disable
-/*function disableScroll() {
+function disableScroll() {
   window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
   window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
   window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
   window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}*/
+}
 
 // call this to Enable
-/*function enableScroll() {
+function enableScroll() {
   window.removeEventListener('DOMMouseScroll', preventDefault, false);
   window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
   window.removeEventListener('touchmove', preventDefault, wheelOpt);
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-}*/
+}
 
-/*window.addEventListener("wheel", function(e) {
-    //disableScroll();
-})*/
+window.addEventListener("wheel", function(e) {
+    
+})
 
-/*window.addEventListener("wheel", function(e) {
-    if(e.deltaY > 0 && e.pageY > 0 && e.pageY < 1300) {
+window.addEventListener("wheel", function(e) {
+    disableScroll();
+    if(e.deltaY > 0 && e.pageY > 0 && e.pageY < 4870) {
         window.scrollTo({
             top:this.window.pageYOffset + this.window.innerHeight,
             behavior: 'smooth'
           });
-    let H2Array = document.querySelector('h2').textContent.split('');
+    let H2Array = document.querySelector('h2:nth-child(1)').textContent.split('');
     this.setTimeout(() => {
         writeH2(H2Array, 0, 1);
     }, 500)
-    } else {
+    }
+    if(e.deltaY > 0 && e.pageY > 4880) {
+
+    }
+     this.document.querySelector(".pageY p").textContent = e.pageY;
+    // if(e.deltaY > 0 && e.pageY >)
+    enableScroll(); 
+    
+    
+    /*else {
         if(e.deltaY > 0) {
             this.window.scrollTo({
                 top:this.window.pageYOffset + this.window.innerHeight,
@@ -100,32 +110,30 @@ var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewh
                 behavior:"smooth"
             })            
         }
-    }
-})*/
+    }*/
+})
 
 window.addEventListener("wheel", function(e) {
     if(e.deltaY > 0 && e.pageY >= 700) {
-        let H2Array = document.querySelector('h2').textContent.split('');
+        let H2Array = document.querySelector('h2:nth-child(1)').textContent.split('');
         writeH2(H2Array, 0, 1);
-        console.log(e.pageY);
-        console.log(e.pageX);
     };
-    if(e.deltaY > 0 && e.pageY >= 1300 && this.document.querySelector('h2').style.filter !== 'blur(2px)') {
-        this.document.querySelector('h2').animate([
+    if(e.deltaY > 0 && e.pageY >= 1300 && this.document.querySelector('h2:nth-child(1)').style.filter !== 'blur(2px)') {
+        this.document.querySelector('h2:nth-child(1)').animate([
             {filter:'blur(0px)'},
             {filter:'blur(2px)'},
         ], {
             duration: 700
         });
-        this.document.querySelector('h2').style.filter = `blur(2px)`;
-    } else if(e.deltaY < 0 && e.pageY <= 2150 && this.document.querySelector('h2').style.filter !== 'blur(0px)') {
-        this.document.querySelector('h2').animate([
+        this.document.querySelector('h2:nth-child(1)').style.filter = `blur(2px)`;
+    } else if(e.deltaY < 0 && e.pageY <= 2150 && this.document.querySelector('h2:nth-child(1)').style.filter !== 'blur(0px)') {
+        this.document.querySelector('h2:nth-child(1)').animate([
             {filter:'blur(2px)'},
             {filter:'blur(0px)'}
         ], {
             duration: 700
         });
-        this.document.querySelector('h2').style.filter = `blur(0px)`;
+        this.document.querySelector('h2:nth-child(1)').style.filter = `blur(0px)`;
     }
 });
 

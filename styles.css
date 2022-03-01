@@ -190,10 +190,10 @@ h2 {
   h2 {
     font-size: 9em;
     text-shadow: 10px 5px 4px rgba(0, 0, 0, 0.3);
-    visibility: hidden;
     width: 100%;
     top: 0px;
     position: fixed;
+    visibility: hidden;
   }
 }
 
@@ -706,7 +706,6 @@ article:nth-child(3) h3, article:nth-child(6) h3 {
 @media all and (min-width: 1024px) {
   article:nth-child(3) h3, article:nth-child(6) h3 {
     margin-top: 10vh;
-    margin-bottom: initial;
   }
 }
 
@@ -1055,5 +1054,13 @@ article:nth-child(5) h4 {
   .text button {
     width: initial;
   }
+}
+
+.pageY {
+  position: fixed;
+  background: black;
+  color: white;
+  bottom: 10px;
+  right: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
