@@ -405,7 +405,6 @@ header {
 // Identité visuelle
 #visualIdentity {
     margin-top:20vh;
-    overflow:hidden;
     background-color: rgba(253, 249, 249, 0.8);
     @include desktopstyle() {
         margin-top:150vh;
