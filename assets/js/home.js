@@ -156,13 +156,3 @@ window.addEventListener('wheel', function(e) {
        
     }
 })
-
-window.addEventListener("wheel", function(e) {
-    if(e.deltaY > 0 && e.pageY > 2000 && this.document.querySelector('#webDevelopementSection').style.visibility !== "visible") {
-        this.document.querySelector('#webDevelopementSection video').style.visibility = "visible";
-        this.document.querySelector('#webDevelopementSection video').play();
-        this.setTimeout(() => {
-            this.document.querySelector('#webDevelopementSection').style.visibility = "visible";
-        }, 1200)
-    }
-})
