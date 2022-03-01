@@ -102,14 +102,12 @@ $tertiary-typo:"Segoe UI", Arial;
   }
 
 // Général
-
 body {
     margin:0;
     padding:0;
     background-color: $background-color;
     font-family:$primary-typo;
     height:auto;
-    overflow: hidden;
 }
 
 
@@ -195,6 +193,7 @@ section {
     width:100%;
     text-align: center;
     overflow-x:hidden;
+    // scroll-snap-type: mandatory;
 }
 
 article {
@@ -203,7 +202,8 @@ article {
     height:100vh;
     width:100%;
     z-index:-2;
-    border:transparent solid 1px;
+    // border:transparent solid 1px;
+    border:red solid 1px;
 }
 
 video {

@@ -34,7 +34,7 @@ window.addEventListener("mousemove", function(e) {
 
 
 // Stop scroll
-var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+/*var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
   e.preventDefault();
@@ -45,10 +45,10 @@ function preventDefaultForScrollKeys(e) {
     preventDefault(e);
     return false;
   }
-}
+}*/
 
 // modern Chrome requires { passive: false } when adding event
-var supportsPassive = false;
+/*var supportsPassive = false;
 try {
   window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
     get: function () { supportsPassive = true; } 
@@ -56,29 +56,29 @@ try {
 } catch(e) {}
 
 var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';*/
 
 // call this to Disable
-function disableScroll() {
+/*function disableScroll() {
   window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
   window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
   window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
   window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}
+}*/
 
 // call this to Enable
-function enableScroll() {
+/*function enableScroll() {
   window.removeEventListener('DOMMouseScroll', preventDefault, false);
   window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
   window.removeEventListener('touchmove', preventDefault, wheelOpt);
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-}
+}*/
 
-window.addEventListener("wheel", function(e) {
+/*window.addEventListener("wheel", function(e) {
     //disableScroll();
-})
+})*/
 
-window.addEventListener("wheel", function(e) {
+/*window.addEventListener("wheel", function(e) {
     if(e.deltaY > 0 && e.pageY > 0 && e.pageY < 1300) {
         window.scrollTo({
             top:this.window.pageYOffset + this.window.innerHeight,
@@ -101,7 +101,7 @@ window.addEventListener("wheel", function(e) {
             })            
         }
     }
-})
+})*/
 
 window.addEventListener("wheel", function(e) {
     if(e.deltaY > 0 && e.pageY >= 700) {

@@ -137,7 +137,6 @@ body {
   background-color: #FDF9F9;
   font-family: "Sitka Heading", Arial;
   height: auto;
-  overflow: hidden;
 }
 
 p, h1, button {
@@ -246,7 +245,7 @@ article {
   height: 100vh;
   width: 100%;
   z-index: -2;
-  border: transparent solid 1px;
+  border: red solid 1px;
 }
 
 video {
