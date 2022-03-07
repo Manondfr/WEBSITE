@@ -101,11 +101,18 @@ $tertiary-typo:"Segoe UI", Arial;
       border: 0px solid #000;
   }
 
+  #animateHero {
+    visibility: hidden;
+    overflow:hidden;
+  }
+
+
+
 // Général
 body {
     margin:0;
     padding:0;
-    background-color: $background-color;
+    // background-color: $background-color;
     font-family:$primary-typo;
     height:auto;
 }
@@ -138,11 +145,15 @@ h1 {
     }
 }
 
+#h2Container {
+    height:100px;
+}
+
 h2 {
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: $background-color;    
     text-align:center; 
-    z-index:-4;
+    z-index:-5;
     font-family: $tertiary-typo;
     width:100%;
     filter:blur(0px);
@@ -153,10 +164,51 @@ h2 {
         font-size:9em;
         text-shadow: 10px 5px 4px rgba(0,0,0,0.3);
         width:100%;
-        top : 0px;
-        position:fixed;
-        visibility: hidden;
+        margin-top:400px;
+        // top : 0px;
+        // position:fixed;
+        // visibility: hidden;
     }
+
+    & span {
+        @include desktopstyle() {
+            // visibility: hidden;
+        }
+    }
+
+    &::after {
+        content:"";
+        width:50%;
+        height:20px;
+        border: 1px solid $underline-color;
+        background-color: $underline-color;
+        position: absolute;
+        bottom:-220px;
+        right:25%;
+    }
+}
+
+#leaves {
+    position:absolute;
+    top:160px;
+    z-index:4;
+    width:500px;
+    right:-170px;
+}
+
+#leafdim2 {
+    position:absolute;
+    left:-280px;
+    width:450px;
+    top:0px;
+}
+
+#leaf2 {
+    width:450px;
+    position:absolute;
+    top:90px;
+    left:-190px;
+    z-index:-1;
 }
 
 h3 {
@@ -192,7 +244,7 @@ h4 {
 section {
     width:100%;
     text-align: center;
-    overflow-x:hidden;
+    overflow:hidden;
     // scroll-snap-type: mandatory;
 }
 
@@ -202,8 +254,7 @@ article {
     height:100vh;
     width:100%;
     z-index:-2;
-    // border:transparent solid 1px;
-    border:red solid 1px;
+    border:transparent solid 1px;
 }
 
 video {
@@ -248,7 +299,7 @@ header {
                 font-size:1.2em;
             }
 
-        & a {
+        & li, a {
             text-decoration: none;
             color:white;
             position:relative;
@@ -301,6 +352,18 @@ header {
     overflow-x: hidden;
     @include tabletstyle() {
         text-align: center;
+    }
+
+    #videoCover {
+        z-index:5;
+        background-color: black;
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
     }
 
     & p strong {
@@ -396,7 +459,7 @@ header {
 
 //Section prestations
 #servicesSection {
-    margin-top:50vh;
+    
     @include desktopstyle() {
         margin-top:auto;
     }
@@ -405,10 +468,10 @@ header {
 // Identité visuelle
 #visualIdentity {
     margin-top:20vh;
-    background-color: rgba(253, 249, 249, 0.8);
+    // background-color: rgba(253, 249, 249, 0.8);
     @include desktopstyle() {
         margin-top:150vh;
-        visibility:hidden;
+        // visibility:hidden;
         z-index:-2;
     }
 
@@ -424,9 +487,10 @@ header {
         background-color: black;
         z-index:-1;
         @include desktopstyle() {
-            box-shadow: 0 5px 10px black;
+            // box-shadow: 0 5px 10px black;
+            box-shadow: 0px 0px 15px black;
             height:80%;
-            border-bottom: transparent 1px solid;
+            border:white solid 1px;
         }
     }
 
@@ -458,7 +522,7 @@ header {
         @include desktopstyle() {
             text-align:left;
             margin-left:40px;
-            top:-63px;
+            top:-93px;
         }
 
         & span {
@@ -567,9 +631,9 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
 
 article:nth-child(3), article:nth-child(6) {
     position:relative;
-    background-color: rgba(253, 249, 249, 0.8);
+    // background-color: rgba(253, 249, 249, 0.8);
     height:100vh;
-    z-index:-3;
+    z-index:-2;
     @include desktopstyle() {
         padding: 0;
         margin-top:0;
@@ -597,7 +661,7 @@ article:nth-child(3), article:nth-child(6) {
 }
 
 article:nth-child(4) {
-    background-color: rgba(253, 249, 249, 0.8);
+    // background-color: rgba(253, 249, 249, 0.8);
     position: relative;
     height:100vh;
     @include desktopstyle() {
@@ -744,7 +808,8 @@ article:nth-child(4) {
 
     & .lineThrough {
         border: rgba(253,249,249,0.9) solid 1px;
-        background-color: rgba(253,249,249,0.9);
+        // background-color: rgba(253,249,249,0.9);
+        background-color: white;
         position:relative;
         width:100%;
         top: -28px;
@@ -764,7 +829,7 @@ article:nth-child(4) {
 
 article:nth-child(5) {
     position:relative;
-    background-color: rgba(253, 249, 249, 0.8);
+    // background-color: rgba(253, 249, 249, 0.8);
     z-index:-3;
 
     & video {
@@ -847,6 +912,7 @@ article:nth-child(5) {
     flex-direction:column;
     justify-content: center;
     height:100%;
+    
     @include desktopstyle() {
         position:initial;
         display:initial;
@@ -869,4 +935,95 @@ article:nth-child(5) {
     color:white;
     bottom:10px;
     right:10px;
+}
+
+// PARTIE A PROPOS
+#about {
+    margin-top:100vh;
+    position:relative;
+}
+
+.aboutFlex {
+    display:flex;
+    position: relative;
+    height:800px;
+    width:98%;
+    margin:auto;
+
+
+    & img {
+        max-width:50%;
+        z-index:3;
+        position:absolute;
+        bottom:4px;
+
+        &:nth-child(2) {
+            order:3;
+        }
+    }
+
+    & div {
+        width:100%;
+        position: absolute;
+        bottom:0;
+        height:60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        line-height:3;
+        border: dashed 5px $underline-color;
+        background-color: $background-color;
+        // background: $underline-color;
+        background: $background-color;
+        box-shadow: 0px 0px 10px $text-color;
+        order:1;
+        // border-radius: 5px;
+
+        & .texte {
+            width:50%;
+            position:absolute;
+            right:30px;
+            top:20%;
+            border:none;
+            box-shadow: none;
+
+            & button {
+                width:50%;
+                margin:auto;
+            }
+        }
+
+
+        & .aboutTitle {
+            font-family: $secondary-typo;
+            font-weight: 700;
+            font-size:2rem;
+            display:block;
+
+            &::before {
+                content:"";
+                position:absolute;
+                top:30%;
+                bottom:0;
+                right:0;
+                left:0;
+                height:4px;
+                width:30%;
+                z-index:0;
+
+                background-color: #068DFF;
+            }
+
+            // &::after {
+            //     content:"";
+            //     position:absolute;
+            //     top:50%;
+            //     bottom:0;
+            //     right:-5%;
+            //     height:2px;
+            //     width:47%;
+            //     background-color: $text-color;
+            // }
+        }
+    }
 }
