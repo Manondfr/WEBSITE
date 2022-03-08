@@ -200,7 +200,7 @@ h2 {
     font-size: 9em;
     text-shadow: 10px 5px 4px rgba(0, 0, 0, 0.3);
     width: 100%;
-    margin-top: 400px;
+    margin-top: 75vh;
   }
 }
 
@@ -215,7 +215,7 @@ h2 {
 
 #leafdim2 {
   position: absolute;
-  left: -280px;
+  left: -250px;
   width: 450px;
   top: 0px;
   opacity: 0.95;
@@ -225,7 +225,7 @@ h2 {
   width: 450px;
   position: absolute;
   top: 90px;
-  left: -190px;
+  left: -160px;
   z-index: -1;
   opacity: 0.95;
 }
@@ -299,6 +299,12 @@ header {
   font-weight: 900;
 }
 
+@media all and (min-width: 1024px) {
+  header {
+    width: 66vw;
+  }
+}
+
 header button {
   background-color: transparent;
   border: none;
@@ -308,6 +314,9 @@ header button {
   header nav {
     width: 600px;
     text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 10;
   }
 }
 
@@ -382,6 +391,34 @@ header svg {
   margin-top: 10px;
 }
 
+.sticky-footer {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.fixed-target {
+  bottom: -100vh;
+}
+
+.fixed-element,
+.fixed-target {
+  position: absolute;
+  top: -100vh;
+  right: 0;
+  left: 0;
+}
+
+.fixed-element {
+  height: 100%;
+  width: 100%;
+  background: url(../img/black2.jpg);
+  background-color: black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 #heroSection {
   color: white;
   width: 100%;
@@ -422,8 +459,6 @@ header svg {
   position: relative;
   margin: auto;
   text-shadow: 5px 2px rgba(0, 0, 0, 0.6);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 @media all and (min-width: 443px) {
@@ -528,6 +563,9 @@ header svg {
 @media all and (min-width: 1024px) {
   #servicesSection {
     margin-top: auto;
+    background-color: #FDF9F9;
+    position: relative;
+    z-index: -5;
   }
 }
 

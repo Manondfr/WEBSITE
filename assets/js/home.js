@@ -46,23 +46,31 @@ let leavesMoving = gsap.timeline()
 
 // let parallaxLeaves = 
 
-let tl = gsap.timeline({
-    scrollTrigger: {
+// let tl = gsap.timeline({
+//     scrollTrigger: {
         
-        trigger:"#visualIdentityBlock",
-        start:"bottom 80%",
-        end:"bottom 0%",
-        toggleActions: "restart none none none",
-        scrub:1
-    }
-})
+//         trigger:"#visualIdentityBlock",
+//         start:"bottom 80%",
+//         end:"bottom 0%",
+//         toggleActions: "restart none none none",
+//         scrub:1
+//     }
+// })
 
 // .from("h3", {x: -300, ease:"power2.InOut"}, 0)
 // .from("span", {x: 300, ease:"power2.InOut"}, 0)
 // .from("p", {y: 70}, 0)
 // .from("#visualIdentityBlock video", {xPercent:10, ease:"linear"}, 0)
 
+let headerChangeColor = gsap.to("nav a", {color: "black"});
 
+ScrollTrigger.create({
+    trigger:"#heroSection video",
+    animation:headerChangeColor,
+    start:"bottom 0",
+    scroller:"#scrollContainer",
+    toggleActions:"play none none reverse"
+})
 
 let h2Typewriting = gsap.timeline()
 .fromTo("h2", { text:"" },
@@ -70,11 +78,10 @@ let h2Typewriting = gsap.timeline()
 
 
 ScrollTrigger.create({
-
     trigger:"#heroSection video",
     animation:h2Typewriting,
     start:"bottom 30%",
-    end:"+=600",
+    end:"+=900",
     scroller:"#scrollContainer",
     markers:true,
     toggleActions: "restart none none reverse",

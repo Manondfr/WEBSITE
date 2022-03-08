@@ -165,7 +165,7 @@ h2 {
         font-size:9em;
         text-shadow: 10px 5px 4px rgba(0,0,0,0.3);
         width:100%;
-        margin-top:400px;
+        margin-top:75vh;
         // top : 0px;
         // position:fixed;
         // visibility: hidden;
@@ -200,7 +200,7 @@ h2 {
 
 #leafdim2 {
     position:absolute;
-    left:-280px;
+    left:-250px;
     width:450px;
     top:0px;
     opacity:0.95;
@@ -210,7 +210,7 @@ h2 {
     width:450px;
     position:absolute;
     top:90px;
-    left:-190px;
+    left:-160px;
     z-index:-1;
     opacity:0.95;
 }
@@ -274,6 +274,9 @@ header {
     margin:20px 40px 25vh 40px;
     justify-content:space-between;
     font-weight:900;
+    @include desktopstyle() {
+        width:66vw;
+    }
 
     & button {
         background-color: transparent;
@@ -285,6 +288,9 @@ header {
         @include tabletstyle() {
             width:600px;
             text-align:center;
+            position:sticky;
+            z-index:10;
+            // top:0;
         }
     } 
     
@@ -309,6 +315,7 @@ header {
             position:relative;
             padding:0 5px;
             z-index:1;
+            
         
             &:hover {
                 &::after {
@@ -345,6 +352,31 @@ header {
     }
 }
 
+.sticky-footer {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+  }
+  .fixed-target {
+    bottom: -100vh;
+  }
+  .fixed-element,
+  .fixed-target {
+    position: absolute;
+    top: -100vh;
+    right: 0;
+    left: 0;
+  }
+  .fixed-element {
+    height: 100%;
+    width: 100%;
+    background: url(../img/black2.jpg);
+    background-color: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
 
 // Section hero
 #heroSection {
@@ -379,7 +411,7 @@ header {
         position:relative;
         margin:auto;
         text-shadow: 5px 2px rgba(0,0,0, 0.6);
-        transform: translateY(-50%);
+        // transform: translateY(-50%);
         @include tabletstyle() {
             font-size:4em;
             padding:0;
@@ -466,6 +498,10 @@ header {
     
     @include desktopstyle() {
         margin-top:auto;
+        background-color: $background-color;
+        position:relative;
+        z-index:-5;
+        
     }
 }
 

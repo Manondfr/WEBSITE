@@ -18,10 +18,11 @@
 
     <!-- Header -->
     <div id="scrollContainer" data-scroll-container>
+    <div id="scrollTarget">
     <div id="animateHero">
     <header>
         <a id="logoImg" href="index.html"><img src="assets/img/logo.png" alt="Logo entreprise"/></a>
-        <nav aria-label="Menu de navigation principal">
+        <nav aria-label="Menu de navigation principal" data-scroll data-scroll-sticky data-scroll-target="#scrollTarget">
             <button class="mobileOnly" aria-expanded="false" aria-controls="navigationMenu" aria-label="Bouton de menu de navigation déroulable">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="18" viewBox="0 0 30 18">
                     <g transform="translate(-379.5 -24)">
@@ -73,7 +74,7 @@
             <img id="leaf2" src="assets/img/leaf.png">
             <img id="leaves" src="assets/img/laves2.png">
         </section>
-      </div>
+      
         <!-- Fin de la section Hero -->
 
         
@@ -341,6 +342,7 @@
         </section>
     </main>
     <span class="c-scrollbar"></span>
+    </div>
     </div>
     <body>
       <!-- <div class="desktopOnly" id="container">
