@@ -275,7 +275,7 @@ section {
 article {
   margin: 0;
   position: relative;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   z-index: -2;
   border: transparent solid 1px;
@@ -391,32 +391,8 @@ header svg {
   margin-top: 10px;
 }
 
-.sticky-footer {
-  position: relative;
-  overflow: hidden;
+#h2Container {
   height: 100vh;
-}
-
-.fixed-target {
-  bottom: -100vh;
-}
-
-.fixed-element,
-.fixed-target {
-  position: absolute;
-  top: -100vh;
-  right: 0;
-  left: 0;
-}
-
-.fixed-element {
-  height: 100%;
-  width: 100%;
-  background: url(../img/black2.jpg);
-  background-color: black;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 #heroSection {
@@ -575,8 +551,12 @@ header svg {
 
 @media all and (min-width: 1024px) {
   #visualIdentity {
-    margin-top: 150vh;
+    margin-top: 0vh;
     z-index: -2;
+    position: relative;
+    border: blue solid 1px;
+    height: 100vh;
+    background-image: url("/assets/img/background.png") no-repeat center;
   }
 }
 
@@ -595,34 +575,26 @@ header svg {
 
 @media all and (min-width: 1024px) {
   #visualIdentityBlock {
-    -webkit-box-shadow: 0px 0px 15px black;
-            box-shadow: 0px 0px 15px black;
+    -webkit-box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
+            box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
     height: 80%;
-    border: white solid 1px;
+    width: 93%;
+    margin: auto;
+    border: white outset 3px;
   }
 }
 
-#visualIdentityBlock__AppearanceDiv {
-  background-color: rgba(0, 0, 0, 0.9);
-  width: inherit;
-  height: 100%;
+#visualIdentity #circles {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  visibility: visible;
-  -webkit-transform-origin: left;
-          transform-origin: left;
+  top: -50px;
+  right: -5%;
+  z-index: -16;
 }
 
 #visualIdentity video {
   bottom: 0;
   right: 0;
-  height: 100%;
+  width: 100%;
 }
 
 #visualIdentity h3 {
@@ -646,7 +618,7 @@ header svg {
 @media all and (min-width: 1024px) {
   #visualIdentity h3 span {
     position: relative;
-    color: #CFD0D1;
+    color: white;
     left: 70px;
     text-shadow: none;
   }
@@ -751,7 +723,7 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
 
 article:nth-child(3), article:nth-child(6) {
   position: relative;
-  height: 100vh;
+  height: 80vh;
   z-index: -2;
 }
 
@@ -759,7 +731,15 @@ article:nth-child(3), article:nth-child(6) {
   article:nth-child(3), article:nth-child(6) {
     padding: 0;
     margin-top: 0;
-    z-index: -4;
+    -webkit-box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
+            box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
+    width: 93%;
+    margin: auto;
+    margin-top: -20vh;
+    height: 100%;
+    border: blue solid 1px;
+    background-color: #FDF9F9;
+    z-index: 5;
   }
 }
 
@@ -798,6 +778,7 @@ article:nth-child(4) {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     position: relative;
+    width: 90%;
   }
 }
 
@@ -890,6 +871,9 @@ article:nth-child(4) .SEO__h4Containers {
     font-family: "Sitka Heading", Arial;
     padding: auto;
     width: unset;
+    -webkit-box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
+            box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
+    background-color: #464646;
   }
 }
 
@@ -915,7 +899,6 @@ article:nth-child(4) #h42 {
 @media all and (min-width: 1024px) {
   article:nth-child(4) #h42 {
     width: unset;
-    background-color: transparent;
   }
 }
 

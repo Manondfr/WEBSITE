@@ -249,13 +249,15 @@ section {
     width:100%;
     text-align: center;
     overflow:hidden;
+
     // scroll-snap-type: mandatory;
 }
 
 article {
     margin:0;
     position:relative;
-    height:100vh;
+    // height:100vh;
+    height:80vh;
     width:100%;
     z-index:-2;
     border:transparent solid 1px;
@@ -352,30 +354,9 @@ header {
     }
 }
 
-.sticky-footer {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-  }
-  .fixed-target {
-    bottom: -100vh;
-  }
-  .fixed-element,
-  .fixed-target {
-    position: absolute;
-    top: -100vh;
-    right: 0;
-    left: 0;
-  }
-  .fixed-element {
-    height: 100%;
-    width: 100%;
-    background: url(../img/black2.jpg);
-    background-color: black;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
+#h2Container {
+    height:100vh;
+}
 
 
 // Section hero
@@ -500,8 +481,7 @@ header {
         margin-top:auto;
         background-color: $background-color;
         position:relative;
-        z-index:-5;
-        
+        z-index:-5;        
     }
 }
 
@@ -510,9 +490,13 @@ header {
     margin-top:20vh;
     // background-color: rgba(253, 249, 249, 0.8);
     @include desktopstyle() {
-        margin-top:150vh;
+        margin-top:0vh;
         // visibility:hidden;
         z-index:-2;
+        position:relative;
+        border:blue solid 1px;
+        height:100vh;
+        background-image: url("/assets/img/background.png") no-repeat center;
     }
 
     & svg {
@@ -528,31 +512,44 @@ header {
         z-index:-1;
         @include desktopstyle() {
             // box-shadow: 0 5px 10px black;
-            box-shadow: 0px 0px 15px black;
+            box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
             height:80%;
-            border:white solid 1px;
+            width:93%;
+            margin:auto;
+            // overflow-x:hidden;
+            
+            // border:#1477ca outset 3px;
+            border:white outset 3px;
         }
     }
 
-    &Block__AppearanceDiv {
-        background-color: rgba(0,0,0,0.9);
-        width:inherit;
-        height:100%;
-        position:absolute;
-        top:0;
-        bottom:0;
-        left:0;
-        right:0;
-        z-index:2;
-        transform:scale(0);
-        visibility:visible;
-        transform-origin: left;
+    & #circles {
+        position: absolute;
+        top:-50px;
+        right:-5%;
+        z-index:-16;
     }
+
+    // &Block__AppearanceDiv {
+    //     background-color: rgba(0,0,0,0.9);
+    //     width:inherit;
+    //     height:100%;
+    //     position:absolute;
+    //     top:0;
+    //     bottom:0;
+    //     left:0;
+    //     right:0;
+    //     z-index:2;
+    //     transform:scale(0);
+    //     visibility:visible;
+    //     transform-origin: left;
+    // }
 
     & video {
         bottom: 0;
         right:0;
-        height:100%;
+        width:100%;
+        // opacity:0.4;
     }
 
     & h3 {
@@ -569,7 +566,7 @@ header {
             left:5px;
             @include desktopstyle() {
                 position:relative;
-                color:#CFD0D1;
+                color:white;
                 left:70px;
                 text-shadow:none;
             }
@@ -662,7 +659,13 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
 
 
 
-
+// #articlesContainer {
+//     height:100%;
+//     width:100%;
+//     border: yellow solid 1px;
+//     position:relative;
+//     overflow:hidden;
+// }
 
 
 
@@ -672,12 +675,19 @@ h4 + p, #visualIdentity p, #webDevelopementSection p {
 article:nth-child(3), article:nth-child(6) {
     position:relative;
     // background-color: rgba(253, 249, 249, 0.8);
-    height:100vh;
+    height:80vh;
     z-index:-2;
     @include desktopstyle() {
         padding: 0;
         margin-top:0;
-        z-index:-4;
+        box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+        width:93%;
+        margin:auto;
+        margin-top:-20vh;
+        height:100%;
+        border:blue solid 1px;
+        background-color: $background-color;
+        z-index:5;
     }
 
     & img {
@@ -708,6 +718,7 @@ article:nth-child(4) {
         display:flex;
         justify-content:space-around;
         position:relative;
+        width:90%;
     }
     
     & #h3 {
@@ -781,6 +792,8 @@ article:nth-child(4) {
             font-family: $primary-typo;
             padding:auto;
             width:unset;
+            box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+            background-color: $text-color;
         }
     }
 
@@ -799,7 +812,6 @@ article:nth-child(4) {
 
         @include desktopstyle() {
             width:unset;
-            background-color: transparent;
         }
 
         & p {

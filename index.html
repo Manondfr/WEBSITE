@@ -7,138 +7,274 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon_package_v0.16/favicon.ico">    
-
-
     <link rel="stylesheet" href="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.css">
+    <!-- <link rel="stylesheet" href="https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b"> -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Orinoco - Ours en peluche tout doux</title>    
 </head>
 
 
-    <!-- Header -->
+     <!-- Scrollbar personnalisée -->
     <div id="scrollContainer" data-scroll-container>
-    <div id="scrollTarget">
-    <div id="animateHero">
-    <header>
-        <a id="logoImg" href="index.html"><img src="assets/img/logo.png" alt="Logo entreprise"/></a>
-        <nav aria-label="Menu de navigation principal" data-scroll data-scroll-sticky data-scroll-target="#scrollTarget">
-            <button class="mobileOnly" aria-expanded="false" aria-controls="navigationMenu" aria-label="Bouton de menu de navigation déroulable">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="18" viewBox="0 0 30 18">
-                    <g transform="translate(-379.5 -24)">
-                        <line x2="30" transform="translate(379.5 25.5)" fill="none" stroke="#fff" stroke-width="3"/>
-                        <line x2="30" transform="translate(379.5 40.5)" fill="none" stroke="#fff" stroke-width="3"/>
-                        <line x2="30" transform="translate(379.5 33.5)" fill="none" stroke="#fff" stroke-width="3"/>
-                    </g>
-                </svg>                      
-            </button>
-            <ul>
-                <li><a aria-label="Bouton d'accès aux services" href="#">Services</a></li>
-                <li><a aria-label="Bouton d'accès aux réalisations" href="#">Réalisations</a></li>
-                <li><a aria-label="Bouton d'accès à la page A propos" href="#">A propos</a></li>
-                <li><a aria-label="Bouton d'accès à la page de contact" href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Fin du header -->
+      <!-- Sticky header -->
+      <div id="scrollTarget">
+        <!-- Div apparition Hero -->
+        <div id="animateHero">
 
-    <!-- Contenu principal -->
-    <main>
-        <!-- Section Hero -->
-        <section id="heroSection">
-          <div id="videoCover"></div> 
-          <video src="assets/videos/try.mp4" id="heroSection__video" preload autoplay loop muted>
-                <p>Votre navigateur ne prend pas en charge les vidéos.</p>
-            </video> 
-            <p id="heroSection__mouseSvg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="131.5" viewBox="0 0 37 131.5">
+          <!-- Header -->
+          <header data-scroll data-scroll-sticky data-scroll-target="#scrollTarget">
+              <a href="index.html"><img src="assets/img/logo.png" alt="#"/></a>
+              <nav aria-label="Menu de navigation principal">
+                  <button class="mobileOnly" aria-expanded="false" aria-controls="navigationMenu" aria-label="Bouton de menu de navigation déroulable">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="18" viewBox="0 0 30 18">
+                          <g transform="translate(-379.5 -24)">
+                              <line x2="30" transform="translate(379.5 25.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                              <line x2="30" transform="translate(379.5 40.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                              <line x2="30" transform="translate(379.5 33.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                          </g>
+                      </svg>                      
+                  </button>
+                  <ul>
+                      <li><a aria-label="Bouton d'accès aux services" href="#">Services</a></li>
+                      <li><a aria-label="Bouton d'accès aux réalisations" href="#">Réalisations</a></li>
+                      <li><a aria-label="Bouton d'accès à la page A propos" href="#">A propos</a></li>
+                      <li><a aria-label="Bouton d'accès à la page de contact" href="#">Contact</a></li>
+                  </ul>
+              </nav>
+          </header>
+          <!-- Fin du header -->
+
+          <!-- Contenu principal -->
+          <main>
+              <!-- Section Hero -->
+              <section id="heroSection">                
+                <!-- Loader --> <div id="videoCover"></div> 
+                <video src="assets/videos/try.mp4" id="heroSection__video" preload autoplay loop muted>
+                  <p>Votre navigateur ne prend pas en charge les vidéos.</p>
+                </video> 
+                <p id="heroSection__mouseSvg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="27" height="131.5" viewBox="0 0 37 131.5">
                     <g transform="translate(-758 -949)" style="isolation: isolate">
-                        <rect class="desktopOnly" width="37" height="61" rx="18.5" transform="translate(758 951)" fill="#fff" opacity="0.35"/>
-                        <path class="desktopOnly" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v24A16.5,16.5,0,0,0,30.167,54.167,16.392,16.392,0,0,0,35,42.5v-24A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v24a18.5,18.5,0,0,1-37,0v-24A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 951)" fill="#fff"/>
-                        <rect class="desktopOnly" width="37" height="63" rx="18.5" transform="translate(758 949)" fill="none"/>
-                        <path class="desktopOnly" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v26A16.5,16.5,0,0,0,30.167,56.167,16.392,16.392,0,0,0,35,44.5v-26A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v26a18.5,18.5,0,0,1-37,0v-26A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 949)" fill="#fff"/>
-                        <path class="desktopOnly" d="M1,22H-1V0H1Z" transform="translate(776.5 951.5)" fill="#fff"/>
+                      <rect class="desktopOnly" width="37" height="61" rx="18.5" transform="translate(758 951)" fill="#fff" opacity="0.35"/>
+                      <path class="desktopOnly" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v24A16.5,16.5,0,0,0,30.167,54.167,16.392,16.392,0,0,0,35,42.5v-24A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v24a18.5,18.5,0,0,1-37,0v-24A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 951)" fill="#fff"/>
+                      <rect class="desktopOnly" width="37" height="63" rx="18.5" transform="translate(758 949)" fill="none"/>
+                      <path class="desktopOnly" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v26A16.5,16.5,0,0,0,30.167,56.167,16.392,16.392,0,0,0,35,44.5v-26A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v26a18.5,18.5,0,0,1-37,0v-26A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 949)" fill="#fff"/>
+                      <path class="desktopOnly" d="M1,22H-1V0H1Z" transform="translate(776.5 951.5)" fill="#fff"/>
                     </g>
-                </svg>
-            </p>
-            <p><strong></strong></p>
-            <div id="heroSection__mobileLineContainer" class="mobileOnly">
-                <h1>Mimouche, l'agence de communication à Lyon qui dynamise ton business.</h1>
-                <p class="mobileOnly" id="heroSection__mobileLine">
+                  </svg>
+                </p>
+                <p><strong></strong></p>
+                <div id="heroSection__mobileLineContainer" class="mobileOnly">
+                  <h1>Mimouche, l'agence de communication à Lyon qui dynamise ton business.</h1>
+                  <p class="mobileOnly" id="heroSection__mobileLine">
                     <svg xmlns="http://www.w3.org/2000/svg" width="126" height="15" viewBox="0 0 156 15">
-                        <rect width="15" height="156" transform="translate(156) rotate(90)" fill="#fff"/>
+                      <rect width="15" height="156" transform="translate(156) rotate(90)" fill="#fff"/>
                     </svg>                  
-                </p>  
-            </div> 
-            <img id="leafdim2" src="assets/img/leafdim2.png">
-            <img id="leaf2" src="assets/img/leaf.png">
-            <img id="leaves" src="assets/img/laves2.png">
-        </section>
-      
-        <!-- Fin de la section Hero -->
+                  </p>  
+                </div> 
+                <img id="leafdim2" src="assets/img/leafdim2.png">
+                <img id="leaf2" src="assets/img/leaf.png">
+                <img id="leaves" src="assets/img/laves2.png">
+              </section>            
+              <!-- Fin de la section Hero -->              
 
-        
+              <!-- Section Prestations -->
+              <section id="servicesSection">
+                <div id="h2Container">
+                  <h2><span>P</span><span>R</span><span>E</span><span>S</span><span>T</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span><span>S</span></h2>          
+                </div>
 
-        <!-- Section Prestations -->
-        <section id="servicesSection">
-          <!-- <img src="assets/img/cube.png" id="cubic" width="500"> -->
-            <h2><span>P</span><span>R</span><span>E</span><span>S</span><span>T</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span><span>S</span></h2>          
+                <!-- Conteneur articles (slide-in panels) -->
+                <!-- <div id="articlesContainer"> -->
+                  <!-- Identité visuelle -->
+                  <article id="visualIdentity">
+                    <svg id="circles" xmlns="http://www.w3.org/2000/svg" width="295" height="295" viewBox="0 0 295 295">
+                      <rect id="Rectangle_601" data-name="Rectangle 601" width="295" height="295" fill="#1477ca"/>
+                    </svg>
+                    
+                    <div id="visualIdentityBlock">
 
-            <!-- Identité visuelle -->
-            <article id="visualIdentity">
-                <div id="visualIdentityBlock">
-                    <div id="visualIdentityBlock__AppearanceDiv"></div>
-                    <h3>Identité <br><span>visuelle</span></h3>
+                      
+                      <div id="visualIdentityBlock__AppearanceDiv"></div>
+                        <h3>Identité <br><span>visuelle</span></h3>
+                        <div class="text">
+                          <div class="h4Container">
+                              <hr class="desktopOnly"><h4>Création de logo</h4><hr class="desktopOnly">
+                          </div>
+                          <p>
+                              Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
+                          </p>
+                          <button class="knowMoreButton">EN SAVOIR PLUS</button>
+                          <div class="carrouselIcons">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
+                                  <g transform="translate(-889.136 -3118.535)">
+                                    <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="0">
+                                      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                                      <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                                    </g>
+                                    <g transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                                      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                                      <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                                    </g>
+                                    <g transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                                      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                                      <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                                    </g>
+                                    <g transform="translate(12.166 1196.119)">
+                                      <line x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                                      <line x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                                    </g>
+                                    <g transform="translate(1056.666 3122.035)">
+                                      <line x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
+                                      <line x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
+                                    </g>
+                                  </g>
+                                </svg>                                    
+                          </div>
+                        </div>
+                        <!-- <video src="assets/videos/try.mp4" class="fill" preload autoplay loop muted>
+                            <p>Votre navigateur ne prend pas en charge les vidéos.</p>
+                        </video>  -->
+                        <img id="leafdim2" src="assets/img/leafdim2.png">
+                        <img id="leaf2" src="assets/img/leaf.png">
+                    </div>
+                    <!-- <svg class="animatedLine" xmlns="http://www.w3.org/2000/svg" width="6" height="212" viewBox="0 0 6 212">
+                      <line class="desktopOnly" y2="212" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="6" stroke-dasharray="10 10"/>
+                    </svg>      -->
+                  </article>
+
+                  <!-- Développement Web -->
+                  <article id="webDevelopementSection">             
+                    <div>  
+                    <div class="text">
+                        <h3>Développement Web</h3>
+                        <h4>Site vitrine</h4>
+                        <p>
+                            Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
+                        </p>
+                          <button class="knowMoreButton">EN SAVOIR PLUS</button>
+                          <div class="carrouselIcons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
+                                <g transform="translate(-889.136 -3118.535)">
+                                  <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="1">
+                                    <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                                    <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                                  </g>
+                                  <g transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                                    <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                                    <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                                  </g>
+                                  <g transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                                    <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                                    <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                                  </g>
+                                  <g transform="translate(12.166 1196.119)">
+                                    <line x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                                    <line x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                                  </g>
+                                  <g transform="translate(1056.666 3122.035)">
+                                    <line x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
+                                    <line x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
+                                  </g>
+                                </g>
+                              </svg>                                    
+                        </div>
+                      </div>
+                      <img class="desktopOnly" src="assets/img/macbook.png"/>
+                  </article>
+
+                <!-- Référencement -->
+                <article>
+                    <div id="h3">                  
+                        <h3>Référencement</h3>
+                    </div>
+                    <div class="SEO__h4Containers" id="h41">
+                        <h4>SEO</h4>
+                        <hr class="lineThrough">
+                        <p>Nous optimisons votre site afin de le faire remonter dans les résultats des moteurs de recherche, en travaillant sur les trois piliers du référencement naturel : les performances techniques de votre site, la cohérence de son contenu, ainsi que son autorité sur le Web.</p>
+                        <button class="knowMoreButton desktopOnly">EN SAVOIR PLUS</button>
+
+                    </div>
+                    <div class="SEO__h4Containers" id="h42">
+                        <h4>SEA</h4>
+                        <hr class="lineThrough">
+                        <p>Nous optimisons votre site afin de le faire remonter dans les résultats des moteurs de recherche, en travaillant sur les trois piliers du référencement naturel : les performances techniques de votre site, la cohérence de son contenu, ainsi que son autorité sur le Web.</p>
+                        <button class="knowMoreButton desktopOnly">EN SAVOIR PLUS</button>
+                    </div>
+                    <button class="knowMoreButton mobileOnly">EN SAVOIR PLUS</button>
+                </article>
+
+                <!-- Réseaux sociaux -->
+                <!-- <article> -->
+                    <!--<h3><span class="span">R</span><span class="span">é</span><span class="span">s</span><span class="span">e</span><span class="span">a</span><span class="span">u</span><span class="span">x</span><br><span class="span">s</span><span class="span">o</span><span class="span">c</span><span class="span">i</span><span class="span">a</span><span class="span">u</span><span class="span">x</span></h3>-->
+                    <!-- <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="528.705" height="270.284" viewBox="0 0 528.705 270.284">
+                            <g id="Groupe_107" data-name="Groupe 107" transform="translate(-1013.228 -4353.943)">
+                              <text id="R" transform="translate(1034.359 4419.283) rotate(-1)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-19.585" y="0">R</tspan></text>
+                              <text id="E" transform="translate(1231.27 4435.174) rotate(9)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-15.967" y="0">é</tspan></text>
+                              <text id="S" transform="translate(1168.191 4425.928) rotate(8)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-16.816" y="0">s</tspan></text>
+                              <text id="E-2" data-name="E" transform="matrix(0.996, 0.087, -0.087, 0.996, 1102.672, 4420.807)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-15.967" y="0">e</tspan></text>
+                              <text id="A" transform="translate(1297.609 4447.998) rotate(13)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-21.094" y="0">a</tspan></text>
+                              <text id="U" transform="matrix(0.97, 0.242, -0.242, 0.97, 1365.902, 4465.2)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-21.694" y="0">u</tspan></text>
+                              <text id="X" transform="translate(1431.885 4485.426) rotate(20)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-19.658" y="0">x</tspan></text>
+                              <text id="S-2" data-name="S" transform="matrix(0.999, 0.052, -0.052, 0.999, 1117.244, 4510.886)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-16.816" y="0">s</tspan></text>
+                              <text id="O" transform="translate(1185.285 4517.172) rotate(9)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-22.749" y="0">o</tspan></text>
+                              <text id="C" transform="matrix(0.978, 0.208, -0.208, 0.978, 1250.289, 4526.852)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-18.721" y="0">c</tspan></text>
+                              <text id="I" transform="translate(1306.586 4539.37) rotate(13)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-9.507" y="0">i</tspan></text>
+                              <text id="A-2" data-name="A" transform="translate(1365.887 4555.686) rotate(17)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-21.094" y="0">a</tspan></text>
+                              <text id="U-2" data-name="U" transform="matrix(0.951, 0.309, -0.309, 0.951, 1432.814, 4577.609)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-21.694" y="0">u</tspan></text>
+                              <text id="X-2" data-name="X" transform="translate(1497.225 4602.389) rotate(24)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-19.658" y="0">x</tspan></text>
+                            </g>
+                          </svg>                      
+                    </h3>
                     <div class="text">
                       <div class="h4Container">
-                          <hr class="desktopOnly"><h4>Création de logo</h4><hr class="desktopOnly">
-                      </div>
-                      <p>
-                          Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
-                      </p>
-                      <button class="knowMoreButton">EN SAVOIR PLUS</button>
-                      <div class="carrouselIcons">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
-                              <g transform="translate(-889.136 -3118.535)">
-                                <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="0">
-                                  <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                                  <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                                </g>
-                                <g transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                                  <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                                  <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                                </g>
-                                <g transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                                  <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                                  <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                                </g>
-                                <g transform="translate(12.166 1196.119)">
-                                  <line x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                                  <line x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                                </g>
-                                <g transform="translate(1056.666 3122.035)">
-                                  <line x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
-                                  <line x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
-                                </g>
-                              </g>
-                            </svg>                                    
-                      </div>
-                      <!-- <img class="desktopOnly" src="assets/img/Creative Process _Monochromatic (12).png"/> -->
-                      <img class="desktopOnly"/>
+                        <hr><h4>Création de logo</h4><hr>
                     </div>
-                    <video src="assets/videos/Composition 1_2.mp4" class="fill" preload autoplay loop muted>
+                    <p>
+                      Nous élaborons un plan d'action dans le but d'optimiser votre présence sur les réseaux sociaux et de fédérer une communauté plus large et engagée. Nous mettons en place une ligne éditoriale ainsi qu'un calendrier de publications adaptés à vos objectifs, et assurons en parallèle la gestion quotidienne des commentaires et sollicitations de vos abonnés.
+                    </p>
+                    <div id="flex">
+                    <button class="knowMoreButton">EN SAVOIR PLUS</button>
+                    <div class="carrouselIcons">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
+                          <g transform="translate(-889.136 -3118.535)">
+                            <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="1">
+                              <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                              <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                            </g>
+                            <g transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                              <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                              <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                            </g>
+                            <g transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                              <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                              <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                            </g>
+                            <g transform="translate(12.166 1196.119)">
+                              <line x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                              <line x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                            </g>
+                            <g transform="translate(1056.666 3122.035)">
+                              <line x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
+                              <line x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
+                            </g>
+                          </g>
+                        </svg>                                    
+                  </div>
+                    </div>  
+                    </div>               
+                    <video src="assets/videos/socialmedia-video2.mp4" class="fill" preload autoplay loop muted>
                         <p>Votre navigateur ne prend pas en charge les vidéos.</p>
-                    </video> 
-                </div>
-                <svg class="animatedLine" xmlns="http://www.w3.org/2000/svg" width="6" height="212" viewBox="0 0 6 212">
-                  <line class="desktopOnly" y2="212" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="6" stroke-dasharray="10 10"/>
-                </svg>     
-            </article>
+                    </video>
+                    <svg class="desktopOnly" xmlns="http://www.w3.org/2000/svg" width="6" height="222" viewBox="0 0 6 222">
+                      <line y2="222" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="6" stroke-dasharray="10 10"/>
+                    </svg>    
+                </article> -->
 
-            <!-- Développement Web -->
-            <article id="webDevelopementSection">             
-              <div>  
-              <div class="text">
+                <!-- Développement commercial -->
+                <!-- <article id="commercialSection">             
                   <h3>Développement Web</h3>
                   <h4>Site vitrine</h4>
                   <p>
@@ -171,184 +307,45 @@
                           </g>
                         </svg>                                    
                   </div>
-                </div>
-                <img class="desktopOnly" src="assets/img/macbook.png"/>
-                <video src="assets/videos/Composition1.mp4" id="heroSection__video" preload autoplay muted>
-                  <p>Votre navigateur ne prend pas en charge les vidéos.</p>
-              </video> 
-            </article>
+                  <img class="desktopOnly" src="assets/img/macbook.png"/>
+              </article> -->
+            <!-- </div> -->
+              </section>
+              <!-- FIN DE LA SECTION PRESTATIONS -->
 
-            <!-- Référencement -->
-            <article>
-                <div id="h3">                  
-                  <svg class="desktopOnly" xmlns="http://www.w3.org/2000/svg" width="5" height="302" viewBox="0 0 5 302">
-                    <line y2="800" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="5" stroke-dasharray="10 10"/>
-                    </svg>
-                    <h3>Référencement</h3>
-                    <svg class="desktopOnly"  xmlns="http://www.w3.org/2000/svg" width="5" height="292" viewBox="0 0 5 292">
-                        <line y2="800" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="5" stroke-dasharray="10 10"/>
-                      </svg>  
-                </div>
-                <div class="SEO__h4Containers" id="h41">
-                    <h4>SEO</h4>
-                    <hr class="lineThrough">
-                    <p>Nous optimisons votre site afin de le faire remonter dans les résultats des moteurs de recherche, en travaillant sur les trois piliers du référencement naturel : les performances techniques de votre site, la cohérence de son contenu, ainsi que son autorité sur le Web.</p>
-                    <button class="knowMoreButton desktopOnly">EN SAVOIR PLUS</button>
-
-                </div>
-                <div class="SEO__h4Containers"id="h42">
-                    <h4>SEA</h4>
-                    <hr class="lineThrough">
-                    <p>Nous optimisons votre site afin de le faire remonter dans les résultats des moteurs de recherche, en travaillant sur les trois piliers du référencement naturel : les performances techniques de votre site, la cohérence de son contenu, ainsi que son autorité sur le Web.</p>
-                    <button class="knowMoreButton desktopOnly">EN SAVOIR PLUS</button>
-                </div>
-                <button class="knowMoreButton mobileOnly">EN SAVOIR PLUS</button>
-            </article>
-
-            <!-- Réseaux sociaux -->
-            <article>
-                <!--<h3><span class="span">R</span><span class="span">é</span><span class="span">s</span><span class="span">e</span><span class="span">a</span><span class="span">u</span><span class="span">x</span><br><span class="span">s</span><span class="span">o</span><span class="span">c</span><span class="span">i</span><span class="span">a</span><span class="span">u</span><span class="span">x</span></h3>-->
-                <h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="528.705" height="270.284" viewBox="0 0 528.705 270.284">
-                        <g id="Groupe_107" data-name="Groupe 107" transform="translate(-1013.228 -4353.943)">
-                          <text id="R" transform="translate(1034.359 4419.283) rotate(-1)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-19.585" y="0">R</tspan></text>
-                          <text id="E" transform="translate(1231.27 4435.174) rotate(9)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-15.967" y="0">é</tspan></text>
-                          <text id="S" transform="translate(1168.191 4425.928) rotate(8)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-16.816" y="0">s</tspan></text>
-                          <text id="E-2" data-name="E" transform="matrix(0.996, 0.087, -0.087, 0.996, 1102.672, 4420.807)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-15.967" y="0">e</tspan></text>
-                          <text id="A" transform="translate(1297.609 4447.998) rotate(13)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-21.094" y="0">a</tspan></text>
-                          <text id="U" transform="matrix(0.97, 0.242, -0.242, 0.97, 1365.902, 4465.2)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-21.694" y="0">u</tspan></text>
-                          <text id="X" transform="translate(1431.885 4485.426) rotate(20)" fill="#312f30" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan class="shadowTSpan" x="-19.658" y="0">x</tspan></text>
-                          <text id="S-2" data-name="S" transform="matrix(0.999, 0.052, -0.052, 0.999, 1117.244, 4510.886)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-16.816" y="0">s</tspan></text>
-                          <text id="O" transform="translate(1185.285 4517.172) rotate(9)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-22.749" y="0">o</tspan></text>
-                          <text id="C" transform="matrix(0.978, 0.208, -0.208, 0.978, 1250.289, 4526.852)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-18.721" y="0">c</tspan></text>
-                          <text id="I" transform="translate(1306.586 4539.37) rotate(13)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-9.507" y="0">i</tspan></text>
-                          <text id="A-2" data-name="A" transform="translate(1365.887 4555.686) rotate(17)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-21.094" y="0">a</tspan></text>
-                          <text id="U-2" data-name="U" transform="matrix(0.951, 0.309, -0.309, 0.951, 1432.814, 4577.609)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-21.694" y="0">u</tspan></text>
-                          <text id="X-2" data-name="X" transform="translate(1497.225 4602.389) rotate(24)" fill="#e6e6e6" font-size="60" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.03em"><tspan x="-19.658" y="0">x</tspan></text>
-                        </g>
-                      </svg>                      
-                </h3>
-                <div class="text">
-                  <div class="h4Container">
-                    <hr><h4>Création de logo</h4><hr>
-                </div>
-                <p>
-                  Nous élaborons un plan d'action dans le but d'optimiser votre présence sur les réseaux sociaux et de fédérer une communauté plus large et engagée. Nous mettons en place une ligne éditoriale ainsi qu'un calendrier de publications adaptés à vos objectifs, et assurons en parallèle la gestion quotidienne des commentaires et sollicitations de vos abonnés.
-                </p>
-                <div id="flex">
-                <button class="knowMoreButton">EN SAVOIR PLUS</button>
-                <div class="carrouselIcons">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
-                      <g transform="translate(-889.136 -3118.535)">
-                        <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="1">
-                          <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                          <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                        </g>
-                        <g transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                          <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                          <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                        </g>
-                        <g transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                          <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                          <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                        </g>
-                        <g transform="translate(12.166 1196.119)">
-                          <line x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                          <line x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                        </g>
-                        <g transform="translate(1056.666 3122.035)">
-                          <line x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
-                          <line x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
-                        </g>
-                      </g>
-                    </svg>                                    
-              </div>
-                </div>  
-                </div>               
-                <video src="assets/videos/socialmedia-video2.mp4" class="fill" preload autoplay loop muted>
-                    <p>Votre navigateur ne prend pas en charge les vidéos.</p>
-                </video>
+              <!-- DEBUT DE LA SECTION A PROPOS -->
+              <!-- <section id="about">
+                <h2><span>A</span><span> </span><span>P</span><span>R</span><span>O</span><span>P</span><span>O</span><span>S</span></h2>
+                <p>C'est pas le tout, mais qui sommes-nous ?</p>
                 <svg class="desktopOnly" xmlns="http://www.w3.org/2000/svg" width="6" height="222" viewBox="0 0 6 222">
                   <line y2="222" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="6" stroke-dasharray="10 10"/>
-                </svg>    
-            </article>
-
-            <!-- Développement commercial -->
-            <article id="commercialSection">             
-              <h3>Développement Web</h3>
-              <h4>Site vitrine</h4>
-              <p>
-                  Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
-              </p>
-                <button class="knowMoreButton">EN SAVOIR PLUS</button>
-                <div class="carrouselIcons">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
-                      <g transform="translate(-889.136 -3118.535)">
-                        <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="1">
-                          <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                          <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                        </g>
-                        <g transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                          <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                          <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                        </g>
-                        <g transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                          <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                          <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                        </g>
-                        <g transform="translate(12.166 1196.119)">
-                          <line x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                          <line x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                        </g>
-                        <g transform="translate(1056.666 3122.035)">
-                          <line x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
-                          <line x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
-                        </g>
-                      </g>
-                    </svg>                                    
-              </div>
-              <img class="desktopOnly" src="assets/img/macbook.png"/>
-          </article>
-        </section>
-        <!-- FIN DE LA SECTION PRESTATIONS -->
-
-        <!-- DEBUT DE LA SECTION A PROPOS -->
-        <section id="about">
-          <h2><span>A</span><span> </span><span>P</span><span>R</span><span>O</span><span>P</span><span>O</span><span>S</span></h2>
-          <p>C'est pas le tout, mais qui sommes-nous ?</p>
-          <svg class="desktopOnly" xmlns="http://www.w3.org/2000/svg" width="6" height="222" viewBox="0 0 6 222">
-            <line y2="222" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="6" stroke-dasharray="10 10"/>
-          </svg>  
-          <div class="aboutFlex">
-            <img src="assets/img/manon.png">
-            <div>
-              <div class="texte">
-                <p class="aboutTitle">MANON</p>
-                <p>La mayonnaise est une sauce froide à base d'huile émulsionnée dans un mélange de jaune d'œuf et de vinaigre, ou de jus de citron, additionnée de moutarde dans certaines régions. Strictement parlant, la mayonnaise se prépare sans moutarde. Additionnée de moutarde, elle devient une rémoulade</p>
-                <button class="knowMoreButton">EN SAVOIR PLUS</button>
-              </div>
-            </div>
-          </div>
-          <div class="aboutFlex">
-            <img src="assets/img/ghali2.png">
-            <div>
-              <div class="texte">
-                <p class="aboutTitle">GHALI</p>
-                <p>La mayonnaise est une sauce froide à base d'huile émulsionnée dans un mélange de jaune d'œuf et de vinaigre, ou de jus de citron, additionnée de moutarde dans certaines régions. Strictement parlant, la mayonnaise se prépare sans moutarde. Additionnée de moutarde, elle devient une rémoulade</p>
-                <button class="knowMoreButton">EN SAVOIR PLUS</button>
-              </div>
-            </div>
-          </div>
-        </section>
-    </main>
+                </svg>  
+                <div class="aboutFlex">
+                  <img src="assets/img/manon.png">
+                  <div>
+                    <div class="texte">
+                      <p class="aboutTitle">MANON</p>
+                      <p>La mayonnaise est une sauce froide à base d'huile émulsionnée dans un mélange de jaune d'œuf et de vinaigre, ou de jus de citron, additionnée de moutarde dans certaines régions. Strictement parlant, la mayonnaise se prépare sans moutarde. Additionnée de moutarde, elle devient une rémoulade</p>
+                      <button class="knowMoreButton">EN SAVOIR PLUS</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutFlex">
+                  <img src="assets/img/ghali2.png">
+                  <div>
+                    <div class="texte">
+                      <p class="aboutTitle">GHALI</p>
+                      <p>La mayonnaise est une sauce froide à base d'huile émulsionnée dans un mélange de jaune d'œuf et de vinaigre, ou de jus de citron, additionnée de moutarde dans certaines régions. Strictement parlant, la mayonnaise se prépare sans moutarde. Additionnée de moutarde, elle devient une rémoulade</p>
+                      <button class="knowMoreButton">EN SAVOIR PLUS</button>
+                    </div>
+                  </div>
+                </div>
+              </section> -->
+          </main>
     <span class="c-scrollbar"></span>
     </div>
     </div>
     <body>
-      <!-- <div class="desktopOnly" id="container">
-        <div class="circleBase roundCursor" id="cube"></div>
-      </div> -->
-      <!-- <div class="pageY"><p></p></div> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>

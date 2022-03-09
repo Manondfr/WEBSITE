@@ -62,12 +62,12 @@ let leavesMoving = gsap.timeline()
 // .from("p", {y: 70}, 0)
 // .from("#visualIdentityBlock video", {xPercent:10, ease:"linear"}, 0)
 
-let headerChangeColor = gsap.to("nav a", {color: "black"});
+let headerChangeColor = gsap.to("nav a", {color: "#464646"});
 
 ScrollTrigger.create({
     trigger:"#heroSection video",
     animation:headerChangeColor,
-    start:"bottom 0",
+    start:"bottom 50",
     scroller:"#scrollContainer",
     toggleActions:"play none none reverse"
 })
@@ -77,6 +77,7 @@ let h2Typewriting = gsap.timeline()
     { text: document.querySelector('h2').textContent, duration:1, ease:"power.InOut"})
 
 
+
 ScrollTrigger.create({
     trigger:"#heroSection video",
     animation:h2Typewriting,
@@ -84,7 +85,23 @@ ScrollTrigger.create({
     end:"+=900",
     scroller:"#scrollContainer",
     markers:true,
+    pinSpacing:true,
     toggleActions: "restart none none reverse",
+})
+
+let translatePanels = gsap.timeline()
+.to("#visualIdentityBlock", {yPercent:-80, duration:1})
+.to("#circles", {yPercent:-180, duration:1}, "<")
+.to('#webDevelopementSection', {yPercent:-60, duration:0.5}, "<0.8")
+
+ScrollTrigger.create({
+    trigger:"#h2Container",
+    scroller:"#scrollContainer",
+    animation: translatePanels,
+    start:"top 0",
+    scrub:1,
+    pinReparent:true,
+    toggleActions: "play none none reverse",
 })
 
 
