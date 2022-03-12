@@ -8,7 +8,6 @@
     <meta name="robots" content="index,follow">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon_package_v0.16/favicon.ico">    
     <link rel="stylesheet" href="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.css">
-    <!-- <link rel="stylesheet" href="https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b"> -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Orinoco - Ours en peluche tout doux</title>    
@@ -49,7 +48,7 @@
           <main>
               <!-- Section Hero -->
               <section id="heroSection">                
-                <!-- Loader --> <div id="videoCover"></div> 
+                <!-- Loader --> <div id="heroSection__videoCover"></div> 
                 <video src="assets/videos/try.mp4" id="heroSection__video" preload autoplay loop muted>
                   <p>Votre navigateur ne prend pas en charge les vidéos.</p>
                 </video> 
@@ -73,91 +72,37 @@
                     </svg>                  
                   </p>  
                 </div> 
-                <img id="leafdim2" src="assets/img/leafdim2.png">
-                <img id="leaf2" src="assets/img/leaf.png">
-                <img id="leaves" src="assets/img/laves2.png">
+                <img class="backgroundSvg leafdim2" src="assets/img/leafdim2.png">
+                <img class="backgroundSvg leaf2" src="assets/img/leaf.png">
+                <img class="backgroundSvg" id="leaves" src="assets/img/laves2.png">
               </section>            
               <!-- Fin de la section Hero -->              
 
               <!-- Section Prestations -->
               <section id="servicesSection">
-                <div id="h2Container">
+                <div class="h2Container">
                   <h2><span>P</span><span>R</span><span>E</span><span>S</span><span>T</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span><span>S</span></h2>          
                 </div>
 
-                <!-- Conteneur articles (slide-in panels) -->
-                <!-- <div id="articlesContainer"> -->
-                  <!-- Identité visuelle -->
-                  <article id="visualIdentity">
-                    <svg id="circles" xmlns="http://www.w3.org/2000/svg" width="295" height="295" viewBox="0 0 295 295">
-                      <rect id="Rectangle_601" data-name="Rectangle 601" width="295" height="295" fill="#1477ca"/>
-                    </svg>
-                    
-                    <div id="visualIdentityBlock">
-
-                      
-                      <div id="visualIdentityBlock__AppearanceDiv"></div>
-                        <h3>Identité <br><span>visuelle</span></h3>
-                        <div class="text">
-                          <div class="h4Container">
-                              <hr class="desktopOnly"><h4>Création de logo</h4><hr class="desktopOnly">
-                          </div>
-                          <p>
-                              Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
-                          </p>
-                          <button class="knowMoreButton">EN SAVOIR PLUS</button>
-                          <div class="carrouselIcons">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
-                                  <g transform="translate(-889.136 -3118.535)">
-                                    <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="0">
-                                      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                                      <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                                    </g>
-                                    <g transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                                      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                                      <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                                    </g>
-                                    <g transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
-                                      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
-                                      <circle cx="8.5" cy="8.5" r="8" fill="none"/>
-                                    </g>
-                                    <g transform="translate(12.166 1196.119)">
-                                      <line x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                                      <line x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
-                                    </g>
-                                    <g transform="translate(1056.666 3122.035)">
-                                      <line x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
-                                      <line x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
-                                    </g>
-                                  </g>
-                                </svg>                                    
-                          </div>
+                <!-- Identité visuelle -->
+                <article class="serviceArticle" id="visualIdentity">
+                  <svg id="square" xmlns="http://www.w3.org/2000/svg" width="295" height="295" viewBox="0 0 295 295">
+                    <rect id="Rectangle_601" data-name="Rectangle 601" width="295" height="295" fill="#1477ca"/>
+                  </svg>
+                  
+                  <div id="visualIdentityBlock">                    
+                      <h3>Identité <br><span>visuelle</span></h3>
+                        <div class="h4Container">
+                            <hr class="desktopOnly"><h4>Création de logo</h4><hr class="desktopOnly">
                         </div>
-                        <!-- <video src="assets/videos/try.mp4" class="fill" preload autoplay loop muted>
-                            <p>Votre navigateur ne prend pas en charge les vidéos.</p>
-                        </video>  -->
-                        <img id="leafdim2" src="assets/img/leafdim2.png">
-                        <img id="leaf2" src="assets/img/leaf.png">
-                    </div>
-                    <!-- <svg class="animatedLine" xmlns="http://www.w3.org/2000/svg" width="6" height="212" viewBox="0 0 6 212">
-                      <line class="desktopOnly" y2="212" transform="translate(2.5)" fill="none" stroke="#6e93a0" stroke-width="6" stroke-dasharray="10 10"/>
-                    </svg>      -->
-                  </article>
-
-                  <!-- Développement Web -->
-                  <article id="webDevelopementSection">             
-                    <div>  
-                    <div class="text">
-                        <h3>Développement Web</h3>
-                        <h4>Site vitrine</h4>
                         <p>
                             Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
                         </p>
-                          <button class="knowMoreButton">EN SAVOIR PLUS</button>
-                          <div class="carrouselIcons">
+                        <button class="knowMoreButton">EN SAVOIR PLUS</button>
+                        <div class="carrouselIcons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
                                 <g transform="translate(-889.136 -3118.535)">
-                                  <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="1">
+                                  <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="0">
                                     <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
                                     <circle cx="8.5" cy="8.5" r="8" fill="none"/>
                                   </g>
@@ -180,29 +125,69 @@
                                 </g>
                               </svg>                                    
                         </div>
-                      </div>
-                      <img class="desktopOnly" src="assets/img/macbook.png"/>
+                      <img class="backgroundSvg leafdim2" src="assets/img/leafdim2.png">
+                      <img class="backgroundSvg leaf2" src="assets/img/leaf.png">
+                  </div>
+                </article>
+
+                  <!-- Développement Web -->
+                  <article class="serviceArticle">           
+                    <h3>Développement Web</h3>
+                    <h4>Site vitrine</h4>
+                    <p>
+                        Nous créons pour vous un logo unique et cohérent par rapport à votre secteur d’activité et à votre identité, et vous le livrons accompagné de plusieurs déclinaisons (disposition horizontale, verticale, noir et blanc, avec et sans baseline…). Nous vous offrons également la possibilité de créer un logo dynamique (à intégrer dans vos vidéos, par exemple).
+                    </p>
+                    <button class="knowMoreButton">EN SAVOIR PLUS</button>
+                    <div class="carrouselIcons">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="176.06" height="14" viewBox="0 0 176.06 17">
+                          <g transform="translate(-889.136 -3118.535)">
+                            <g transform="translate(924.666 3118.535)" fill="#fff" stroke="#707070" stroke-width="1">
+                              <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                              <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                            </g>
+                            <g transform="translate(968.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                              <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                              <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                            </g>
+                            <g transform="translate(1012.666 3118.535)" fill="#707070" stroke="#707070" stroke-width="1">
+                              <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+                              <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+                            </g>
+                            <g transform="translate(12.166 1196.119)">
+                              <line x2="8" y2="5" transform="translate(877.5 1931.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                              <line x1="8" y2="5" transform="translate(877.5 1926.416)" fill="none" stroke="#707070" stroke-width="2"/>
+                            </g>
+                            <g transform="translate(1056.666 3122.035)">
+                              <line x1="8" y2="5" transform="translate(0 5)" fill="none" stroke="#707070" stroke-width="2"/>
+                              <line x2="8" y2="5" fill="none" stroke="#707070" stroke-width="2"/>
+                            </g>
+                          </g>
+                        </svg>                                    
+                  </div>
+                  <img class="desktopOnly" src="assets/img/macbook3.png"/>                      
                   </article>
 
                 <!-- Référencement -->
-                <article>
-                    <div id="h3">                  
-                        <h3>Référencement</h3>
+                <article class="serviceArticle">                 
+                  <h3>Référencement</h3>
+                  <div id="seo__h4Container">
+                    <div>
+                      <h4>SEO</h4>
+                      <hr class="lineThrough">
+                      <p>Nous optimisons votre site afin de le faire remonter dans les résultats des moteurs de recherche, en travaillant sur les trois piliers du référencement naturel : les performances techniques de votre site, la cohérence de son contenu, ainsi que son autorité sur le Web.</p>
+                      <button class="knowMoreButton desktopOnly">EN SAVOIR PLUS</button>
                     </div>
-                    <div class="SEO__h4Containers" id="h41">
-                        <h4>SEO</h4>
-                        <hr class="lineThrough">
-                        <p>Nous optimisons votre site afin de le faire remonter dans les résultats des moteurs de recherche, en travaillant sur les trois piliers du référencement naturel : les performances techniques de votre site, la cohérence de son contenu, ainsi que son autorité sur le Web.</p>
-                        <button class="knowMoreButton desktopOnly">EN SAVOIR PLUS</button>
-
-                    </div>
-                    <div class="SEO__h4Containers" id="h42">
+                    <div>
                         <h4>SEA</h4>
                         <hr class="lineThrough">
                         <p>Nous optimisons votre site afin de le faire remonter dans les résultats des moteurs de recherche, en travaillant sur les trois piliers du référencement naturel : les performances techniques de votre site, la cohérence de son contenu, ainsi que son autorité sur le Web.</p>
                         <button class="knowMoreButton desktopOnly">EN SAVOIR PLUS</button>
                     </div>
                     <button class="knowMoreButton mobileOnly">EN SAVOIR PLUS</button>
+                  </div>
+                  <svg id="seo__square" xmlns="http://www.w3.org/2000/svg" width="295" height="295" viewBox="0 0 295 295">
+                    <rect data-name="Rectangle 601" width="295" height="295"/>
+                  </svg>
                 </article>
 
                 <!-- Réseaux sociaux -->

@@ -21,7 +21,7 @@ function init() {
     let heroTimeline = gsap.timeline()
     .from("#animateHero", {autoAlpha:0})
     .from("video", {opacity:0, duration:0.1})
-    .to("#videoCover", {yPercent:-100, ease:"power4", duration:1}, "<")
+    .to("#heroSection__videoCover", {yPercent:-100, ease:"power4", duration:1}, "<")
     .from("a img", {yPercent:-160}, ">")
     .from("nav ul li", {yPercent:-240, stagger:0.1, duration:0.3}, "<0.2")
     .from("#heroSection__mouseSvg", {opacity:0, yoyo:true, repeat:2, duration:0.3}, "<")
@@ -84,25 +84,41 @@ ScrollTrigger.create({
     start:"bottom 30%",
     end:"+=900",
     scroller:"#scrollContainer",
-    markers:true,
     pinSpacing:true,
     toggleActions: "restart none none reverse",
 })
 
-let translatePanels = gsap.timeline()
-.to("#visualIdentityBlock", {yPercent:-80, duration:1})
-.to("#circles", {yPercent:-180, duration:1}, "<")
-.to('#webDevelopementSection', {yPercent:-60, duration:0.5}, "<0.8")
+let articles = document.querySelectorAll(".serviceArticle");
 
-ScrollTrigger.create({
-    trigger:"#h2Container",
+articles.forEach( (article) => {
+    console.log(article);
+    let tl = gsap.timeline()
+        .to(article, {yPercent:-25, duration:1})
+
+    ScrollTrigger.create({
+    trigger:article,
     scroller:"#scrollContainer",
-    animation: translatePanels,
-    start:"top 0",
-    scrub:1,
+    animation: tl,
+    start:"top bottom",
+    end:"center bottom",
+    scrub:3,
     pinReparent:true,
     toggleActions: "play none none reverse",
+    })
 })
+
+// let joinPanel = gsap.timeline()
+// .to('#webDevelopementSection', {yPercent:-100, duration:0.5})
+
+// ScrollTrigger.create({
+//     trigger:"#visualIdentityBlock",
+//     scroller:"#scrollContainer",
+//     animation:joinPanel,
+//     start:"top -50%",
+//     end:"+=4000",
+//     scrub:1,
+//     pin:true
+// })
 
 
 // gsap.to(".animatedLine", {
