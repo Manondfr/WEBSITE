@@ -27,8 +27,8 @@ function init() {
     .from("#heroSection__mouseSvg", {opacity:0, yoyo:true, repeat:2, duration:0.3}, "<")
     .from("h1", {y:50, ease:"back(1.5)", duration:0.8}, "<")
     .from("p strong", {opacity:0}, ">")
-    .from("#leaf2", {xPercent:-100, duration:0.8}, "<")
-    .from("#leafdim2", {xPercent:-100, duration:0.8}, "<")
+    .from(".leaf2", {xPercent:-100, duration:0.8}, "<")
+    .from(".leafdim2", {xPercent:-100, duration:0.8}, "<")
     .from("#leaves", {xPercent:100, duration:0.8}, "<0.2")
 }
 
@@ -72,21 +72,23 @@ ScrollTrigger.create({
     toggleActions:"play none none reverse"
 })
 
-let h2Typewriting = gsap.timeline()
-.fromTo("h2", { text:"" },
-    { text: document.querySelector('h2').textContent, duration:1, ease:"power.InOut"})
+let sections = document.querySelectorAll(".animatedSection");
 
+sections.forEach((section) => {
+    let heading = section.querySelector("h2");
+    let h2Typewriting = gsap.fromTo(heading, {text:""}, {text:heading.textContent, duration:1, ease:"power.InOut"});
 
-
-ScrollTrigger.create({
-    trigger:"#heroSection video",
+    ScrollTrigger.create({
+    trigger:section,
     animation:h2Typewriting,
-    start:"bottom 30%",
+    start:"top 50%",
     end:"+=900",
     scroller:"#scrollContainer",
     pinSpacing:true,
     toggleActions: "restart none none reverse",
 })
+})
+
 
 let articles = document.querySelectorAll(".serviceArticle");
 
