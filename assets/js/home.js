@@ -40,8 +40,8 @@ window.addEventListener("load", function(event) {
 })
 
 let leavesMoving = gsap.timeline()
-.to("#leaf2", {rotation:1.5, yoyo:true, repeat:-1, duration:7,ease: "sine.inOut", transformOrigin:"left"})
-.to("#leafdim2", {rotation:2, yoyo:true, repeat:-1, duration:6.5,ease: "sine.inOut", transformOrigin:"left"}, 0.5)
+.to(".leaf2", {rotation:1.5, yoyo:true, repeat:-1, duration:7,ease: "sine.inOut", transformOrigin:"left"})
+.to(".leafdim2", {rotation:2, yoyo:true, repeat:-1, duration:6.5,ease: "sine.inOut", transformOrigin:"left"}, 0.5)
 .to("#leaves", {rotation:1.5, yoyo:true, repeat:-1, duration:6.5,ease: "sine.inOut", transformOrigin:"right"}, 0.5)
 
 // let parallaxLeaves = 
@@ -95,7 +95,14 @@ let articles = document.querySelectorAll(".serviceArticle");
 articles.forEach( (article) => {
     console.log(article);
     let tl = gsap.timeline()
-        .to(article, {yPercent:-25, duration:1})
+        .fromTo(article, {yPercent:30, scale:0.9, opacity:0}, {yPercent:0, scale:1, opacity:1, duration:1, stagger:0.1})
+        // .from(article.querySelector("h3"), {opacity:0}, "<0.1")
+        // .from(article.querySelectorAll("h4"), {opacity:0, y:-5}, "<")
+        // .from(article.querySelectorAll("p"), {opacity:0}, "<")
+        // .from(article.querySelectorAll("hr"), {opacity:0, y:-10}, "<0.1")
+        // .from(article.querySelectorAll("button"), {y:10, opacity:0}, "<")
+        // .from(article.querySelector(".carrouselIcons"), {y:10, opacity:0}, "<")
+
 
     ScrollTrigger.create({
     trigger:article,
@@ -103,71 +110,29 @@ articles.forEach( (article) => {
     animation: tl,
     start:"top bottom",
     end:"center bottom",
-    scrub:3,
-    pinReparent:true,
+    scrub:4,
     toggleActions: "play none none reverse",
     })
 })
 
-// let joinPanel = gsap.timeline()
-// .to('#webDevelopementSection', {yPercent:-100, duration:0.5})
 
-// ScrollTrigger.create({
-//     trigger:"#visualIdentityBlock",
-//     scroller:"#scrollContainer",
-//     animation:joinPanel,
-//     start:"top -50%",
-//     end:"+=4000",
-//     scrub:1,
-//     pin:true
-// })
+let aboutUs = document.querySelectorAll(".aboutFlex");
 
+aboutUs.forEach( (about) => {
+    let tl = gsap.timeline()
+    .fromTo(about.querySelector("img"), {y:500, opacity:0}, {y:0, opacity:1, duration:2, ease:"back", stagger:3})
+    .fromTo(about.querySelector(".texte"), {scale:0.95, opacity:0}, {scale:1, opacity:1, duration:1}, "<0.2")
 
-// gsap.to(".animatedLine", {
-//     y:40, duration:10, transformOrigin: "top", 
-//         scrollTrigger: {
-//             trigger: ".animatedLine",
-//             markers:true,
-//             start: "top 75%",
-//             end: "bottom 50%",
-//             scrub: 1
-//         }
-// });
-
-// const item = document.querySelector(".item");
-// gsap.defaults({ duration: 0.3 });
-// const tl = gsap
-//   .timeline({ paused: true })
-//   .to(".text", { color: "white", x: 10 })
-//   .to(".dot", { backgroundColor: "#F93", scale: 1.5 }, 0);
-
-// item.addEventListener("mouseenter", () => tl.play());
-// item.addEventListener("mouseleave", () => tl.reverse());
-
-
-
-
-//Cercle suivant le curseur
-// window.addEventListener("mousemove", function(e) {
-//     positionUpdate(e);
-// })
+    ScrollTrigger.create({
+        trigger:document.querySelector("#about"),
+        scroller:"#scrollContainer",
+        animation: tl,
+        start:"top bottom",
+        scrub:4,
+        toggleActions: "play none none reverse",
+    })
+})
   
-//     function positionUpdate(event) { 
-//       var x_cursor = event.pageX;
-//       var y_cursor = event.pageY;
-//       var x_box = document.querySelector("#cube").getBoundingClientRect().left;
-//       var y_box = document.querySelector("#cube").getBoundingClientRect().top;
-  
-//       document.querySelector("#cube").animate({
-//         left: event.pageX + "px",
-//         top: event.pageY + "px"
-//       }, {
-//         duration: 300
-//     });
-//     document.querySelector("#cube").style.left = event.pageX + "px";
-//     document.querySelector("#cube").style.top =  event.pageY + "px";
-//     };
-
 
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());

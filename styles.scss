@@ -86,6 +86,7 @@ body {
     font-family:$primary-typo;
     height:auto;
     overflow-x: hidden;
+    background-color: $background-color;
 }
 
 p, h1, button, article {
@@ -94,7 +95,7 @@ p, h1, button, article {
 }
 
 section {
-    overflow:hidden;
+    // overflow:hidden;
     width:100%;
     text-align: center;
     margin:auto;
@@ -121,16 +122,24 @@ article {
             line-height:3;
         }
     }
+
+
 }
 
 article:nth-child(3), article:nth-child(6) {
-    border:$text-color outset 3px;
+    // border:$text-color outset 3px;
+    // box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
     box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
-    background-color: $background-color;
+    border:white outset 3px;
+    background-color: black;
     
     & h3 {
         margin-top:10vh;
         margin-bottom:8vh;
+    }
+
+    &  h4, p {
+        color:white;
     }
 }
 
@@ -144,7 +153,6 @@ video {
 h1, h2 {
     color:rgba(0,0,0,0.8);
     width:100%;
-    border:blue solid 1px;
 }
 
 h3, h4, button {
@@ -198,7 +206,7 @@ h3 {
     & span {
         position:relative;
         color:#CFD0D1;
-        left:70px;
+        // left:70px;
         text-shadow:none;
     }
 }
@@ -470,7 +478,6 @@ header {
 //Section prestations OK
 #servicesSection {    
     @include desktopstyle() {
-        background-color: $background-color;
         position:relative;
         margin-top:25vh; 
     }
@@ -478,7 +485,9 @@ header {
 
 .h2Container {
     height:25vh;
-    margin:25vh auto 35vh auto;
+    margin:75vh auto 15vh auto;
+    position:sticky;
+
 }
 
 // Identité visuelle
@@ -489,7 +498,9 @@ header {
     &Block {
         width:100%;
         position:relative;
-        background-color: black;
+        // background-color: black;
+        background: rgb(0,0,0);
+        background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);  
         z-index:-1;
         @include desktopstyle() {
             box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
@@ -528,37 +539,71 @@ header {
         top: 60%;
     }
 
-    & #square {
-        position: absolute;
-        top:-50px;
+}
+
+.square {
+    position: absolute;
+    top:-50px;
+    right:-5%;
+    z-index:-26;
+    opacity:0.5;
+
+    &2 {
+        position:absolute;
+        bottom:-1%;
+        z-index:-26;
         right:-5%;
-        z-index:-16;
     }
 }
 
-// Développement web, développement commercial OK
+// // Développement web, développement commercial OK
+article:nth-child(3) {
+    // background-color: mix(#1477ca,rgba(0,0,0,0.5),12%);
+    // background-color: mix(#1477ca,rgba(0,0,0,0.4),22%);
+    // background: rgb(124,150,173);
+    // background: radial-gradient(circle, rgba(124,150,173,0.83) 0%, rgba(124,150,173,0.75) 31%, rgba(124,150,173,0.8544059860272234) 76%, rgba(124,150,173,0.9) 100%)
+
+    background: rgb(145,166,185);
+background: radial-gradient(circle, rgba(145,166,185,0.66) 7%, rgba(145,166,185,1) 100%);
+}
+    
+    // background: rgb(124,150,173);
+    // background: linear-gradient(0deg, mix(rgba(0,0,0,0.5), rgba(124,150,173,0.6593397124474789), 20%) 0%, mix(rgba(0,0,0,0.5),rgba(124,150,173,1), 70%) 43%);}
+
+article:nth-child(6) {
+    margin-top:15vh;
+    margin-bottom:15px;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);
+    
+}
+
 article:nth-child(3), article:nth-child(6) {
     height:80vh;
     z-index:-2;
     @include desktopstyle() {
         height:100%;
-        margin-top:-15vh;
+        overflow-x:hidden;
+
     }
 
     & img {
         max-width:25%;
         position:absolute;
         bottom:150px;
-        left: 80px;
+        left: 0px;
         @include desktopstyle() {
-            left:0;
+            left:-4%;
             bottom:10%;
             max-width:35%;
             transform: rotate(10deg);
             z-index:-1;
         }
     }
+
+
 }
+
 
 
 // Référencement
@@ -567,17 +612,27 @@ article:nth-child(4) {
     margin-top:15vh;
     @include desktopstyle() {
         width:100%;
-        overflow:hidden;
+        // overflow:hidden;
     }
 
     & #seoBlock {
         height:80vh;
-        border:$text-color outset 3px;
-        box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
         width:93%;
-        background-color: $background-color;
         margin:auto;
-        overflow-x:hidden;
+        // overflow-x:hidden;
+        box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+        border:white outset 3px;
+        background: rgb(0,0,0);
+        background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);
+        position:relative;
+
+        & img {
+            transform:rotate(5deg);
+            position:absolute;
+            left:-10%;
+            top:-10%;
+            opacity:0.5;
+        }
     }
 
     & #seo__h4Container {
@@ -585,25 +640,26 @@ article:nth-child(4) {
         justify-content: space-around;
         width:90%;
         margin:auto;
+        position:relative;
 
         & div {
             margin-top: 8vh;
             margin-left:5px;
             margin-right:5px;
+            position:relative;
+
+//             & img  {
+//                 position:absolute;
+// bottom:-10%;
+// right:-10%;
+//                 transform:rotate(5deg);
+//             }
         }        
 
         & div:nth-child(2) {
             & h4 {
                 color:lighten(#1477ca, 30%);
             }
-        }
-
-        & img {
-            position:absolute;
-            max-width:500px;
-            right:-10%;
-            z-index: 0;
-            transform: rotate(-90deg);
         }
     }
 
@@ -623,21 +679,22 @@ article:nth-child(4) {
         }
     }
 
-    & .lineThrough {
-        border: rgba(253,249,249,0.9) solid 1px;
-        background-color: white;
-        position:relative;
-        width:100%;
-        top: -28px;
-        @include desktopstyle() {
-            width:120px;
-            top:-32.5px;
-        }
-    }
+    // & .lineThrough {
+    //     border: rgba(253,249,249,0.9) solid 1px;
+    //     background-color: white;
+    //     position:relative;
+    //     width:100%;
+    //     top: -28px;
+    //     @include desktopstyle() {
+    //         width:120px;
+    //         top:-32.5px;
+    //     }
+    // }
 
     & p {
         // line-height:2;
         margin: auto;
+        color:white;
         width:80%;
     }
 }
@@ -654,11 +711,14 @@ article:nth-child(4) {
 
 
 
-// Social media
+// // Social media
 article:nth-child(5) {
     width:100%;
     position:relative;
-    background-color: black;
+    // background-color: mix(#1b4533,rgba(0,0,0,0.5),22%);
+    background: rgb(105,118,111);
+    background: radial-gradient(circle, rgba(105,118,111,0.6621408328956583) 7%, rgba(105,118,111,1) 100%);
+    
     z-index:-1;
     @include desktopstyle() {
         box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
@@ -666,7 +726,7 @@ article:nth-child(5) {
         width:93%;
         margin:auto;
         border:white outset 3px;
-        margin-top:-15vh;
+        margin-top:0vh;
     }
 
     & h3 {
@@ -694,95 +754,48 @@ article:nth-child(5) {
     }
 }
 
-
-// PARTIE A PROPOS
-#about {
-    margin-top:100vh;
+#commercialSection {
     position:relative;
+    overflow:visible;
+
+    & .backgroundSvg {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:-100%;
+    }
 }
 
-.aboutFlex {
-    display:flex;
-    position: relative;
-    height:800px;
-    width:98%;
-    margin:auto;
 
 
-    & img {
-        max-width:50%;
-        z-index:3;
-        position:absolute;
-        bottom:4px;
+// // PARTIE A PROPOS
+#about {
+    position:relative;
+    z-index:-10;
+    // background-color:black;
+    // color:white;
 
-        &:nth-child(2) {
-            order:3;
+    & .aboutFlex {
+        display:flex;
+        align-items:center;
+        margin-left:10%;
+        margin-right:10%;
+        height:100vh;
+
+        & p {
+            line-height:3;
         }
-    }
-
-    & div {
-        width:100%;
-        position: absolute;
-        bottom:0;
-        height:60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        line-height:3;
-        border: dashed 5px $underline-color;
-        background-color: $background-color;
-        // background: $underline-color;
-        background: $background-color;
-        box-shadow: 0px 0px 10px $text-color;
-        order:1;
-        // border-radius: 5px;
 
         & .texte {
-            width:50%;
-            position:absolute;
-            right:30px;
-            top:20%;
-            border:none;
-            box-shadow: none;
-
-            & button {
-                width:50%;
-                margin:auto;
-            }
-        }
-
-
-        & .aboutTitle {
-            font-family: $secondary-typo;
-            font-weight: 700;
-            font-size:2rem;
-            display:block;
-
-            &::before {
-                content:"";
-                position:absolute;
-                top:30%;
-                bottom:0;
-                right:0;
-                left:0;
-                height:4px;
-                width:30%;
-                z-index:0;
-
-                background-color: #068DFF;
-            }
-
-            // &::after {
-            //     content:"";
-            //     position:absolute;
-            //     top:50%;
-            //     bottom:0;
-            //     right:-5%;
-            //     height:2px;
-            //     width:47%;
-            //     background-color: $text-color;
-            // }
+            width:80%;
+            border-top: black solid 1px;
+            border-bottom: black solid 1px;
         }
     }
+
+    & img {
+        max-height:85%;
+    }
 }
-    
+
+

@@ -43,25 +43,3 @@ function eraseWord(word, index, number) {
         }
     }
 }
-
-
-// Ecriture et suppression des H2
-function writeH2(whichH2, array, index, number) {
-        if(index < array.length) {
-        setTimeout(() => {
-            document.querySelector("#about H2 span:nth-child(1)");
-            document.querySelector(`${whichH2} span:nth-child(${number})`).style.visibility = "visible";
-            writeH2(whichH2, array, index + 1, number + 1)
-        }, 100)
-}};
-
-
-function eraseH2(whichH2, index, number) {
-    if(index !== 0) {
-        setTimeout(() => {
-            // document.querySelector(`${whichH2}`).innerHTML = `${document.querySelector(`${whichH2}`).innerHTML.slice(0, index - 1)}`;
-            document.querySelector(`${whichH2} span:nth-child(${number})`).style.visibility = "hidden";
-            eraseH2(whichH2, index - 1, number - 1)
-        }, 100)
-    }
-}
