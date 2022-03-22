@@ -132,7 +132,106 @@ aboutUs.forEach( (about) => {
         toggleActions: "play none none reverse",
     })
 })
-  
+
+
+// Survol boutons Know More
+const items = document.querySelectorAll(".knowMoreButton");
+
+items.forEach((item) => {
+    const tl = gsap
+    .timeline({ paused: true })
+    .to(item, {color:"#464646", duration:0.1})
+    .fromTo(item, {
+        "--opacity": 0,
+    }, {"--opacity": 1, color:"black", y:-3, duration:0.2}, "<")
+
+  item.addEventListener("mouseenter", () => tl.play());
+  item.addEventListener("mouseleave", () => tl.reverse());
+})
+
+
+// Essai carrousel
+const tl = gsap.timeline();
+
+tl.add("paragraph1")
+.fromTo(".serviceArticle__paragraph3", {opacity:1, scale:1}, {opacity:0, scale:0.9})
+.fromTo(".serviceArticle__paragraph1", {opacity:0, scale:0.9}, {opacity:1, scale:1})
+.addPause()
+.to(".serviceArticle__paragraph1", {opacity:0, scale:0.9})
+.add("paragraph2")
+.fromTo(".serviceArticle__paragraph2", {opacity:0, scale:0.9}, {opacity:1, scale:1})
+.addPause()
+.to(".serviceArticle__paragraph2", {opacity:0, scale:0.9})
+.add("paragraph3")
+.fromTo(".serviceArticle__paragraph3", {opacity:0, scale:0.9}, {opacity:1, scale:1})
+.addPause()
+
+
+articles.forEach((article) => {
+    if(article.querySelector(".carrouselIcons .next")) {
+        article.querySelector(".carrouselIcons .next").addEventListener("click", function() {
+            if(tl.previousLabel() == "paragraph3"){
+                tl.play(0)
+              } else {
+                tl.play()
+              }
+        });
+        article.querySelectorAll(".circle").forEach((circle) => {
+            circle.addEventListener("click", function() {
+                tl.play(this.getAttribute("data-label"));
+                article.querySelectorAll(".circle").forEach((circle) => {
+                    circle.classList.remove("active")
+                })
+                circle.classList.add("active");
+            })
+        })
+    }
+})
+
+const getLabelsArray = timeline => Object.keys(timeline.labels).map(v => ({name: v, time: timeline.labels[v]})).sort((a,b) => a.time - b.time)
+let labels = getLabelsArray(tl)
+console.log(labels);
+
+// labels.forEach(function(item, index){
+//   console.log(item.name)
+//   let dot = document.createElement("div")
+//   dot.setAttribute("class", "dot")
+//   dot.setAttribute("data-label", item.name)
+//   document.querySelector(".dotNav").appendChild(dot)
+//   dot.addEventListener("click", function()  {
+//     console.log(this.getAttribute("data-label"))
+//     tl.play(this.getAttribute("data-label"))
+//   })
+
+// })
+
+
+
+function startAgain() {
+    gsap.delayedCall(0.5, function() {
+        tl.play(0)
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());

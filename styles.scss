@@ -95,15 +95,14 @@ p, h1, button, article {
 }
 
 section {
-    // overflow:hidden;
     width:100%;
     text-align: center;
     margin:auto;
-    z-index:-5;   
+    // z-index:-5;   
 }
 
 article {
-    position:relative;
+    // position:relative;
     height:100vh;
     width:93%;
     z-index:-2;
@@ -242,14 +241,71 @@ h4 {
     font-weight:600;
     margin-top:4vh;
     margin-bottom:6vh;
+    position:relative;
+    overflow:hidden;
     @include desktopstyle() {
         margin-top:30px;
         margin-bottom:35px;
+    }
+
+    &:hover {
+        opacity:0.8
+    }
+
+    &::after {
+        content:"EN SAVOIR PLUS";
+        // background-color: #1477ca;
+        background: rgb(20,119,202);
+        background: radial-gradient(circle, mix(white, rgba(20,119,202,1), 10%) 100%, rgba(20,119,202,0.7) 28%);
+        padding:10px 15px;
+        cursor:pointer;
+        border-radius: 8px;
+        color:black;
+        font-weight:600;
+        letter-spacing:2px;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        opacity:var(--opacity);
+        transform: translateY(var(--translate))   rotateX(var(--rotate));;
+    }
+}
+
+.wrapper {
+    position: relative;
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    width:279vw;
+
+    & .serviceArticle__paragraph {
+        width:93vw;
+        border:red solid 1px;
+        grid-area: 1 / 1;
+
+        & p {
+            width:50%;
+        }
     }
 }
 
 .carrouselIcons {
     margin-bottom:50px;
+    z-index:20;
+
+    & .circle {
+        fill:#707070;
+        stroke:#707070;
+        stroke-width:1
+    }
+
+    & .circle.active {
+        fill:white;
+        stroke:#707070;
+        stroke-width:0
+    }
 }
 
 .h4Container {
@@ -714,7 +770,7 @@ article:nth-child(4) {
 // // Social media
 article:nth-child(5) {
     width:100%;
-    position:relative;
+    // position:relative;
     // background-color: mix(#1b4533,rgba(0,0,0,0.5),22%);
     background: rgb(105,118,111);
     background: radial-gradient(circle, rgba(105,118,111,0.6621408328956583) 7%, rgba(105,118,111,1) 100%);
@@ -755,7 +811,7 @@ article:nth-child(5) {
 }
 
 #commercialSection {
-    position:relative;
+    // position:relative;
     overflow:visible;
 
     & .backgroundSvg {

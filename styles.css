@@ -124,11 +124,9 @@ section {
   width: 100%;
   text-align: center;
   margin: auto;
-  z-index: -5;
 }
 
 article {
-  position: relative;
   height: 100vh;
   width: 93%;
   z-index: -2;
@@ -284,6 +282,8 @@ h4 {
   font-weight: 600;
   margin-top: 4vh;
   margin-bottom: 6vh;
+  position: relative;
+  overflow: hidden;
 }
 
 @media all and (min-width: 1024px) {
@@ -293,8 +293,68 @@ h4 {
   }
 }
 
+.knowMoreButton:hover {
+  opacity: 0.8;
+}
+
+.knowMoreButton::after {
+  content: "EN SAVOIR PLUS";
+  background: #1477ca;
+  background: radial-gradient(circle, #2c85cf 100%, rgba(20, 119, 202, 0.7) 28%);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: var(--opacity);
+  -webkit-transform: translateY(var(--translate)) rotateX(var(--rotate));
+          transform: translateY(var(--translate)) rotateX(var(--rotate));
+}
+
+.wrapper {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  width: 279vw;
+}
+
+.wrapper .serviceArticle__paragraph {
+  width: 93vw;
+  border: red solid 1px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1 / 1;
+}
+
+.wrapper .serviceArticle__paragraph p {
+  width: 50%;
+}
+
 .carrouselIcons {
   margin-bottom: 50px;
+  z-index: 20;
+}
+
+.carrouselIcons .circle {
+  fill: #707070;
+  stroke: #707070;
+  stroke-width: 1;
+}
+
+.carrouselIcons .circle.active {
+  fill: white;
+  stroke: #707070;
+  stroke-width: 0;
 }
 
 .h4Container {
@@ -795,7 +855,6 @@ article:nth-child(4) p {
 
 article:nth-child(5) {
   width: 100%;
-  position: relative;
   background: #69766f;
   background: radial-gradient(circle, rgba(105, 118, 111, 0.662141) 7%, #69766f 100%);
   z-index: -1;
@@ -844,7 +903,6 @@ article:nth-child(5) h4, article:nth-child(5) p {
 }
 
 #commercialSection {
-  position: relative;
   overflow: visible;
 }
 
