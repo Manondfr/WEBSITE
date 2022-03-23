@@ -84,50 +84,46 @@ articles.forEach((article) => {
 
 
 
-
-
-
-
-
-let active
-let expanders = gsap.utils.toArray(".expander")
-
-expanders.forEach(function(expander, index){
-  let close = expander.querySelector(".close")
-  let animation = gsap.timeline({paused:true})
-  animation.to(expander, {width:200, duration:0.4})
-  .from(close, {opacity:0, scale:0.4, duration:0.1, x:"-=10"}, "-=0.1")
-  expander.animation = animation // assign the animation to the current element
-  
-  expander.addEventListener("click", function(){
-    
-    if(active){
-      active.animation.reverse() // reverse (close) active element's animation
-    }
-    
-    expander.animation.play() // play (open) the clicked element's animation
-    active = expander
+// ESSAI MOUSE MOVE ARTICLES
+articles.forEach((article) => {
+  article.addEventListener("mousemove", function(e) {
+    // tilt(e.pageX, e.pageY, article)
+    console.log("hi")
   })
-  
-  close.addEventListener("click", function(event){
-    event.stopPropagation()
-    expander.animation.reverse() 
+  article.addEventListener("mouseleave", function() {
+    // tilt(article.width()/2, article.height()/2);
+    console.log("bye")
   })
-  
-  console.log(expander)
-
 })
 
-gsap.set(".expander", {backgroundColor:gsap.utils.wrap(["#f5ce5b", "#c570b6", "#78d6e0"])})
 
 
 
 
-
+function tilt(cx, cy, article) {
+	// var sxPos = cx / $panel.width() * 100 - 100;
+	// var syPos = cy / $panel.height() * 100 - 100;
+	var sxPos = (cx / $body.width()*100 - 50)*2 ;
+	var syPos = (cy / $body.height()*100 - 50)*2;
+	gsap.to(article, {
+		rotationY: -0.03 * sxPos,
+		rotationX: 0.03 * syPos,
+		// transformPerspective: 500,
+		transformOrigin: "center center -400",
+		ease: Expo.easeOut
+	});
+	// TweenMax.to($img, 2, {
+	// 	rotationY: -0.03 * sxPos,
+	// 	rotationX: 0.03 * syPos,
+	// 	transformPerspective: 500,
+	// 	transformOrigin: "center center -200",
+	// 	ease: Expo.easeOut
+	// });
+}
 
 
 
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh();
+ScrollTrigger.refresh(); 
 

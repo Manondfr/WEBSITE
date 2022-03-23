@@ -247,9 +247,60 @@ articles.forEach((article) => {
     }
 })
 
-const getLabelsArray = timeline => Object.keys(timeline.labels).map(v => ({name: v, time: timeline.labels[v]})).sort((a,b) => a.time - b.time)
-let labels = getLabelsArray(tl)
-console.log(labels);
+
+
+
+
+
+
+
+// ESSAI MOUSE MOVE ARTICLES - FONCTIONNE 
+// articles.forEach((article) => {
+//     article.addEventListener("mousemove", function(e) {
+//       tilt(e.pageX, e.pageY, article)
+//     })
+//     article.addEventListener("mouseleave", function() {
+//       tilt(document.querySelector("body").offsetWidth/2, document.querySelector("body").offsetHeight/2, article);
+//     })
+//   })
+  
+  
+  
+  
+//   function tilt(cx, cy, article) {
+//       // var sxPos = cx / $panel.width() * 100 - 100;
+//       // var syPos = cy / $panel.height() * 100 - 100;
+//       console.log("tilt");
+//       var sxPos = (cx / document.querySelector("body").offsetWidth*100 - 50)*2 ;
+//       console.log(window.clientWidth);
+//       var syPos = (cy / document.querySelector("body").offsetHeight*100 - 50)*2;
+//       console.log(article);
+//       let tl = gsap.to(article, {
+//           rotationY: -0.03 * sxPos,
+//           rotationX: 0.03 * syPos,
+//           // transformPerspective: 500,
+//           transformOrigin: "center center -400",
+//           ease: Expo.easeOut
+//       });
+//       // TweenMax.to($img, 2, {
+//       // 	rotationY: -0.03 * sxPos,
+//       // 	rotationX: 0.03 * syPos,
+//       // 	transformPerspective: 500,
+//       // 	transformOrigin: "center center -200",
+//       // 	ease: Expo.easeOut
+//       // });
+//   }
+  
+  
+  
+
+
+
+
+
+// const getLabelsArray = timeline => Object.keys(timeline.labels).map(v => ({name: v, time: timeline.labels[v]})).sort((a,b) => a.time - b.time)
+// let labels = getLabelsArray(tl)
+// console.log(labels);
 
 // labels.forEach(function(item, index){
 //   console.log(item.name)
@@ -265,12 +316,6 @@ console.log(labels);
 // })
 
 
-
-function startAgain() {
-    gsap.delayedCall(0.5, function() {
-        tl.play(0)
-    })
-}
 
 
 
