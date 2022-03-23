@@ -153,27 +153,78 @@ items.forEach((item) => {
 // Essai carrousel
 const tl = gsap.timeline();
 
-tl.add("paragraph1")
+tl
 .fromTo(".serviceArticle__paragraph3", {opacity:1, scale:1}, {opacity:0, scale:0.9})
+.fromTo(".serviceArticle__h4_3 h4", {opacity:1, scale:1}, {opacity:0, scale:0.9}, "<")
+.add("paragraph1")
 .fromTo(".serviceArticle__paragraph1", {opacity:0, scale:0.9}, {opacity:1, scale:1})
+.fromTo(".serviceArticle__h4_1 h4", {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
 .addPause()
 .to(".serviceArticle__paragraph1", {opacity:0, scale:0.9})
+.to(".serviceArticle__h4_1 h4", {opacity:0, scale:0.9}, "<")
+.to(".serviceArticle__h4_1 hr", {opacity:0}, "<")
 .add("paragraph2")
 .fromTo(".serviceArticle__paragraph2", {opacity:0, scale:0.9}, {opacity:1, scale:1})
+.fromTo(".serviceArticle__h4_2 h4", {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
 .addPause()
 .to(".serviceArticle__paragraph2", {opacity:0, scale:0.9})
+.to(".serviceArticle__h4_2 h4", {opacity:0, scale:0.9}, "<") 
+.to(".serviceArticle__h4_2 hr", {opacity:0}, "<")
 .add("paragraph3")
 .fromTo(".serviceArticle__paragraph3", {opacity:0, scale:0.9}, {opacity:1, scale:1})
+.fromTo(".serviceArticle__h4_3 h4", {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
 .addPause()
 
+let touchstartX = 0
+let touchendX = 0
+
+
+function handleGesture(article) {
+  if (touchendX < touchstartX) {
+      console.log("swiped left next");
+      if(tl.previousLabel() == "paragraph3"){
+        tl.play(0);
+        let activeCircle = article.querySelector(".active");
+        activeCircle.classList.remove("active");
+        article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+      } else {
+        tl.play();
+        let activeCircle = article.querySelector(".active");
+        activeCircle.classList.remove("active");
+        activeCircle.nextElementSibling.classList.add("active")
+      }
+  }
+  if (touchendX > touchstartX) {
+    if(tl.previousLabel() != "paragraph1"){
+        tl.reverse()
+        let activeCircle = article.querySelector(".active");
+        activeCircle.classList.remove("active");
+        activeCircle.previousElementSibling.classList.add("active")
+      }
+  }
+}
 
 articles.forEach((article) => {
     if(article.querySelector(".carrouselIcons .next")) {
         article.querySelector(".carrouselIcons .next").addEventListener("click", function() {
             if(tl.previousLabel() == "paragraph3"){
-                tl.play(0)
+                tl.play(0);
+                let activeCircle = article.querySelector(".active");
+                activeCircle.classList.remove("active");
+                article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
               } else {
-                tl.play()
+                tl.play();
+                let activeCircle = article.querySelector(".active");
+                activeCircle.classList.remove("active");
+                activeCircle.nextElementSibling.classList.add("active")
+              }
+        });
+        article.querySelector(".carrouselIcons .prev").addEventListener("click", function() {
+            if(tl.previousLabel() != "paragraph1"){
+                tl.reverse()
+                let activeCircle = article.querySelector(".active");
+                activeCircle.classList.remove("active");
+                activeCircle.previousElementSibling.classList.add("active")
               }
         });
         article.querySelectorAll(".circle").forEach((circle) => {
@@ -184,6 +235,14 @@ articles.forEach((article) => {
                 })
                 circle.classList.add("active");
             })
+        })
+        article.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX
+        })
+
+        article.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX
+        handleGesture(article)
         })
     }
 })

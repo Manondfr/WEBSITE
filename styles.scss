@@ -282,7 +282,6 @@ h4 {
 
     & .serviceArticle__paragraph {
         width:93vw;
-        border:red solid 1px;
         grid-area: 1 / 1;
 
         & p {
@@ -291,21 +290,45 @@ h4 {
     }
 }
 
+.h4Wrapper {
+    display:grid;
+    width:93vw;
+    align-items:center;
+
+    & .serviceArticle__h4 {
+        grid-area: 1 / 1;
+    }
+}
+
 .carrouselIcons {
     margin-bottom:50px;
     z-index:20;
 
+
+    & svg {
+        padding: 2px 5px;
+        margin:0 7px;
+    }
+
     & .circle {
         fill:#707070;
         stroke:#707070;
-        stroke-width:1
+        stroke-width:1;
+        cursor:pointer;
     }
 
     & .circle.active {
         fill:white;
         stroke:#707070;
-        stroke-width:0
+        stroke-width:0;
     }
+
+    & .prev, .next {
+        position:relative;
+        top:-2px;
+        cursor: pointer;
+    }
+
 }
 
 .h4Container {
@@ -318,7 +341,7 @@ h4 {
     }
 
     & hr {
-        flex:2;
+        flex:5;
         height:0px;
         background-color: white;
     }
@@ -616,15 +639,14 @@ header {
 article:nth-child(3) {
     // background-color: mix(#1477ca,rgba(0,0,0,0.5),12%);
     // background-color: mix(#1477ca,rgba(0,0,0,0.4),22%);
-    // background: rgb(124,150,173);
-    // background: radial-gradient(circle, rgba(124,150,173,0.83) 0%, rgba(124,150,173,0.75) 31%, rgba(124,150,173,0.8544059860272234) 76%, rgba(124,150,173,0.9) 100%)
+    background: rgb(124,150,173);
+    background: radial-gradient(circle, rgba(124,150,173,0.83) 0%, rgba(124,150,173,0.75) 31%, rgba(124,150,173,0.8544059860272234) 76%, rgba(124,150,173,0.9) 100%)
 
-    background: rgb(145,166,185);
-background: radial-gradient(circle, rgba(145,166,185,0.66) 7%, rgba(145,166,185,1) 100%);
+
+//     background: rgb(145,166,185);
+// background: radial-gradient(circle, rgba(145,166,185,0.66) 7%, rgba(145,166,185,1) 100%);
 }
     
-    // background: rgb(124,150,173);
-    // background: linear-gradient(0deg, mix(rgba(0,0,0,0.5), rgba(124,150,173,0.6593397124474789), 20%) 0%, mix(rgba(0,0,0,0.5),rgba(124,150,173,1), 70%) 43%);}
 
 article:nth-child(6) {
     margin-top:15vh;

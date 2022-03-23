@@ -330,7 +330,6 @@ h4 {
 
 .wrapper .serviceArticle__paragraph {
   width: 93vw;
-  border: red solid 1px;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: 1 / 1;
@@ -340,21 +339,48 @@ h4 {
   width: 50%;
 }
 
+.h4Wrapper {
+  display: -ms-grid;
+  display: grid;
+  width: 93vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.h4Wrapper .serviceArticle__h4 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1 / 1;
+}
+
 .carrouselIcons {
   margin-bottom: 50px;
   z-index: 20;
+}
+
+.carrouselIcons svg {
+  padding: 2px 5px;
+  margin: 0 7px;
 }
 
 .carrouselIcons .circle {
   fill: #707070;
   stroke: #707070;
   stroke-width: 1;
+  cursor: pointer;
 }
 
 .carrouselIcons .circle.active {
   fill: white;
   stroke: #707070;
   stroke-width: 0;
+}
+
+.carrouselIcons .prev, .carrouselIcons .next {
+  position: relative;
+  top: -2px;
+  cursor: pointer;
 }
 
 .h4Container {
@@ -375,9 +401,9 @@ h4 {
 }
 
 .h4Container hr {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
   height: 0px;
   background-color: white;
 }
@@ -723,8 +749,8 @@ header svg {
 }
 
 article:nth-child(3) {
-  background: #91a6b9;
-  background: radial-gradient(circle, rgba(145, 166, 185, 0.66) 7%, #91a6b9 100%);
+  background: #7c96ad;
+  background: radial-gradient(circle, rgba(124, 150, 173, 0.83) 0%, rgba(124, 150, 173, 0.75) 31%, rgba(124, 150, 173, 0.854406) 76%, rgba(124, 150, 173, 0.9) 100%);
 }
 
 article:nth-child(6) {
