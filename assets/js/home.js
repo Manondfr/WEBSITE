@@ -151,52 +151,41 @@ items.forEach((item) => {
 
 
 // Essai carrousel
-const tl = gsap.timeline();
-
-tl
-.fromTo(".serviceArticle__paragraph3", {opacity:1, scale:1}, {opacity:0, scale:0.9})
-.fromTo(".serviceArticle__h4_3 h4", {opacity:1, scale:1}, {opacity:0, scale:0.9}, "<")
-.add("paragraph1")
-.fromTo(".serviceArticle__paragraph1", {opacity:0, scale:0.9}, {opacity:1, scale:1})
-.fromTo(".serviceArticle__h4_1 h4", {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
-.addPause()
-.to(".serviceArticle__paragraph1", {opacity:0, scale:0.9})
-.to(".serviceArticle__h4_1 h4", {opacity:0, scale:0.9}, "<")
-.to(".serviceArticle__h4_1 hr", {opacity:0}, "<")
-.add("paragraph2")
-.fromTo(".serviceArticle__paragraph2", {opacity:0, scale:0.9}, {opacity:1, scale:1})
-.fromTo(".serviceArticle__h4_2 h4", {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
-.addPause()
-.to(".serviceArticle__paragraph2", {opacity:0, scale:0.9})
-.to(".serviceArticle__h4_2 h4", {opacity:0, scale:0.9}, "<") 
-.to(".serviceArticle__h4_2 hr", {opacity:0}, "<")
-.add("paragraph3")
-.fromTo(".serviceArticle__paragraph3", {opacity:0, scale:0.9}, {opacity:1, scale:1})
-.fromTo(".serviceArticle__h4_3 h4", {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
-.addPause()
-
 let touchstartX = 0
 let touchendX = 0
 
 
-function handleGesture(article) {
+function handleGesture(article, tl) {
   if (touchendX < touchstartX) {
-      console.log("swiped left next");
-      if(tl.previousLabel() == "paragraph3"){
-        tl.play(0);
-        let activeCircle = article.querySelector(".active");
-        activeCircle.classList.remove("active");
-        article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
-      } else {
-        tl.play();
-        let activeCircle = article.querySelector(".active");
-        activeCircle.classList.remove("active");
-        activeCircle.nextElementSibling.classList.add("active")
-      }
+    if(article.querySelector(".serviceArticle__paragraph3")) {
+        if(tl.previousLabel() == "paragraph3"){
+            tl.play("paragraph1");
+            let activeCircle = article.querySelector(".active");
+            activeCircle.classList.remove("active");
+            article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+          } else {
+            tl.play(tl.nextLabel());
+            let activeCircle = article.querySelector(".active");
+            activeCircle.classList.remove("active");
+            activeCircle.nextElementSibling.classList.add("active")
+          }
+    } else {
+        if(tl.previousLabel() == "paragraph2"){
+            tl.play("paragraph1");
+            let activeCircle = article.querySelector(".active");
+            activeCircle.classList.remove("active");
+            article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+          } else {
+            tl.play(tl.nextLabel());
+            let activeCircle = article.querySelector(".active");
+            activeCircle.classList.remove("active");
+            activeCircle.nextElementSibling.classList.add("active")
+          } 
+    }
   }
   if (touchendX > touchstartX) {
     if(tl.previousLabel() != "paragraph1"){
-        tl.reverse()
+        tl.reverse(tl.previousLabel())
         let activeCircle = article.querySelector(".active");
         activeCircle.classList.remove("active");
         activeCircle.previousElementSibling.classList.add("active")
@@ -205,23 +194,63 @@ function handleGesture(article) {
 }
 
 articles.forEach((article) => {
+    let tl = gsap.timeline();
+    tl.add("paragraph1")
+    .fromTo(article.querySelector(".serviceArticle__paragraph1"), {opacity:0, scale:0.9}, {opacity:1, scale:1})
+    .fromTo(article.querySelector(".serviceArticle__h4_1 h4"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+    .fromTo(article.querySelector(".serviceArticle__h4_1 hr:nth-child(1)"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"left"}, "<")
+    .fromTo(article.querySelector(".serviceArticle__h4_1 hr:last-child"), {opacity:0,scale:0.8}, {opacity:1, scale:1, transformOrigin:"right"}, "<")
+    .addPause()
+    .to(article.querySelector(".serviceArticle__paragraph1"), {opacity:0, scale:0.9})
+    .to(article.querySelector(".serviceArticle__h4_1 h4"), {opacity:0, scale:0.9}, "<")
+    .to(article.querySelectorAll(".serviceArticle__h4_1 hr"), {opacity:0}, "<")
+    .add("paragraph2")
+    .fromTo(article.querySelector(".serviceArticle__paragraph2"), {opacity:0, scale:0.9}, {opacity:1, scale:1})
+    .fromTo(article.querySelector(".serviceArticle__h4_2 h4"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+    .fromTo(article.querySelector(".serviceArticle__h4_2 hr:nth-child(1)"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"left"}, "<")
+    .fromTo(article.querySelector(".serviceArticle__h4_2 hr:last-child"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"right"}, "<")
+    .addPause()
+    .to(article.querySelector(".serviceArticle__paragraph2"), {opacity:0, scale:0.9})
+    .to(article.querySelector(".serviceArticle__h4_2 h4"), {opacity:0, scale:0.9}, "<") 
+    .to(article.querySelectorAll(".serviceArticle__h4_2 hr"), {opacity:0}, "<")
+    .add("paragraph3")
+    .fromTo(article.querySelector(".serviceArticle__paragraph3"), {opacity:0, scale:0.9}, {opacity:1, scale:1})
+    .fromTo(article.querySelector(".serviceArticle__h4_3 h4"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+    .fromTo(article.querySelector(".serviceArticle__h4_3 hr:nth-child(1)"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"left"}, "<")
+    .fromTo(article.querySelector(".serviceArticle__h4_3 hr:last-child"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"right"}, "<")
+    .addPause()
+
     if(article.querySelector(".carrouselIcons .next")) {
         article.querySelector(".carrouselIcons .next").addEventListener("click", function() {
-            if(tl.previousLabel() == "paragraph3"){
-                tl.play(0);
-                let activeCircle = article.querySelector(".active");
-                activeCircle.classList.remove("active");
-                article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
-              } else {
-                tl.play();
-                let activeCircle = article.querySelector(".active");
-                activeCircle.classList.remove("active");
-                activeCircle.nextElementSibling.classList.add("active")
-              }
+            if(article.querySelector(".serviceArticle__paragraph3")) {
+                if(tl.previousLabel() == "paragraph3"){
+                    tl.play("paragraph1");
+                    let activeCircle = article.querySelector(".active");
+                    activeCircle.classList.remove("active");
+                    article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+                  } else {
+                    tl.play(tl.nextLabel());
+                    let activeCircle = article.querySelector(".active");
+                    activeCircle.classList.remove("active");
+                    activeCircle.nextElementSibling.classList.add("active")
+                  }
+            } else {
+                if(tl.previousLabel() == "paragraph2"){
+                    tl.play("paragraph1");
+                    let activeCircle = article.querySelector(".active");
+                    activeCircle.classList.remove("active");
+                    article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+                  } else {
+                    tl.play(tl.nextLabel());
+                    let activeCircle = article.querySelector(".active");
+                    activeCircle.classList.remove("active");
+                    activeCircle.nextElementSibling.classList.add("active")
+                  } 
+            }
         });
         article.querySelector(".carrouselIcons .prev").addEventListener("click", function() {
             if(tl.previousLabel() != "paragraph1"){
-                tl.reverse()
+                tl.reverse(tl.previousLabel())
                 let activeCircle = article.querySelector(".active");
                 activeCircle.classList.remove("active");
                 activeCircle.previousElementSibling.classList.add("active")
@@ -242,7 +271,7 @@ articles.forEach((article) => {
 
         article.addEventListener('touchend', e => {
         touchendX = e.changedTouches[0].screenX
-        handleGesture(article)
+        handleGesture(article, tl)
         })
     }
 })
