@@ -156,7 +156,7 @@ let touchendX = 0
 
 
 function handleGesture(article, tl) {
-  if (touchendX < touchstartX) {
+  if ((touchendX - touchstartX) > 50) {
     if(article.querySelector(".serviceArticle__paragraph3")) {
         if(tl.previousLabel() == "paragraph3"){
             tl.play("paragraph1");
@@ -267,10 +267,12 @@ articles.forEach((article) => {
         })
         article.addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX
+        console.log(touchstartX);
         })
 
         article.addEventListener('touchend', e => {
         touchendX = e.changedTouches[0].screenX
+        console.log(touchendX);
         handleGesture(article, tl)
         })
     }
