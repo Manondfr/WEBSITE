@@ -107,9 +107,11 @@ article {
     z-index:-2;
     border:transparent solid 1px;
     margin:auto;
+    margin-bottom:100px;
     @include tabletstyle() {
         width:93%;
         height:100vh;
+        margin-bottom:unset;
     }
 
     & p {
@@ -788,21 +790,22 @@ article:nth-child(3), article:nth-child(6) {
 
 // Référencement
 article:nth-child(4) {
-    // height:100vh;
+    border:blue solid 1Px;
 
     @include tabletstyle() {
         margin-top:15vh;
     }
     @include desktopstyle() {
         width:100%;
-        // overflow:hidden;
     }
+
+
 
     & #seoBlock {
         width:100%;
         margin:auto;
         // overflow-x:hidden;
-
+        padding-top:5vh;
         background: rgb(0,0,0);
         background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);
         position:relative;
@@ -811,6 +814,15 @@ article:nth-child(4) {
             box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
             border:white outset 3px;
             height:80vh;
+            padding-top:unset;
+        }
+
+        & h3 {
+            @include desktopstyle() {
+                margin-top:10vh;
+                margin-bottom:8vh;
+            }
+
         }
 
         & img {
@@ -897,7 +909,7 @@ article:nth-child(5) {
 
     & h3 {
         position:relative;
-        top:-43px;
+        top:-73px;
         @include desktopstyle() {
             text-align:left;
             margin-left:40px;
