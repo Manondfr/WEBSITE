@@ -156,7 +156,7 @@ let touchendX = 0
 
 
 function handleGesture(article, tl) {
-  if ((touchendX - touchstartX) > 50) {
+  if ((touchstartX - touchendX) > 50) {
     if(article.querySelector(".serviceArticle__paragraph3")) {
         if(tl.previousLabel() == "paragraph3"){
             tl.play("paragraph1");
@@ -183,7 +183,7 @@ function handleGesture(article, tl) {
           } 
     }
   }
-  if ((touchstartX - touchendX) > 50) {
+  if ((touchendX - touchstartX) > 50) {
     if(tl.previousLabel() != "paragraph1"){
         tl.reverse(tl.previousLabel())
         let activeCircle = article.querySelector(".active");
