@@ -143,10 +143,11 @@ article {
 }
 
 article p {
-  width: 90%;
+  width: 30%;
   margin: 7% auto 0 auto;
   line-height: 3;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  border: red solid 1px;
 }
 
 @media all and (min-width: 443px) {
@@ -245,12 +246,13 @@ h3 {
   letter-spacing: 2px;
   line-height: 1.3;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 @media all and (min-width: 1024px) {
   h3 {
     font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -261,13 +263,14 @@ h3 span {
 }
 
 h4 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin: 0 20px 0 20px;
 }
 
 @media all and (min-width: 1024px) {
   h4 {
     margin: auto 20px;
+    font-size: 1.3rem;
   }
 }
 
@@ -294,6 +297,7 @@ h4 {
   border-radius: 8px;
   color: white;
   letter-spacing: 2px;
+  font-size: 0.8rem;
   font-weight: 600;
   margin-top: 4vh;
   margin-bottom: 6vh;
@@ -305,6 +309,7 @@ h4 {
   .callToAction {
     margin-top: 30px;
     margin-bottom: 35px;
+    font-size: initial;
   }
 }
 
@@ -368,7 +373,7 @@ h4 {
 }
 
 .wrapper .serviceArticle__paragraph {
-  width: 100vw;
+  width: 85vw;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: 1 / 1;
@@ -393,7 +398,7 @@ h4 {
 .h4Wrapper {
   display: -ms-grid;
   display: grid;
-  width: 100vw;
+  width: 85vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -426,6 +431,15 @@ h4 {
   stroke: #707070;
   stroke-width: 1;
   cursor: pointer;
+  height: 14px;
+  width: 14px;
+}
+
+@media all and (min-width: 1024px) {
+  .carrouselIcons .circle {
+    height: 17px;
+    width: 17px;
+  }
 }
 
 .carrouselIcons .circle.active {
@@ -766,13 +780,13 @@ header svg {
 }
 
 #visualIdentityBlock {
-  width: 95%;
+  width: 85%;
   position: relative;
   background: black;
   background: radial-gradient(circle, rgba(0, 0, 0, 0.77) 0%, rgba(0, 0, 0, 0.8) 31%, rgba(0, 0, 0, 0.85) 76%, black 100%);
   z-index: -1;
   margin: auto;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   border: white outset 3px;
   -webkit-box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
           box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
@@ -788,7 +802,7 @@ header svg {
 
 #visualIdentity h3 {
   position: relative;
-  top: -43px;
+  top: -58px;
 }
 
 @media all and (min-width: 1024px) {
@@ -836,7 +850,7 @@ header svg {
 }
 
 article:nth-child(3) {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 @media all and (min-width: 1024px) {
@@ -865,7 +879,7 @@ article:nth-child(3) hr {
 article:nth-child(6) {
   background: black;
   background: radial-gradient(circle, rgba(0, 0, 0, 0.77) 0%, rgba(0, 0, 0, 0.8) 31%, rgba(0, 0, 0, 0.85) 76%, black 100%);
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 @media all and (min-width: 443px) {
@@ -928,7 +942,7 @@ article:nth-child(4) #seoBlock {
   background: black;
   background: radial-gradient(circle, rgba(0, 0, 0, 0.77) 0%, rgba(0, 0, 0, 0.8) 31%, rgba(0, 0, 0, 0.85) 76%, black 100%);
   position: relative;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 @media all and (min-width: 443px) {
@@ -1014,7 +1028,7 @@ article:nth-child(5) {
   width: 100%;
   background: #00192d;
   background: radial-gradient(circle, rgba(0, 25, 45, 0.462141) 7%, rgba(0, 25, 45, 0.8) 100%);
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 @media all and (min-width: 1024px) {
