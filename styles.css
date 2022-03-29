@@ -131,7 +131,6 @@ article {
   z-index: -2;
   border: transparent solid 1px;
   margin: auto;
-  border: blue solid 1px;
 }
 
 @media all and (min-width: 443px) {
@@ -409,6 +408,7 @@ h4 {
 }
 
 .carrouselIcons {
+  margin-bottom: 50px;
   z-index: 20;
 }
 
@@ -701,11 +701,6 @@ header svg {
 @media all and (min-width: 443px) {
   #leaves {
     display: initial;
-  }
-}
-
-@media all and (min-width: 1024px) {
-  #leaves {
     top: 160px;
     z-index: 4;
     width: 500px;
@@ -720,11 +715,6 @@ header svg {
 @media all and (min-width: 443px) {
   .leafdim2 {
     display: initial;
-  }
-}
-
-@media all and (min-width: 1024px) {
-  .leafdim2 {
     left: -250px;
     width: 450px;
     top: 0px;
@@ -738,11 +728,6 @@ header svg {
 @media all and (min-width: 443px) {
   .leaf2 {
     display: initial;
-  }
-}
-
-@media all and (min-width: 1024px) {
-  .leaf2 {
     width: 450px;
     top: 90px;
     left: -160px;
@@ -774,7 +759,6 @@ header svg {
 #visualIdentity {
   background-image: url("/assets/img/background.png") no-repeat center;
   width: 100%;
-  height: auto;
 }
 
 #visualIdentityBlock {
@@ -795,7 +779,7 @@ header svg {
     width: 93%;
     margin: auto;
     border: white outset 3px;
-    padding-bottom: initial;
+    padding-bottom: unset;
   }
 }
 
@@ -851,13 +835,6 @@ header svg {
 article:nth-child(3) {
   background: #00192d;
   background: radial-gradient(circle, rgba(0, 25, 45, 0.462141) 7%, rgba(0, 25, 45, 0.8) 100%);
-  padding-bottom: 30px;
-}
-
-@media all and (min-width: 1024px) {
-  article:nth-child(3) {
-    padding-bottom: initial;
-  }
 }
 
 article:nth-child(3) h3 {
@@ -888,6 +865,7 @@ article:nth-child(6) {
 }
 
 article:nth-child(3), article:nth-child(6) {
+  height: 80vh;
   z-index: -2;
 }
 
@@ -919,7 +897,6 @@ article:nth-child(3) img, article:nth-child(6) img {
 @media all and (min-width: 443px) {
   article:nth-child(4) {
     margin-top: 15vh;
-    height: 100vh;
   }
 }
 
@@ -943,6 +920,7 @@ article:nth-child(4) #seoBlock {
     -webkit-box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
             box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7), 5px 0px 15px rgba(0, 0, 0, 0.7);
     border: white outset 3px;
+    height: 80vh;
   }
 }
 
@@ -955,7 +933,7 @@ article:nth-child(4) #seoBlock img {
   opacity: 0.5;
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 443px) {
   article:nth-child(4) #seo__h4Container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1004,14 +982,6 @@ article:nth-child(4) p {
   margin: auto;
   color: white;
   width: 80%;
-}
-
-#seo__square {
-  position: absolute;
-  fill: #FFB3B3;
-  top: 0;
-  left: -10%;
-  z-index: -5;
 }
 
 article:nth-child(5) {

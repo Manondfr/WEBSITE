@@ -107,7 +107,6 @@ article {
     z-index:-2;
     border:transparent solid 1px;
     margin:auto;
-    border:blue solid 1px;
     @include tabletstyle() {
         width:93%;
         height:100vh;
@@ -347,6 +346,7 @@ h4 {
 }
 
 .carrouselIcons {
+    margin-bottom:50px;
     z-index:20;
     
 
@@ -374,6 +374,7 @@ h4 {
         top:-2px;
         cursor: pointer;
     }
+
 }
 
 .h4Container {
@@ -583,22 +584,17 @@ header {
     display:none;
     @include tabletstyle() {
         display:initial;
-    }
-    @include desktopstyle() {
         top:160px;
         z-index:4;
         width:500px;
         right:-170px;
     }
-
 }
 
 .leafdim2 {
     display:none;
     @include tabletstyle() {
         display:initial;
-    }
-    @include desktopstyle() {
         left:-250px;
         width:450px;
         top:0px;
@@ -610,8 +606,6 @@ header {
     display:none;
     @include tabletstyle() {
         display:initial;
-    }
-    @include desktopstyle() {
         width:450px;
         top:90px;
         left:-160px;
@@ -619,6 +613,7 @@ header {
     }
 
 }
+
 
 //Section prestations OK
 #servicesSection {    
@@ -642,8 +637,7 @@ header {
 // Identité visuelle
 #visualIdentity {
     background-image: url("/assets/img/background.png") no-repeat center;
-    width:100%;  
-    height:auto;  
+    width:100%;    
 
     &Block {
         width:100%;
@@ -653,14 +647,14 @@ header {
         background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);  
         z-index:-1;
         margin:0;
-        padding-bottom:30px;
+        padding-bottom: 30px;
         @include desktopstyle() {
             box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
             height:80%;
             width:93%;
             margin:auto;
             border:white outset 3px;
-            padding-bottom: initial;
+            padding-bottom: unset;
         }
     }
 
@@ -734,10 +728,6 @@ article:nth-child(3) {
 
 //     background: rgb(145,166,185);
 // background: radial-gradient(circle, rgba(145,166,185,0.66) 7%, rgba(145,166,185,1) 100%);
-padding-bottom:30px;
-@include desktopstyle() {
-    padding-bottom: initial;
-}
 
     & h3 {
         color:#CFD0D1;
@@ -769,6 +759,7 @@ article:nth-child(6) {
 }
 
 article:nth-child(3), article:nth-child(6) {
+    height:80vh;
     z-index:-2;
     @include desktopstyle() {
         height:100%;
@@ -797,10 +788,10 @@ article:nth-child(3), article:nth-child(6) {
 
 // Référencement
 article:nth-child(4) {
+    // height:100vh;
 
     @include tabletstyle() {
         margin-top:15vh;
-        height:100vh;
     }
     @include desktopstyle() {
         width:100%;
@@ -811,6 +802,7 @@ article:nth-child(4) {
         width:100%;
         margin:auto;
         // overflow-x:hidden;
+
         background: rgb(0,0,0);
         background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);
         position:relative;
@@ -818,6 +810,7 @@ article:nth-child(4) {
             width:93%;
             box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
             border:white outset 3px;
+            height:80vh;
         }
 
         & img {
@@ -827,10 +820,11 @@ article:nth-child(4) {
             top:-10%;
             opacity:0.5;
         }
+
     }
 
     & #seo__h4Container {
-        @include desktopstyle() {
+        @include tabletstyle() {
             display:flex;
             justify-content: space-around;
             width:90%;
@@ -843,6 +837,7 @@ article:nth-child(4) {
             margin-left:5px;
             margin-right:5px;
             position:relative;
+
         }        
 
         & div:nth-child(2) {
@@ -851,6 +846,8 @@ article:nth-child(4) {
             }
         }
     }
+
+
 
     & h4 {
         background:$text-color;
@@ -876,16 +873,6 @@ article:nth-child(4) {
         width:80%;
     }
 }
-
-#seo__square {
-    position:absolute;
-    fill: $underline-color;
-    top:0;
-    left:-10%;
-    z-index:-5;
-}
-
-
 
 
 
