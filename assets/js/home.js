@@ -183,7 +183,7 @@ function handleGesture(article, tl) {
           } 
     }
   }
-  if (touchendX > touchstartX) {
+  if ((touchstartX - touchendX) > 50) {
     if(tl.previousLabel() != "paragraph1"){
         tl.reverse(tl.previousLabel())
         let activeCircle = article.querySelector(".active");
