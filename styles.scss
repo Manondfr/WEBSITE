@@ -323,7 +323,7 @@ h4 {
     width:279vw;
 
     & .serviceArticle__paragraph {
-        width:85vw;
+        width:88vw;
         grid-area: 1 / 1;
         @include desktopstyle() {
             width:93vw;
@@ -341,7 +341,7 @@ h4 {
 
 .h4Wrapper {
     display:grid;
-    width:85vw;
+    width:88vw;
     align-items:center;
     @include desktopstyle() {
         width:93vw;
@@ -653,7 +653,8 @@ header {
 // Identité visuelle
 #visualIdentity {
     background-image: url("/assets/img/background.png") no-repeat center;
-    width:100%;    
+    width:100%;   
+
 
     &Block {
         width:88%;
@@ -814,6 +815,7 @@ article:nth-child(3), article:nth-child(6) {
 // Référencement
 article:nth-child(4) {
     width:100%;
+
 
     @include tabletstyle() {
         margin-top:15vh;

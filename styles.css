@@ -373,7 +373,7 @@ h4 {
 }
 
 .wrapper .serviceArticle__paragraph {
-  width: 85vw;
+  width: 88vw;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: 1 / 1;
@@ -398,7 +398,7 @@ h4 {
 .h4Wrapper {
   display: -ms-grid;
   display: grid;
-  width: 85vw;
+  width: 88vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
