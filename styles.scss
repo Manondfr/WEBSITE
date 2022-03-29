@@ -719,6 +719,10 @@ article:nth-child(3) {
 
     background: rgb(0,25,45);
     background: radial-gradient(circle, rgba(0,25,45,0.4621408328956583) 7%, rgba(0,25,45,0.8) 100%);
+    padding-bottom: 30px;
+    @include desktopstyle() {
+        padding-bottom : unset;
+    }
 
     // background: rgb(81,91,103);
     // background: radial-gradient(circle, rgba(81,91,103,0.762981169030112) 0%, rgba(81,91,103,0.8) 100%);
@@ -754,14 +758,16 @@ article:nth-child(3) {
 article:nth-child(6) {
     background: rgb(0,0,0);
     background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);
+    padding-bottom: 30px;
     @include tabletstyle() {
         margin-top:15vh;
         margin-bottom:15px;
+        padding-bottom : unset;
     }
 }
 
 article:nth-child(3), article:nth-child(6) {
-    height:80vh;
+    // height:80vh;
     z-index:-2;
     @include desktopstyle() {
         height:100%;
@@ -809,12 +815,14 @@ article:nth-child(4) {
         background: rgb(0,0,0);
         background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);
         position:relative;
+        padding-bottom:30px;
         @include tabletstyle() {
             width:93%;
             box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
             border:white outset 3px;
             height:80vh;
             padding-top:unset;
+            padding-bottom:unset;
         }
 
         & h3 {
@@ -895,6 +903,7 @@ article:nth-child(5) {
     // background-color: mix(#1b4533,rgba(0,0,0,0.5),22%);
     background: rgb(0,25,45);
     background: radial-gradient(circle, rgba(0,25,45,0.4621408328956583) 7%, rgba(0,25,45,0.8) 100%);
+    padding-bottom:30px;
     // background-color: mix(rgba(20,119,202,0.1), rgba(70,70,70,0.3), 32%);
         @include desktopstyle() {
         box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
@@ -903,6 +912,7 @@ article:nth-child(5) {
         margin:auto;
         border:white outset 3px;
         margin-top:0vh;
+        padding-bottom:unset;
     }
 
 

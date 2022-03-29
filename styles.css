@@ -837,6 +837,13 @@ header svg {
 article:nth-child(3) {
   background: #00192d;
   background: radial-gradient(circle, rgba(0, 25, 45, 0.462141) 7%, rgba(0, 25, 45, 0.8) 100%);
+  padding-bottom: 30px;
+}
+
+@media all and (min-width: 1024px) {
+  article:nth-child(3) {
+    padding-bottom: unset;
+  }
 }
 
 article:nth-child(3) h3 {
@@ -857,17 +864,18 @@ article:nth-child(3) hr {
 article:nth-child(6) {
   background: black;
   background: radial-gradient(circle, rgba(0, 0, 0, 0.77) 0%, rgba(0, 0, 0, 0.8) 31%, rgba(0, 0, 0, 0.85) 76%, black 100%);
+  padding-bottom: 30px;
 }
 
 @media all and (min-width: 443px) {
   article:nth-child(6) {
     margin-top: 15vh;
     margin-bottom: 15px;
+    padding-bottom: unset;
   }
 }
 
 article:nth-child(3), article:nth-child(6) {
-  height: 80vh;
   z-index: -2;
 }
 
@@ -919,6 +927,7 @@ article:nth-child(4) #seoBlock {
   background: black;
   background: radial-gradient(circle, rgba(0, 0, 0, 0.77) 0%, rgba(0, 0, 0, 0.8) 31%, rgba(0, 0, 0, 0.85) 76%, black 100%);
   position: relative;
+  padding-bottom: 30px;
 }
 
 @media all and (min-width: 443px) {
@@ -929,6 +938,7 @@ article:nth-child(4) #seoBlock {
     border: white outset 3px;
     height: 80vh;
     padding-top: unset;
+    padding-bottom: unset;
   }
 }
 
@@ -1003,6 +1013,7 @@ article:nth-child(5) {
   width: 100%;
   background: #00192d;
   background: radial-gradient(circle, rgba(0, 25, 45, 0.462141) 7%, rgba(0, 25, 45, 0.8) 100%);
+  padding-bottom: 30px;
 }
 
 @media all and (min-width: 1024px) {
@@ -1014,6 +1025,7 @@ article:nth-child(5) {
     margin: auto;
     border: white outset 3px;
     margin-top: 0vh;
+    padding-bottom: unset;
   }
 }
 
