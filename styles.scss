@@ -992,26 +992,59 @@ article:nth-child(5) {
     // color:white;
 
     & .aboutFlex {
+        height:100vh;
         display:flex;
         align-items:center;
-        margin-left:10%;
-        margin-right:10%;
-        height:100vh;
+        @include desktopstyle() {
+            margin-left:10%;
+            margin-right:10%;
+            margin-bottom: unset;
+        }
+
+
+
+        & img {
+            position:absolute;
+            max-height:31%;
+            z-index:-6;
+            filter : opacity(20%);
+            @include desktopstyle() {
+                position:initial;
+                max-height:85%;
+                opacity:1;
+                filter: unset;
+            }
+
+            &:nth-child(1) {
+                left:-200px;
+                max-height:30%;
+                @include desktopstyle() {
+                    max-height: 85%;;
+                }
+            }
+
+            &:nth-child(2) {
+                right:-210px;
+            }
+    
+        }
 
         & p {
             line-height:3;
         }
 
         & .texte {
-            width:80%;
-            border-top: black solid 1px;
-            border-bottom: black solid 1px;
+            width:100%;
+            @include desktopstyle() {
+                width:80%;
+                border-top: black solid 1px;
+                border-bottom: black solid 1px;
+            }
+
         }
     }
 
-    & img {
-        max-height:85%;
-    }
+
 }
 
 .aboutTitle {
@@ -1029,9 +1062,12 @@ article:nth-child(5) {
         height:15vh;
 
         & + p {
-            width:70%;
+            width:88%;
             margin:auto;
             line-height:3;
+            @include tabletstyle() {
+                width:70%;
+            }
         }
     }
 }
@@ -1042,7 +1078,8 @@ article:nth-child(5) {
     z-index:-5;
     font-family: $primary-typo;
     // text-shadow: 5px 2px 3px rgba(0,0,0,0.3);
-    font-size : 3rem;
+    font-size : 2rem;
+    text-shadow: none;
     @include desktopstyle() {
         font-size:4em;
         // text-shadow: 10px 5px 4px rgba(0,0,0,0.3);

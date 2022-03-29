@@ -1100,15 +1100,54 @@ article:nth-child(5) h4, article:nth-child(5) p {
 }
 
 #about .aboutFlex {
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 10%;
-  margin-right: 10%;
-  height: 100vh;
+}
+
+@media all and (min-width: 1024px) {
+  #about .aboutFlex {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: unset;
+  }
+}
+
+#about .aboutFlex img {
+  position: absolute;
+  max-height: 31%;
+  z-index: -6;
+  -webkit-filter: opacity(20%);
+          filter: opacity(20%);
+}
+
+@media all and (min-width: 1024px) {
+  #about .aboutFlex img {
+    position: initial;
+    max-height: 85%;
+    opacity: 1;
+    -webkit-filter: unset;
+            filter: unset;
+  }
+}
+
+#about .aboutFlex img:nth-child(1) {
+  left: -200px;
+  max-height: 30%;
+}
+
+@media all and (min-width: 1024px) {
+  #about .aboutFlex img:nth-child(1) {
+    max-height: 85%;
+  }
+}
+
+#about .aboutFlex img:nth-child(2) {
+  right: -210px;
 }
 
 #about .aboutFlex p {
@@ -1116,13 +1155,15 @@ article:nth-child(5) h4, article:nth-child(5) p {
 }
 
 #about .aboutFlex .texte {
-  width: 80%;
-  border-top: black solid 1px;
-  border-bottom: black solid 1px;
+  width: 100%;
 }
 
-#about img {
-  max-height: 85%;
+@media all and (min-width: 1024px) {
+  #about .aboutFlex .texte {
+    width: 80%;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+  }
 }
 
 .aboutTitle {
@@ -1137,9 +1178,15 @@ article:nth-child(5) h4, article:nth-child(5) p {
 }
 
 #contactSection .h2Container + p {
-  width: 70%;
+  width: 88%;
   margin: auto;
   line-height: 3;
+}
+
+@media all and (min-width: 443px) {
+  #contactSection .h2Container + p {
+    width: 70%;
+  }
 }
 
 #contacth4 {
@@ -1147,7 +1194,8 @@ article:nth-child(5) h4, article:nth-child(5) p {
   -webkit-text-stroke-color: #FDF9F9;
   z-index: -5;
   font-family: "Sitka Heading", Arial;
-  font-size: 3rem;
+  font-size: 2rem;
+  text-shadow: none;
 }
 
 @media all and (min-width: 1024px) {
