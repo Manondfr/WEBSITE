@@ -311,19 +311,29 @@ h4 {
     width:279vw;
 
     & .serviceArticle__paragraph {
-        width:93vw;
+        width:100vw;
         grid-area: 1 / 1;
+        @include desktopstyle() {
+            width:93vw;
+        }
 
         & p {
-            width:50%;
+            width:90%;
+            @include desktopstyle() {
+                width:50%;
+            }
+
         }
     }
 }
 
 .h4Wrapper {
     display:grid;
-    width:93vw;
+    width:100vw;
     align-items:center;
+    @include desktopstyle() {
+        width:93vw;
+    }
 
     & .serviceArticle__h4 {
         grid-area: 1 / 1;
@@ -614,9 +624,13 @@ header {
 }
 
 .h2Container {
-    height:25vh;
-    margin:75vh auto 15vh auto;
-    position:sticky;
+    height:5vh;
+    margin: 55vh auto 15vh auto;
+    @include tabletstyle() {
+        height:25vh;
+        margin:75vh auto 15vh auto;
+        position:sticky;
+    }
 
 }
 
@@ -632,6 +646,7 @@ header {
         background: rgb(0,0,0);
         background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);  
         z-index:-1;
+        margin:0;
         @include desktopstyle() {
             box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
             height:80%;
