@@ -84,44 +84,6 @@ articles.forEach((article) => {
 
 
 
-// ESSAI MOUSE MOVE ARTICLES
-articles.forEach((article) => {
-  article.addEventListener("mousemove", function(e) {
-    // tilt(e.pageX, e.pageY, article)
-    console.log("hi")
-  })
-  article.addEventListener("mouseleave", function() {
-    // tilt(article.width()/2, article.height()/2);
-    console.log("bye")
-  })
-})
-
-
-
-
-
-function tilt(cx, cy, article) {
-	// var sxPos = cx / $panel.width() * 100 - 100;
-	// var syPos = cy / $panel.height() * 100 - 100;
-	var sxPos = (cx / $body.width()*100 - 50)*2 ;
-	var syPos = (cy / $body.height()*100 - 50)*2;
-	gsap.to(article, {
-		rotationY: -0.03 * sxPos,
-		rotationX: 0.03 * syPos,
-		// transformPerspective: 500,
-		transformOrigin: "center center -400",
-		ease: Expo.easeOut
-	});
-	// TweenMax.to($img, 2, {
-	// 	rotationY: -0.03 * sxPos,
-	// 	rotationX: 0.03 * syPos,
-	// 	transformPerspective: 500,
-	// 	transformOrigin: "center center -200",
-	// 	ease: Expo.easeOut
-	// });
-}
-
-
 
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());

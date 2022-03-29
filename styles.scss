@@ -231,7 +231,7 @@ h4 {
     }
 }
 
-.knowMoreButton {
+.callToAction {
     background-color: $text-color;
     padding:10px 15px;
     border:none;
@@ -248,29 +248,59 @@ h4 {
         margin-bottom:35px;
     }
 
-    &:hover {
-        opacity:0.8
+    &.knowMoreButton {
+        &:hover {
+            opacity:0.8
+        }
+    
+        &::after {
+            content:"EN SAVOIR PLUS";
+            // background-color: #1477ca;
+            background: rgb(20,119,202);
+            background: radial-gradient(circle, mix(white, rgba(20,119,202,1), 70%) 100%, rgba(20,119,202,0.7) 28%);
+            padding:10px 15px;
+            cursor:pointer;
+            border-radius: 8px;
+            color:black;
+            font-weight:600;
+            letter-spacing:2px;
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            opacity:var(--opacity);
+            transform: translateY(var(--translate))   rotateX(var(--rotate));;
+        }
     }
 
-    &::after {
-        content:"EN SAVOIR PLUS";
-        // background-color: #1477ca;
-        background: rgb(20,119,202);
-        background: radial-gradient(circle, mix(white, rgba(20,119,202,1), 70%) 100%, rgba(20,119,202,0.7) 28%);
-        padding:10px 15px;
-        cursor:pointer;
-        border-radius: 8px;
-        color:black;
-        font-weight:600;
-        letter-spacing:2px;
-        position:absolute;
-        top:0;
-        bottom:0;
-        left:0;
-        right:0;
-        opacity:var(--opacity);
-        transform: translateY(var(--translate))   rotateX(var(--rotate));;
+    &.contactUs {
+        &:hover {
+            opacity:0.8
+        }
+    
+        &::after {
+            content:"NOUS CONTACTER";
+            // background-color: #1477ca;
+            background: rgb(20,119,202);
+            background: radial-gradient(circle, mix(white, rgba(20,119,202,1), 70%) 100%, rgba(20,119,202,0.7) 28%);
+            padding:10px 15px;
+            cursor:pointer;
+            border-radius: 8px;
+            color:black;
+            font-weight:600;
+            letter-spacing:2px;
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            opacity:var(--opacity);
+            transform: translateY(var(--translate))   rotateX(var(--rotate));;
+        }
     }
+
+
 }
 
 .wrapper {
@@ -535,23 +565,44 @@ header {
 }
 
 #leaves {
-    top:160px;
-    z-index:4;
-    width:500px;
-    right:-170px;
+    display:none;
+    @include tabletstyle() {
+        display:initial;
+    }
+    @include desktopstyle() {
+        top:160px;
+        z-index:4;
+        width:500px;
+        right:-170px;
+    }
+
 }
 
 .leafdim2 {
-    left:-250px;
-    width:450px;
-    top:0px;
+    display:none;
+    @include tabletstyle() {
+        display:initial;
+    }
+    @include desktopstyle() {
+        left:-250px;
+        width:450px;
+        top:0px;
+    }
+
 }
 
 .leaf2 {
-    width:450px;
-    top:90px;
-    left:-160px;
-    z-index:-1;
+    display:none;
+    @include tabletstyle() {
+        display:initial;
+    }
+    @include desktopstyle() {
+        width:450px;
+        top:90px;
+        left:-160px;
+        z-index:-1;
+    }
+
 }
 
 //Section prestations OK
@@ -911,5 +962,98 @@ article:nth-child(5) {
         max-height:85%;
     }
 }
+
+.aboutTitle {
+    font-weight: 800;
+    font-size:1.3rem;
+}
+
+#contactSection {
+    // background-color: lighten($text-color, 65%);
+    // margin-top:0;
+
+    & .h2Container {
+        margin-bottom:0vh;
+        margin-top:25vh;
+        height:15vh;
+
+        & + p {
+            width:70%;
+            margin:auto;
+            line-height:3;
+        }
+    }
+}
+
+#contacth4 {
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: $background-color;    
+    z-index:-5;
+    font-family: $primary-typo;
+    // text-shadow: 5px 2px 3px rgba(0,0,0,0.3);
+    font-size : 3rem;
+    @include desktopstyle() {
+        font-size:4em;
+        // text-shadow: 10px 5px 4px rgba(0,0,0,0.3);
+        text-shadow: none;
+    }
+}
+
+
+// FOOTER
+
+footer {
+    background-color: $text-color;
+    margin-top:10vh;
+    margin-bottom:0;
+    text-align: center;
+    color:white;
+
+    & p {
+        font-weight: 800;
+    }
+
+    & a {
+
+        background-color: white;
+        border-radius: 50%;
+        height:40px;
+        width:40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 300ms;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        color:white;
+        margin:20px 0 0 0;
+        padding:0;
+
+        & li {
+            padding:0;
+            margin:0;
+        }
+    }
+
+}
+
+#socialMediaList {
+    display: flex;
+    justify-content: space-between;
+    margin:auto;
+    width:10%;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
 
 

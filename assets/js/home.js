@@ -135,7 +135,7 @@ aboutUs.forEach( (about) => {
 
 
 // Survol boutons Know More
-const items = document.querySelectorAll(".knowMoreButton");
+const items = document.querySelectorAll(".callToAction");
 
 items.forEach((item) => {
     const tl = gsap
@@ -278,7 +278,16 @@ articles.forEach((article) => {
 
 
 
+let textY = gsap.fromTo("#contactSection p", {opacity:0, scale:0.9}, {opacity:1, scale:1, yPercent:-10})
 
+ScrollTrigger.create({
+  trigger:"#contactSection",
+  scroller:"#scrollContainer",
+  animation: textY,
+  start:"top bottom",
+  scrub:1,
+  toggleActions: "play none none reverse",
+  })
 
 
 

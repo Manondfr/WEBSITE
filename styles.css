@@ -272,7 +272,7 @@ h4 {
   }
 }
 
-.knowMoreButton {
+.callToAction {
   background-color: #464646;
   padding: 10px 15px;
   border: none;
@@ -287,18 +287,42 @@ h4 {
 }
 
 @media all and (min-width: 1024px) {
-  .knowMoreButton {
+  .callToAction {
     margin-top: 30px;
     margin-bottom: 35px;
   }
 }
 
-.knowMoreButton:hover {
+.callToAction.knowMoreButton:hover {
   opacity: 0.8;
 }
 
-.knowMoreButton::after {
+.callToAction.knowMoreButton::after {
   content: "EN SAVOIR PLUS";
+  background: #1477ca;
+  background: radial-gradient(circle, #b9d6ef 100%, rgba(20, 119, 202, 0.7) 28%);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: var(--opacity);
+  -webkit-transform: translateY(var(--translate)) rotateX(var(--rotate));
+          transform: translateY(var(--translate)) rotateX(var(--rotate));
+}
+
+.callToAction.contactUs:hover {
+  opacity: 0.8;
+}
+
+.callToAction.contactUs::after {
+  content: "NOUS CONTACTER";
   background: #1477ca;
   background: radial-gradient(circle, #b9d6ef 100%, rgba(20, 119, 202, 0.7) 28%);
   padding: 10px 15px;
@@ -642,23 +666,59 @@ header svg {
 }
 
 #leaves {
-  top: 160px;
-  z-index: 4;
-  width: 500px;
-  right: -170px;
+  display: none;
+}
+
+@media all and (min-width: 443px) {
+  #leaves {
+    display: initial;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  #leaves {
+    top: 160px;
+    z-index: 4;
+    width: 500px;
+    right: -170px;
+  }
 }
 
 .leafdim2 {
-  left: -250px;
-  width: 450px;
-  top: 0px;
+  display: none;
+}
+
+@media all and (min-width: 443px) {
+  .leafdim2 {
+    display: initial;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .leafdim2 {
+    left: -250px;
+    width: 450px;
+    top: 0px;
+  }
 }
 
 .leaf2 {
-  width: 450px;
-  top: 90px;
-  left: -160px;
-  z-index: -1;
+  display: none;
+}
+
+@media all and (min-width: 443px) {
+  .leaf2 {
+    display: initial;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .leaf2 {
+    width: 450px;
+    top: 90px;
+    left: -160px;
+    z-index: -1;
+  }
 }
 
 @media all and (min-width: 1024px) {
@@ -982,5 +1042,105 @@ article:nth-child(5) h4, article:nth-child(5) p {
 
 #about img {
   max-height: 85%;
+}
+
+.aboutTitle {
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+#contactSection .h2Container {
+  margin-bottom: 0vh;
+  margin-top: 25vh;
+  height: 15vh;
+}
+
+#contactSection .h2Container + p {
+  width: 70%;
+  margin: auto;
+  line-height: 3;
+}
+
+#contacth4 {
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #FDF9F9;
+  z-index: -5;
+  font-family: "Sitka Heading", Arial;
+  font-size: 3rem;
+}
+
+@media all and (min-width: 1024px) {
+  #contacth4 {
+    font-size: 4em;
+    text-shadow: none;
+  }
+}
+
+footer {
+  background-color: #464646;
+  margin-top: 10vh;
+  margin-bottom: 0;
+  text-align: center;
+  color: white;
+}
+
+footer p {
+  font-weight: 800;
+}
+
+footer a {
+  background-color: white;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+}
+
+footer a:hover {
+  opacity: 0.8;
+}
+
+footer ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+footer ul li {
+  padding: 0;
+  margin: 0;
+}
+
+#socialMediaList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  width: 10%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
