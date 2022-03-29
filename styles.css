@@ -726,12 +726,13 @@ header svg {
 }
 
 .leafdim2 {
-  display: none;
+  left: -250px;
+  width: 300px;
+  top: 0px;
 }
 
 @media all and (min-width: 443px) {
   .leafdim2 {
-    display: initial;
     left: -250px;
     width: 450px;
     top: 0px;
@@ -739,12 +740,14 @@ header svg {
 }
 
 .leaf2 {
-  display: none;
+  width: 300px;
+  top: 90px;
+  left: -160px;
+  z-index: -1;
 }
 
 @media all and (min-width: 443px) {
   .leaf2 {
-    display: initial;
     width: 450px;
     top: 90px;
     left: -160px;
@@ -779,7 +782,7 @@ header svg {
 }
 
 #visualIdentityBlock {
-  width: 85%;
+  width: 88%;
   position: relative;
   background: black;
   background: radial-gradient(circle, rgba(0, 0, 0, 0.77) 0%, rgba(0, 0, 0, 0.8) 31%, rgba(0, 0, 0, 0.85) 76%, black 100%);
