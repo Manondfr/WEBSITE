@@ -103,7 +103,7 @@ section {
 
 article {
     // position:relative;
-    width:100%;
+    width:93%;
     z-index:-2;
     border:transparent solid 1px;
     margin:auto;
@@ -131,9 +131,9 @@ article {
 }
 
 article:nth-child(3), article:nth-child(6) {
-    // border:$text-color outset 3px;
-    // box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
-    background-color: black;
+    border:$text-color outset 3px;
+    box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+    // background-color: black;
     @include tabletstyle() {
         box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
         border:white outset 3px;
@@ -642,20 +642,22 @@ header {
     width:100%;    
 
     &Block {
-        width:100%;
+        width:95%;
         position:relative;
         // background-color: black;
         background: rgb(0,0,0);
         background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);  
         z-index:-1;
-        margin:0;
+        margin:auto;
         padding-bottom: 30px;
+        border:white outset 3px;
+        box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
         @include desktopstyle() {
-            box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+
             height:80%;
             width:93%;
-            margin:auto;
-            border:white outset 3px;
+
+
             padding-bottom: unset;
         }
     }
@@ -717,11 +719,13 @@ article:nth-child(3) {
     // background: rgb(105,118,111);
     // background: radial-gradient(circle, rgba(105,118,111,0.6621408328956583) 7%, rgba(105,118,111,1) 100%);
 
-    background: rgb(0,25,45);
-    background: radial-gradient(circle, rgba(0,25,45,0.4621408328956583) 7%, rgba(0,25,45,0.8) 100%);
+    // background: rgb(0,25,45);
+    // background: radial-gradient(circle, rgba(0,25,45,0.4621408328956583) 7%, rgba(0,25,45,0.8) 100%);
     padding-bottom: 30px;
     @include desktopstyle() {
         padding-bottom : unset;
+        background: rgb(0,25,45);
+        background: radial-gradient(circle, rgba(0,25,45,0.4621408328956583) 7%, rgba(0,25,45,0.8) 100%);
     }
 
     // background: rgb(81,91,103);
