@@ -104,10 +104,13 @@ section {
 article {
     // position:relative;
     height:100vh;
-    width:93%;
+    width:100%;
     z-index:-2;
     border:transparent solid 1px;
     margin:auto;
+    @include tabletstyle() {
+        width:93%;
+    }
 
     & p {
         width:90%;
@@ -128,10 +131,12 @@ article {
 article:nth-child(3), article:nth-child(6) {
     // border:$text-color outset 3px;
     // box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
-    box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
-    border:white outset 3px;
     background-color: black;
-    
+    @include tabletstyle() {
+        box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+        border:white outset 3px;
+    }
+
     & h3 {
         margin-top:10vh;
         margin-bottom:8vh;
@@ -647,6 +652,7 @@ header {
         background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);  
         z-index:-1;
         margin:0;
+        height:70%;
         @include desktopstyle() {
             box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
             height:80%;
@@ -748,11 +754,12 @@ article:nth-child(3) {
     
 
 article:nth-child(6) {
-    margin-top:15vh;
-    margin-bottom:15px;
     background: rgb(0,0,0);
     background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);
-    
+    @include tabletstyle() {
+        margin-top:15vh;
+        margin-bottom:15px;
+    }
 }
 
 article:nth-child(3), article:nth-child(6) {
@@ -786,7 +793,10 @@ article:nth-child(3), article:nth-child(6) {
 // Référencement
 article:nth-child(4) {
     height:100vh;
-    margin-top:15vh;
+
+    @include tabletstyle() {
+        margin-top:15vh;
+    }
     @include desktopstyle() {
         width:100%;
         // overflow:hidden;
@@ -794,14 +804,18 @@ article:nth-child(4) {
 
     & #seoBlock {
         height:80vh;
-        width:93%;
+        width:100%;
         margin:auto;
         // overflow-x:hidden;
-        box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
-        border:white outset 3px;
+
         background: rgb(0,0,0);
         background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);
         position:relative;
+        @include tabletstyle() {
+            width:93%;
+            box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+            border:white outset 3px;
+        }
 
         & img {
             transform:rotate(5deg);
