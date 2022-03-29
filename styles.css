@@ -143,10 +143,9 @@ article {
 }
 
 article p {
-  width: 30%;
   margin: 7% auto 0 auto;
   line-height: 3;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 @media all and (min-width: 443px) {
@@ -262,7 +261,7 @@ h3 span {
 }
 
 h4 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin: 0 20px 0 20px;
 }
 
