@@ -103,7 +103,7 @@ section {
 
 article {
     // position:relative;
-    width:93%;
+    width:88%;
     z-index:-2;
     border:transparent solid 1px;
     margin:auto;
@@ -130,8 +130,8 @@ article {
 }
 
 article:nth-child(3), article:nth-child(6) {
-    border:$text-color outset 3px;
     box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+    border:white outset 3px;
     // background-color: black;
     @include tabletstyle() {
         box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
@@ -204,6 +204,7 @@ h3 {
     line-height:1.3;
     font-weight:700;
     font-size:1.7rem;
+    margin-right:3px;
     @include desktopstyle() {
         font-size: 2.5rem;
         font-size:2rem;
@@ -732,11 +733,12 @@ article:nth-child(3) {
     // background: rgb(0,25,45);
     // background: radial-gradient(circle, rgba(0,25,45,0.4621408328956583) 7%, rgba(0,25,45,0.8) 100%);
     padding-bottom: 15px;
+    background: rgb(0,25,45);
+    background: radial-gradient(circle, rgba(0,25,45,0.4621408328956583) 7%, rgba(0,25,45,0.8) 100%);
     @include desktopstyle() {
         padding-bottom : unset;
-        // background: rgb(0,25,45);
-        // background: radial-gradient(circle, rgba(0,25,45,0.4621408328956583) 7%, rgba(0,25,45,0.8) 100%);
-        background-color: lighten($text-color,60%);
+  
+
     }
 
     // background: rgb(81,91,103);
@@ -811,7 +813,7 @@ article:nth-child(3), article:nth-child(6) {
 
 // Référencement
 article:nth-child(4) {
-    border:blue solid 1Px;
+    width:100%;
 
     @include tabletstyle() {
         margin-top:15vh;
@@ -823,14 +825,17 @@ article:nth-child(4) {
 
 
     & #seoBlock {
-        width:100%;
+        width:88%;
         margin:auto;
         // overflow-x:hidden;
         padding-top:5vh;
         background: rgb(0,0,0);
-        background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);
-        position:relative;
-        padding-bottom:15px;
+        background: radial-gradient(circle, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0.80) 31%, rgba(0,0,0,0.85) 76%, rgba(0,0,0,1) 100%);  
+        z-index:-1;
+        margin:auto;
+        padding-bottom: 15px;
+        border:white outset 3px;
+        box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
         @include tabletstyle() {
             width:93%;
             box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
@@ -887,8 +892,8 @@ article:nth-child(4) {
     & h4 {
         background:$text-color;
         color:pink;
-        font-size:2rem;
         width:90px;
+        font-size:1.5rem;
         letter-spacing:1.5px;
         line-height:1.3;
         font-weight:700;
@@ -897,6 +902,7 @@ article:nth-child(4) {
             width:120px;
             letter-spacing:2px;
             flex:1;
+            font-size:2rem;
         }
     }
 
@@ -905,7 +911,8 @@ article:nth-child(4) {
         // line-height:2;
         margin: auto;
         color:white;
-        width:80%;
+        width:80vw;
+        margin:3% auto 0 auto;
     }
 }
 
@@ -913,19 +920,21 @@ article:nth-child(4) {
 
 // // Social media
 article:nth-child(5) {
-    width:100%;
+    width:88%;
     // position:relative;
     // background-color: mix(#1b4533,rgba(0,0,0,0.5),22%);
     background: rgb(0,25,45);
+    box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+    border:white outset 3px;
     background: radial-gradient(circle, rgba(0,25,45,0.4621408328956583) 7%, rgba(0,25,45,0.8) 100%);
     padding-bottom:15px;
     // background-color: mix(rgba(20,119,202,0.1), rgba(70,70,70,0.3), 32%);
         @include desktopstyle() {
-        box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
+
         height:80%;
         width:93%;
         margin:auto;
-        border:white outset 3px;
+
         margin-top:0vh;
         padding-bottom:unset;
     }
@@ -934,7 +943,7 @@ article:nth-child(5) {
 
     & h3 {
         position:relative;
-        top:-73px;
+        top:-65px;
         @include desktopstyle() {
             text-align:left;
             margin-left:40px;
