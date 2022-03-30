@@ -453,12 +453,16 @@ header {
 }
 
 #servicesChoice {
-    margin-top:55vh;
+    @include desktopstyle() {
+        margin-top:55vh;
+    }
+
 }
 
 
 .flexServices {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-content:space-between;
     @include desktopstyle() {
         flex-direction: row;
@@ -480,6 +484,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin:auto;
     
     &:nth-child(2), &:nth-child(4) {
         @include desktopstyle() {
@@ -492,7 +497,10 @@ header {
         @include desktopstyle() {
             align-self:flex-end;
         }
+    }
 
+    &:nth-child(5) {
+        align-self:center;
     }
 
     & p {
@@ -517,8 +525,8 @@ header {
 }
 
 .roundService__circle {
-    width:35vw;
-    height:35vw;
+    width:25vw;
+    height:25vw;
     border-radius:50%;   
     border:dashed 2px rgba(0,0,0,0.3);
     background-color: rgba(253,249,249,0.3);
@@ -542,11 +550,12 @@ header {
     bottom:0;
     margin:auto;
     color:black;
+    -webkit-filter: grayscale(100%); /* Pour les navigateurs Chrome, Safari, Opera */
+    filter: grayscale(100%); /* Firefox */
     @include desktopstyle() {
         max-width:80%;
         max-height:60%;
-        -webkit-filter: grayscale(100%); /* Pour les navigateurs Chrome, Safari, Opera */
-        filter: grayscale(100%); /* Firefox */
+
     }
 }
 

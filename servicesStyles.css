@@ -542,15 +542,19 @@ header svg {
   margin-top: 0;
 }
 
-#servicesChoice {
-  margin-top: 55vh;
+@media all and (min-width: 1024px) {
+  #servicesChoice {
+    margin-top: 55vh;
+  }
 }
 
 .flexServices {
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-line-pack: justify;
       align-content: space-between;
 }
@@ -591,6 +595,7 @@ header svg {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  margin: auto;
 }
 
 @media all and (min-width: 1024px) {
@@ -606,6 +611,12 @@ header svg {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
+}
+
+.roundService:nth-child(5) {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .roundService p {
@@ -631,8 +642,8 @@ header svg {
 }
 
 .roundService__circle {
-  width: 35vw;
-  height: 35vw;
+  width: 25vw;
+  height: 25vw;
   border-radius: 50%;
   border: dashed 2px rgba(0, 0, 0, 0.3);
   background-color: rgba(253, 249, 249, 0.3);
@@ -658,16 +669,16 @@ header svg {
   bottom: 0;
   margin: auto;
   color: black;
+  -webkit-filter: grayscale(100%);
+  /* Pour les navigateurs Chrome, Safari, Opera */
+  filter: grayscale(100%);
+  /* Firefox */
 }
 
 @media all and (min-width: 1024px) {
   .roundService img {
     max-width: 80%;
     max-height: 60%;
-    -webkit-filter: grayscale(100%);
-    /* Pour les navigateurs Chrome, Safari, Opera */
-    filter: grayscale(100%);
-    /* Firefox */
   }
 }
 
