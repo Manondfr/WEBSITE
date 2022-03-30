@@ -550,16 +550,11 @@ header svg {
 }
 
 .flexServices {
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  margin: 6vh auto auto auto;
-  width: 70vw;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 3vh 0 0 0;
 }
 
 @media all and (min-width: 1024px) {
@@ -587,23 +582,25 @@ header svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
-  margin: 0 auto;
+  margin: 8px 0 0 20px;
 }
 
 @media all and (min-width: 1024px) {
   .roundService {
     margin: unset;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -622,15 +619,9 @@ header svg {
   }
 }
 
-.roundService:nth-child(5) {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
 .roundService p {
   font-family: "Sitka Heading", Arial;
-  margin-top: 15px;
+  margin-top: 25px;
   margin-bottom: 30px;
   font-weight: 600;
   font-size: 0.8rem;
@@ -651,13 +642,13 @@ header svg {
 }
 
 .roundService__circle {
-  width: 17vw;
-  height: 17vw;
+  width: 15vw;
+  height: 15vw;
   border-radius: 50%;
   border: dashed 2px rgba(0, 0, 0, 0.3);
   background-color: rgba(253, 249, 249, 0.3);
   position: relative;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
 @media all and (min-width: 1024px) {
