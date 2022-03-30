@@ -49,14 +49,16 @@ ScrollTrigger.create({
 const services = document.querySelectorAll(".roundService");
 
 services.forEach(service => {
-    const serviceRound = service.querySelector(".roundService__circle");
-    const hoverService = gsap.timeline({paused:true})
-    .to(serviceRound, {scale:1.1, border: "dashed 2px rgba(255,179,179,0.6)", backgroundColor: "rgba(253,249,249,0.5)", duration:0.2})
-    .to(serviceRound.querySelector("img"), {"filter": "grayscale(0%)", "-webkit-filter": "grayscale(100%)", duration:0.2}, 0.1)
-    .to(service.querySelector("p"), {opacity:1, duration:0.5}, 0.2)
-
-    service.addEventListener("mouseenter", () => hoverService.play());
-    service.addEventListener("mouseleave", () => hoverService.reverse());
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+        const serviceRound = service.querySelector(".roundService__circle");
+        const hoverService = gsap.timeline({paused:true})
+        .to(serviceRound, {scale:1.1, border: "dashed 2px rgba(255,179,179,0.6)", backgroundColor: "rgba(253,249,249,0.5)", duration:0.2})
+        .to(serviceRound.querySelector("img"), {"filter": "grayscale(0%)", "-webkit-filter": "grayscale(100%)", duration:0.2}, 0.1)
+        .fromTo(service.querySelector("p"), {opacity:0, scale:0.9}, {opacity:1, scale:1, duration:0.5}, 0.2)
+        
+        service.addEventListener("mouseenter", () => hoverService.play());
+        service.addEventListener("mouseleave", () => hoverService.reverse());
+      }
 
     service.addEventListener("click", function() {
         console.log("click")

@@ -173,9 +173,9 @@ h1 {
     position:relative;
     font-variant:small-caps;
     @include tabletstyle() {
-        padding:0 20px;
-        font-weight:400;
-        font-size:1.6em;
+        padding:0;
+        font-weight:600;
+        font-size:1.3em;
         line-height: 3;
     }
     @include desktopstyle() {
@@ -595,7 +595,7 @@ header {
 
 #leaves {
     display:none;
-    @include tabletstyle() {
+    @include desktopstyle() {
         display:initial;
         top:160px;
         z-index:4;
@@ -608,7 +608,7 @@ header {
     left:-250px;
     width:300px;
     top:0px;
-    @include tabletstyle() {
+    @include desktopstyle() {
         left:-250px;
         width:450px;
         top:0px;
@@ -621,7 +621,7 @@ header {
     top:90px;
     left:-160px;
     z-index:-1;
-    @include tabletstyle() {
+    @include desktopstyle() {
         width:450px;
         top:90px;
         left:-160px;
@@ -869,7 +869,7 @@ article:nth-child(4) {
         @include tabletstyle() {
             display:flex;
             justify-content: space-around;
-            width:90%;
+            width:90vw;
             margin:auto;
             position:relative;
         }
@@ -911,10 +911,14 @@ article:nth-child(4) {
 
     & p {
         // line-height:2;
-        margin: auto;
-        color:white;
-        width:80vw;
-        margin:3% auto 0 auto;
+        width:80%;
+        color:white;  
+        // @include desktopstyle() {
+            margin: auto;
+         
+            margin:3% auto 0 auto;
+        // }
+
     }
 }
 
@@ -1063,11 +1067,21 @@ article:nth-child(5) {
 
         & + p {
             width:88%;
-            margin:auto;
-            line-height:3;
+            margin:0 auto;
+            line-height:2.5;
             @include tabletstyle() {
                 width:70%;
+                line-height:3;
             }
+        }
+
+
+    }
+
+    & .contactUs {
+        margin-top:0;
+        @include desktopstyle() {
+            margin-top:30px;
         }
     }
 }
@@ -1096,6 +1110,7 @@ footer {
     margin-bottom:0;
     text-align: center;
     color:white;
+    padding-bottom:5px;
 
     & p {
         font-weight: 800;
@@ -1119,16 +1134,21 @@ footer {
 
     ul {
         list-style-type: none;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
         color:white;
         margin:20px 0 0 0;
         padding:0;
+        @include desktopstyle() {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
 
         & li {
-            padding:0;
-            margin:0;
+            margin:5px 0px;
+            @include desktopstyle() {
+                padding:0;
+                margin:0;
+            }
         }
     }
 
@@ -1138,9 +1158,12 @@ footer {
     display: flex;
     justify-content: space-between;
     margin:auto;
-    width:10%;
+    width:50%;
     padding-top:20px;
     padding-bottom:20px;
+    @include desktopstyle() {
+        width:10%;
+    }
 }
 
 
