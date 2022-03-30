@@ -3,32 +3,26 @@
 $background-color: #FDF9F9;
 $text-color:#464646;
 $underline-color:#FFB3B3;
-
 // Typographies
 $primary-typo:'Sitka Heading', Arial;
 $secondary-typo:'Raleway';
 $tertiary-typo:"Segoe UI", Arial;
-
-
 // MIXINS //
 @mixin smalltabletstyle {
     @media all and (min-width:443px) {
         @content;
     }
 }
-
 @mixin tabletstyle {
     @media all and (min-width:443px) {
         @content;
     }
 }
-
 @mixin desktopstyle {
     @media all and (min-width:1024px) {
         @content;
     }
 }
-
 // KEYFRAMES //
 @keyframes mouseLine {
     0% {
@@ -44,7 +38,6 @@ $tertiary-typo:"Segoe UI", Arial;
         opacity:0.9;
     }
 }
-
 @keyframes mouse {
     0% {
         opacity:0.9;
@@ -55,7 +48,6 @@ $tertiary-typo:"Segoe UI", Arial;
         transform:translateY(2px);
     }
 }
-
 @keyframes typewriter {
     0% {
         opacity:1;
@@ -67,7 +59,6 @@ $tertiary-typo:"Segoe UI", Arial;
         opacity:1;
     }
 }
-
 @keyframes movingBackground {
     0% {
         transform:translateX(-5px);
@@ -76,8 +67,6 @@ $tertiary-typo:"Segoe UI", Arial;
         transform:translateX(5px);
     }
 }
-
-
 // CSS
 //Général OK
 body {
@@ -89,19 +78,16 @@ body {
     background-color: $background-color;
     counter-reset: section;   
 }
-
 p, h1, button, article {
     margin:0;
     padding:0;
 }
-
 section {
     // overflow:hidden;
     width:100%;
     margin:auto;
     z-index:-5;   
 }
-
 article {
     
     & p {
@@ -116,7 +102,6 @@ article {
             line-height:3;
         }
     }
-
     & h4 {
         width:90%;
         margin:0 auto 0 auto;
@@ -128,28 +113,21 @@ article {
             position:relative;
     }
 }
-
-
 }
-
 video {
     position:absolute;
     top:0;
     left:0;
     z-index:-1;
 }
-
 h1, h2 {
     color:rgba(0,0,0,0.8);
     width:100%;
     text-align:center;
 }
-
 h3, h4, button {
     font-family: $tertiary-typo;
-
 }
-
 h1 {
     font-size:1em;
     padding:0 0 40px 40px;
@@ -169,7 +147,6 @@ h1 {
         font-weight:600;
     }
 }
-
 h2 {
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: $background-color;    
@@ -181,7 +158,6 @@ h2 {
         text-shadow: 10px 5px 4px rgba(0,0,0,0.3);
     }
 }
-
 h3 {
     color:#393939;
     text-shadow: 5px 2px #E2DEDE;
@@ -195,7 +171,6 @@ h3 {
         margin-left:40px;
     }
 }
-
 h4 {
     font-size: 1.3rem;
     // margin: 0 20px 0 20px;
@@ -205,20 +180,17 @@ h4 {
         text-align:center;
     }
 }
-
 .mobileOnly {
     @include tabletstyle() {
         display:none;
     }
 }
-
 .desktopOnly {
     display:none;
     @include desktopstyle() {
         display: initial;
     }
 }
-
 .knowMoreButton {
     background-color: $text-color;
     padding:10px 15px;
@@ -234,15 +206,13 @@ h4 {
         margin-bottom:35px;
     }
 }
-
 .carrouselIcons {
     margin-bottom:50px;
 }
-
-
 // Header OK
 header {
     display:flex;
+    margin:20px 40px 25vh 40px;
     margin:20px 40px 10vh 40px;
     justify-content:space-between;
     font-weight:900;
@@ -255,7 +225,6 @@ header {
         background-color: transparent;
         border:none;
     }    
-
     & nav
     {
         @include tabletstyle() {
@@ -280,7 +249,6 @@ header {
             @include desktopstyle() {
                 font-size:1.2em;
             }
-
         & li, a {
             text-decoration: none;
             color:white;
@@ -313,23 +281,18 @@ header {
             }
         }
     }
-
     img {
         max-width:50px;
     }
-
     svg {
         margin-top:10px;
     }
 }
-
-
 // Section hero OK
 #animateHero {
     visibility: hidden;
     overflow:hidden;
 }
-
 #heroSection {
     color:white;
     display:flex;
@@ -338,7 +301,6 @@ header {
     @include tabletstyle() {
         text-align: center;
     }
-
     &__videoCover {
         z-index:5;
         background-color: black;
@@ -350,13 +312,11 @@ header {
         right:0;
         bottom:0;
     }
-
     &__video{
         width:100%;
         height:100vh;
         object-fit:cover;
     }
-
     & p strong {     
         font-family:$secondary-typo;
         font-size:2.2em;
@@ -376,9 +336,7 @@ header {
             font-size:8em;
             letter-spacing:30px;
         }
-
     }
-
     &__mouseSvg svg {
         animation:mouse 900ms infinite;
         animation-direction:alternate;
@@ -386,7 +344,6 @@ header {
         top:83vh;
         left:50%;
     }
-
     &__mouseSvg::after {
         content:"";
         height:55px;
@@ -399,10 +356,8 @@ header {
         animation:mouseLine 1200ms infinite;
         transform-origin:top;
     }
-
     &__mobileLine {
         margin-top:5px;
-
         &Container {
             display:flex;
             align-items:center;
@@ -414,59 +369,49 @@ header {
         }
     }
 }
-
 .backgroundSvg {
     position:absolute;
     opacity:0.95;
 }
-
 #leaves {
     top:160px;
     z-index:4;
     width:500px;
     right:-170px;
 }
-
 .leafdim2 {
     left:-250px;
     width:450px;
     top:0px;
 }
-
 .leaf2 {
     width:450px;
     top:90px;
     left:-160px;
     z-index:-1;
 }
-
 .column {
     flex-direction: column;
     width:70%;
     text-align:center;
 }
-
 // Choix prestation
-
 .flex {
     display:flex;
     margin-top:0;
 }
-
 #servicesChoice {
     @include desktopstyle() {
         margin-top:55vh;
     }
-
 }
-
-
 .flexServices {
-    flex-direction: column;
-    margin: 3vh 0 0 0;
-    // align-items: flex-start;
-    // justify-content: flex-start;
-    // width:75vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content:space-between;
+    align-content:center;
+    margin: 6vh auto auto auto;
+    width:70vw;
     @include desktopstyle() {
         flex-direction: row;
         justify-content: space-between;
@@ -476,41 +421,41 @@ header {
         height:26vh;
         margin: 8vh auto auto auto;
     }
-
-
 }
-
 .roundService {
     z-index:5;
     display:flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin:8px 0 0 20px;;
+    text-align: center;
+    margin:auto;
+    margin:0 auto;
     @include desktopstyle() {
         margin:unset;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
-    
+
     &:nth-child(2), &:nth-child(4) {
         @include desktopstyle() {
             align-self:center;
         }
-
     }
-
     &:nth-child(3) {
         @include desktopstyle() {
             align-self:flex-end;
         }
     }
-
+    &:nth-child(5) {
+        align-self:center;
+    }
     & p {
         font-family: $primary-typo;
-        margin-top:25px;
+        margin-top:15px;
+        margin-bottom: 50px;;
         margin-bottom: 30px;;
         font-weight:600;
         font-size:0.8rem;
+        // max-width: 35vw;
         // max-width: 32vw;
         @include desktopstyle() {
             opacity:0;
@@ -520,28 +465,27 @@ header {
             max-width:8vw;
         }
     }
-
     &:hover {
         cursor:pointer;
     }
 }
 
 .roundService__circle {
-    width:15vw;
-    height:15vw;
+    width:25vw;
+    height:25vw;
+    width:17vw;
+    height:17vw;
     border-radius:50%;   
     border:dashed 2px rgba(0,0,0,0.3);
     background-color: rgba(253,249,249,0.3);
     position:relative;
-    margin: 0 20px;
+    margin: 0 10px;
     @include desktopstyle() {
         width:8vw;
         height:8vw;
         margin:unset;
-
     }
 }
-
 .roundService img {  
     max-width:80%;
     max-height:60%;
@@ -557,22 +501,17 @@ header {
     @include desktopstyle() {
         max-width:80%;
         max-height:60%;
-
     }
 }
-
 // Prestation
 .h2Container {
     height:25vh;
     margin:35vh auto 35vh auto;
     position:sticky;
-
 }
-
 article img {
     max-width:40%;
 }
-
 .number {
     font-weight:bold;
     font-size:7rem;
