@@ -274,8 +274,8 @@ h4 {
 
 @media all and (min-width: 1024px) {
   .knowMoreButton {
-    margin-top: 30px;
-    margin-bottom: 35px;
+    margin: auto auto 15px auto;
+    z-index: 40;
   }
 }
 
@@ -713,7 +713,6 @@ header svg {
 
 .h2Container__first {
   margin: 60vh auto 7vh auto;
-  border: green solid 1px;
 }
 
 .h3Container {
@@ -764,8 +763,18 @@ article img {
   cursor: pointer;
 }
 
-.wrap .knowMoreButton {
-  margin: auto auto 15px auto;
+.wrap .faces {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  width: inherit;
+  border: red solid 1px;
+  position: relative;
+}
+
+.wrap .back {
+  border: yellow solid 1Px;
+  position: absolute;
+  top: 0;
 }
 
 .wrap p {

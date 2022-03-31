@@ -217,8 +217,8 @@ h4 {
     margin-top:4vh;
     margin-bottom:6vh;
     @include desktopstyle() {
-        margin-top:30px;
-        margin-bottom:35px;
+        margin:auto auto 15px auto;
+        z-index:40;
     }
 }
 .carrouselIcons {
@@ -534,7 +534,6 @@ header {
 
     &__first {
         margin:60vh auto 7vh auto;
-        border:green solid 1px;
     }
 
 }
@@ -585,9 +584,19 @@ article img {
     transform: perspective(100rem); 
     cursor: pointer;
 
-    & .knowMoreButton {
-        margin:auto auto 15px auto;
+    & .faces {
+        backface-visibility: hidden;
+        width:inherit;
+        border: red solid 1px;
+        position: relative;
     }
+
+    & .back {
+        border:yellow solid 1Px;
+        position: absolute;
+        top:0;
+    }
+
 
     & p {
         font-size:0.95rem;

@@ -86,6 +86,14 @@ articles.forEach((article) => {
     pinSpacing:true,
     toggleActions: "restart none none reverse",
 })
+
+    article.querySelectorAll("button").forEach(button => {
+        button.addEventListener("click", function() {
+            let number = button.getAttribute("data-id");
+            console.log(number);
+            gsap.to(`.faces[data-id='${number}']`, {rotationY:180, duration:3, ease:"power1.inOut"})
+        })
+    })
 })
 
 
@@ -195,7 +203,7 @@ class parallaxTiltEffect {
   
     handleMouseEnter() {
       this.mouseOnComponent = true;
-      gsap.to(this.element, {scale:1.05, filter:"drop-shadow(10px 10px 10px rgba(0,0,0,0.2))"})
+      gsap.to(this.element, {scale:1.05, filter:"drop-shadow(0px 10px 10px rgba(0,0,0,1))"})
       this.container.classList.add("container--active");
     }
   
@@ -256,6 +264,9 @@ class parallaxTiltEffect {
     element: $('.wrap--6'),
     tiltEffect: 'reverse'
   });
+
+
+
 
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
