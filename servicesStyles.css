@@ -221,7 +221,6 @@ h3 {
   color: #393939;
   text-shadow: 5px 2px #E2DEDE;
   letter-spacing: 2px;
-  line-height: 1.3;
   font-weight: 700;
   font-size: 2rem;
 }
@@ -276,6 +275,7 @@ h4 {
   .knowMoreButton {
     margin: auto auto 15px auto;
     z-index: 40;
+    cursor: pointer;
   }
 }
 
@@ -760,21 +760,48 @@ article img {
           transform-style: preserve-3d;
   -webkit-transform: perspective(100rem);
           transform: perspective(100rem);
-  cursor: pointer;
 }
 
 .wrap .faces {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   width: inherit;
   border: red solid 1px;
   position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.wrap .face {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.wrap .face .face > * {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .wrap .back {
   border: yellow solid 1Px;
   position: absolute;
   top: 0;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.72)), to(rgba(0, 0, 0, 0.82)));
+  background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.82));
+  border-radius: 1.6rem;
+}
+
+.wrap .back .number {
+  font-size: 4rem;
+  line-height: initial;
+  margin: 0 auto;
+  font-weight: 800;
+  font-family: "Sitka Heading", Arial;
+}
+
+.wrap .front {
+  -webkit-transform: translateZ(1px);
+          transform: translateZ(1px);
 }
 
 .wrap p {
@@ -784,7 +811,6 @@ article img {
 .wrap h3, .wrap p {
   margin: auto;
   color: white;
-  line-height: 2.8;
   text-align: center;
 }
 

@@ -91,7 +91,8 @@ articles.forEach((article) => {
         button.addEventListener("click", function() {
             let number = button.getAttribute("data-id");
             console.log(number);
-            gsap.to(`.faces[data-id='${number}']`, {rotationY:180, duration:3, ease:"power1.inOut"})
+            // gsap.to(`.wrap--${number}`, {rotationY:180, duration:3, ease:"power1.inOut"})
+            gsap.to(`.faces[data-id="${number}"]`, {rotationY:180, duration:3, ease:"power1.inOut"})
         })
     })
 })
