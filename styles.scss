@@ -86,7 +86,7 @@ body {
     font-family:$primary-typo;
     height:auto;
     overflow-x: hidden;
-    background-color: $background-color;
+    background: url('assets/img/background.png');
 }
 
 p, h1, button, article {
@@ -109,7 +109,7 @@ article {
     margin:auto;
     margin-bottom:100px;
     @include tabletstyle() {
-        width:93%;
+        width:73%;
         height:100vh;
         margin-bottom:unset;
     }
@@ -153,6 +153,7 @@ video {
     top:0;
     left:0;
     z-index:-1;
+    opacity:0.8;
 }
 
 h1, h2 {
@@ -326,7 +327,7 @@ h4 {
         width:88vw;
         grid-area: 1 / 1;
         @include desktopstyle() {
-            width:93vw;
+            width:73vw;
         }
 
         & p {
@@ -344,7 +345,7 @@ h4 {
     width:88vw;
     align-items:center;
     @include desktopstyle() {
-        width:93vw;
+        width:73vw;
     }
 
     & .serviceArticle__h4 {
@@ -566,7 +567,7 @@ header {
         position:absolute;
         border: white 0.5px solid;
         background-color:white;
-        top:93vh;
+        top:73vh;
         left:50%;
         margin-left:12px;
         animation:mouseLine 1200ms infinite;
@@ -669,7 +670,7 @@ header {
         box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
         @include desktopstyle() {
             height:80%;
-            width:93%;
+            width:73%;
             padding-bottom: unset;
         }
     }
@@ -698,26 +699,33 @@ header {
         color:white;
     }
 
-    & img {
+    & .backgroundSvg {
         top: 60%;
+        @include desktopstyle() {
+            width:700px;
+            left:-45%;
+        }
+
     }
 
 }
 
 .square {
     position: absolute;
-    top:-50px;
-    right:-5%;
+    top:-10%;
+    right:-2%;
     z-index:-26;
-    opacity:0.5;
+    max-width:25%;
+    // opacity:0.5;
 
     &2 {
         position:absolute;
-        bottom:-1%;
+        bottom:0%;
         z-index:-26;
         right:-5%;
     }
 }
+
 
 // // Développement web, développement commercial OK
 article:nth-child(3) {
@@ -839,7 +847,7 @@ article:nth-child(4) {
         border:white outset 3px;
         box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
         @include tabletstyle() {
-            width:93%;
+            width:73%;
             box-shadow: -5px 10px 15px rgba(0,0,0,0.7), 5px 0px 15px rgba(0,0,0,0.7);
             border:white outset 3px;
             height:80vh;
@@ -938,7 +946,7 @@ article:nth-child(5) {
         @include desktopstyle() {
 
         height:80%;
-        width:93%;
+        width:73%;
         margin:auto;
 
         margin-top:0vh;
@@ -979,9 +987,10 @@ article:nth-child(5) {
 
     & .backgroundSvg {
         position:absolute;
-        top:0;
+        top:-100%;
         bottom:0;
-        right:-100%;
+        filter:grayscale(50%);
+        // right:-100%;
     }
     
 }
@@ -1105,12 +1114,13 @@ article:nth-child(5) {
 // FOOTER
 
 footer {
-    background-color: $text-color;
+    background: radial-gradient(circle, rgba(70,70,70, 0.3) 0%, rgba(70,70,70,0.3) 37%, rgba(70,70,70,0.3) 100%), url("assets/img/footerbackground.png") 50% 50%;
     margin-top:10vh;
     margin-bottom:0;
     text-align: center;
     color:white;
     padding-bottom:5px;
+    // border:red solid 1px;
 
     & p {
         font-weight: 800;

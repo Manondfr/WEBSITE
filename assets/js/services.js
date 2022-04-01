@@ -268,8 +268,183 @@ class parallaxTiltEffect {
 
 
 
+  let touchstartX = 0
+  let touchendX = 0
+  
+  
+  function handleGesture(article, tl) {
+    if ((touchstartX - touchendX) > 50) {
+      if(article.querySelector(".serviceArticle__paragraph3")) {
+          if(tl.previousLabel() == "paragraph3"){
+              tl.play("paragraph1");
+              let activeCircle = article.querySelector(".active");
+              activeCircle.classList.remove("active");
+              article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+            } else {
+              tl.play(tl.nextLabel());
+              let activeCircle = article.querySelector(".active");
+              activeCircle.classList.remove("active");
+              activeCircle.nextElementSibling.classList.add("active")
+            }
+      } else {
+          if(tl.previousLabel() == "paragraph2"){
+              tl.play("paragraph1");
+              let activeCircle = article.querySelector(".active");
+              activeCircle.classList.remove("active");
+              article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+            } else {
+              tl.play(tl.nextLabel());
+              let activeCircle = article.querySelector(".active");
+              activeCircle.classList.remove("active");
+              activeCircle.nextElementSibling.classList.add("active")
+            } 
+      }
+    }
+    if ((touchendX - touchstartX) > 50) {
+      if(tl.previousLabel() != "paragraph1"){
+          tl.reverse(tl.previousLabel())
+          let activeCircle = article.querySelector(".active");
+          activeCircle.classList.remove("active");
+          activeCircle.previousElementSibling.classList.add("active")
+        }
+    }
+  }
+  
+  articles.forEach((article) => {
+      let tl = gsap.timeline();
+      tl.add("paragraph1")
+      .fromTo(article.querySelector(".serviceArticle__paragraph1"), {opacity:0, scale:0.9}, {opacity:1, scale:1})
+      .fromTo(article.querySelector(".serviceArticle__h4_1 h4"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_1 .number"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_1 hr:nth-child(1)"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"left"}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_1 hr:last-child"), {opacity:0,scale:0.8}, {opacity:1, scale:1, transformOrigin:"right"}, "<")
+      .addPause()
+      .to(article.querySelector(".serviceArticle__paragraph1"), {opacity:0, scale:0.9})
+      .to(article.querySelector(".serviceArticle__h4_1 .number"), {opacity:0, scale:0.9}, "<")
+      .to(article.querySelector(".serviceArticle__h4_1 h4"), {opacity:0, scale:0.9}, "<")
+      .to(article.querySelectorAll(".serviceArticle__h4_1 hr"), {opacity:0}, "<")
+      .add("paragraph2")
+      .fromTo(article.querySelector(".serviceArticle__paragraph2"), {opacity:0, scale:0.9}, {opacity:1, scale:1})
+      .fromTo(article.querySelector(".serviceArticle__h4_2 h4"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_2 .number"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_2 hr:nth-child(1)"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"left"}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_2 hr:last-child"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"right"}, "<")
+      .addPause()
+      .to(article.querySelector(".serviceArticle__paragraph2"), {opacity:0, scale:0.9})
+      .to(article.querySelector(".serviceArticle__h4_2 .number"), {opacity:0, scale:0.9}, "<")
+      .to(article.querySelector(".serviceArticle__h4_2 h4"), {opacity:0, scale:0.9}, "<") 
+      .to(article.querySelectorAll(".serviceArticle__h4_2 hr"), {opacity:0}, "<")
+      .add("paragraph3")
+      .fromTo(article.querySelector(".serviceArticle__paragraph3"), {opacity:0, scale:0.9}, {opacity:1, scale:1})
+      .fromTo(article.querySelector(".serviceArticle__h4_3 h4"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_3 .number"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_3 hr:nth-child(1)"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"left"}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_3 hr:last-child"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"right"}, "<")
+      .addPause()
+      .to(article.querySelector(".serviceArticle__paragraph3"), {opacity:0, scale:0.9})
+      .to(article.querySelector(".serviceArticle__h4_3 .number"), {opacity:0, scale:0.9}, "<")
+      .to(article.querySelector(".serviceArticle__h4_3 h4"), {opacity:0, scale:0.9}, "<") 
+      .to(article.querySelectorAll(".serviceArticle__h4_3 hr"), {opacity:0}, "<")
+      .add("paragraph4")
+      .fromTo(article.querySelector(".serviceArticle__paragraph4"), {opacity:0, scale:0.9}, {opacity:1, scale:1})
+      .fromTo(article.querySelector(".serviceArticle__h4_4 h4"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_4 .number"), {opacity:0, scale:0.9}, {opacity:1, scale:1}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_4 hr:nth-child(1)"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"left"}, "<")
+      .fromTo(article.querySelector(".serviceArticle__h4_4 hr:last-child"), {opacity:0, scale:0.8}, {opacity:1, scale:1, transformOrigin:"right"}, "<")
+      .addPause()
+  
+      if(article.querySelector(".carrouselIcons .next")) {
+          article.querySelector(".carrouselIcons .next").addEventListener("click", function() {
+              if(article.querySelector(".serviceArticle__paragraph4")) {
+                  if(tl.previousLabel() == "paragraph4"){
+                      tl.play("paragraph1");
+                      let activeCircle = article.querySelector(".active");
+                      activeCircle.classList.remove("active");
+                      article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+                    } else {
+                      tl.play(tl.nextLabel());
+                      let activeCircle = article.querySelector(".active");
+                      activeCircle.classList.remove("active");
+                      activeCircle.nextElementSibling.classList.add("active")
+                    }
+              } else if(!article.querySelector(".serviceArticle__paragraph4") && article.querySelector(".serviceArticle__paragraph3") ) {
+                if(tl.previousLabel() == "paragraph3"){
+                    tl.play("paragraph1");
+                    let activeCircle = article.querySelector(".active");
+                    activeCircle.classList.remove("active");
+                    article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+                  } else {
+                    tl.play(tl.nextLabel());
+                    let activeCircle = article.querySelector(".active");
+                    activeCircle.classList.remove("active");
+                    activeCircle.nextElementSibling.classList.add("active")
+                  }
+              }
+              
+              
+              else {
+                  if(tl.previousLabel() == "paragraph2"){
+                      tl.play("paragraph1");
+                      let activeCircle = article.querySelector(".active");
+                      activeCircle.classList.remove("active");
+                      article.querySelector(".circle[data-label='paragraph1']").classList.add("active");
+                    } else {
+                      tl.play(tl.nextLabel());
+                      let activeCircle = article.querySelector(".active");
+                      activeCircle.classList.remove("active");
+                      activeCircle.nextElementSibling.classList.add("active")
+                    } 
+              }
+          });
+          article.querySelector(".carrouselIcons .prev").addEventListener("click", function() {
+              if(tl.previousLabel() != "paragraph1"){
+                  tl.reverse(tl.previousLabel())
+                  let activeCircle = article.querySelector(".active");
+                  activeCircle.classList.remove("active");
+                  activeCircle.previousElementSibling.classList.add("active")
+                }
+          });
+          article.querySelectorAll(".circle").forEach((circle) => {
+              circle.addEventListener("click", function() {
+                  tl.play(this.getAttribute("data-label"));
+                  article.querySelectorAll(".circle").forEach((circle) => {
+                      circle.classList.remove("active")
+                  })
+                  circle.classList.add("active");
+              })
+          })
+          article.addEventListener('touchstart', e => {
+          touchstartX = e.changedTouches[0].screenX
+          console.log(touchstartX);
+          })
+  
+          article.addEventListener('touchend', e => {
+          touchendX = e.changedTouches[0].screenX
+          console.log(touchendX);
+          handleGesture(article, tl)
+          })
+      }
+  })
+
+
+
+  // Survol boutons Know More
+const items = document.querySelectorAll(".callToAction");
+
+items.forEach((item) => {
+    const tl = gsap
+    .timeline({ paused: true })
+    .to(item, {color:"#464646", duration:0.1})
+    .fromTo(item, {
+        "--opacity": 0,
+    }, {"--opacity": 1, color:"black", y:-3, duration:0.2}, "<")
+
+  item.addEventListener("mouseenter", () => tl.play());
+  item.addEventListener("mouseleave", () => tl.reverse());
+})
 
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 ScrollTrigger.refresh(); 
+
 
