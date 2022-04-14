@@ -43,3 +43,27 @@ function eraseWord(word, index, number) {
         }
     }
 }
+
+function interactWithHamburgerMenu() {
+    let hamburgerMenu = document.querySelector("nav button");
+    let dropDownMenu = document.querySelector(".dropdownMenu");
+    let tl = gsap.timeline({paused:true})
+    .to("#line3", {opacity:0,duration:0.01})
+    .to(".dropdownMenu", {yPercent:100, duration:0.5, ease:"linear"}, "<")
+    .to("#line1", {y:35, transformOrigin:"top", duration:0.3, ease:"linear"}, "<")
+    .to("#line2", {y:35, transformOrigin:"top", duration:0.3, ease:"linear"}, "<")
+    .to("#line1", {rotate:45, scale:0.8, transformOrigin:"top", duration:0.3, ease:"linear"}, ">0.1")
+    .to("#line2", {rotate:-45, scale:0.8, transformOrigin:"top", duration:0.3, ease:"linear"}, "<")
+    .to("#navCircle circle", {opacity:1}, "<")
+    .fromTo("#navCircle circle", {drawSVG:"0%"}, {drawSVG:"100%", duration:1}, "<0.2")
+    .fromTo(".dropdownMenu li", {opacity:0}, {opacity:1, stagger:0.1}, "<0.1")
+    hamburgerMenu.addEventListener("click", function() {
+        if(dropDownMenu.classList.contains ("inactive")) {
+            dropDownMenu.classList.replace("inactive", "active");
+            tl.play();
+        } else {
+            tl.reverse();
+            dropDownMenu.classList.replace("active", "inactive");
+    };
+})
+}

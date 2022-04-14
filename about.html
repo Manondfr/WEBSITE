@@ -1,0 +1,159 @@
+<!-- Métas (à revoir) -->
+<!doctype html>
+<html lang="FR">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A remplir">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon_package_v0.16/favicon.ico">    
+    <link rel="stylesheet" href="generalStyles.css">
+    <link rel="stylesheet" href="aboutStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Orinoco - Ours en peluche tout doux</title>    
+</head>
+
+<body>
+         <!-- Scrollbar personnalisée -->
+         <div id="smooth-wrapper">
+            <!-- Sticky header -->
+            <div id="smooth-content">
+              <!-- Div apparition Hero -->
+                <div id="animateHero">
+
+                <!-- Header -->
+                <header data-scroll data-scroll-sticky data-scroll-target="#scrollTarget">
+                    <a href="index.html"><img src="assets/img/logo.png" alt="#"/></a>
+                    <nav aria-label="Menu de navigation principal">
+                        <button class="mobileOnly" aria-expanded="false" aria-controls="navigationMenu" aria-label="Bouton de menu de navigation déroulable">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="18" viewBox="0 0 30 18">
+                                <g transform="translate(-379.5 -24)">
+                                    <line x2="30" transform="translate(379.5 25.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                                    <line x2="30" transform="translate(379.5 40.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                                    <line x2="30" transform="translate(379.5 33.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                                </g>
+                            </svg>                      
+                        </button>
+                        <ul>
+                            <li><a aria-label="Bouton d'accès aux services" href="#">Services</a></li>
+                            <li><a aria-label="Bouton d'accès aux réalisations" href="#">Réalisations</a></li>
+                            <li><a aria-label="Bouton d'accès à la page A propos" href="#">A propos</a></li>
+                            <li><a aria-label="Bouton d'accès à la page de contact" href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <!-- Fin du header -->
+
+                <main>
+                    <!-- Section Hero -->
+                    <section id="heroSection">                
+                        <!-- Loader --> <div id="heroSection__videoCover"></div> 
+                        <video src="assets/videos/try.mp4" id="heroSection__video" preload autoplay loop muted>
+                            <p>Votre navigateur ne prend pas en charge les vidéos.</p>
+                        </video> 
+                        <p class="desktopOnly" id="heroSection__mouseSvg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="131.5" viewBox="0 0 37 131.5">
+                              <g transform="translate(-758 -949)" style="isolation: isolate">
+                                <rect class="desktopOnly" width="37" height="61" rx="18.5" transform="translate(758 951)" fill="#fff" opacity="0.35"/>
+                                <path class="desktopOnly" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v24A16.5,16.5,0,0,0,30.167,54.167,16.392,16.392,0,0,0,35,42.5v-24A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v24a18.5,18.5,0,0,1-37,0v-24A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 951)" fill="#fff"/>
+                                <rect class="desktopOnly" width="37" height="63" rx="18.5" transform="translate(758 949)" fill="none"/>
+                                <path class="desktopOnly" d="M18.5,2A16.5,16.5,0,0,0,2,18.5v26A16.5,16.5,0,0,0,30.167,56.167,16.392,16.392,0,0,0,35,44.5v-26A16.5,16.5,0,0,0,18.5,2m0-2A18.5,18.5,0,0,1,37,18.5v26a18.5,18.5,0,0,1-37,0v-26A18.5,18.5,0,0,1,18.5,0Z" transform="translate(758 949)" fill="#fff"/>
+                                <path class="desktopOnly" d="M1,22H-1V0H1Z" transform="translate(776.5 951.5)" fill="#fff"/>
+                              </g>
+                            </svg>
+                        </p>
+                        <div id="heroSection__mobileLineContainer" class="mobileOnly">
+                            <p><strong>A PROPOS</strong></p>
+                            <p class="mobileOnly" id="heroSection__mobileLine">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="126" height="15" viewBox="0 0 156 15">
+                                    <rect width="15" height="156" transform="translate(156) rotate(90)" fill="#fff"/>
+                                </svg>                  
+                            </p>  
+                        </div> 
+                        <img class="backgroundSvg leafdim2 desktopOnly" src="assets/img/leafdim2.png">
+                        <img class="backgroundSvg leaf2 desktopOnly" src="assets/img/leaf.png">
+                        <img class="backgroundSvg desktopOnly" id="leaves" src="assets/img/laves2.png">
+                    </section>            
+                    <!-- Fin de la section Hero -->
+
+                    <section id="aboutSection">
+                        <!-- <div id="circle"></div> -->
+                        <div class="h2Container h2Container__first">
+                            <h2><span>Mimouche, qu'est-ce que c'est ? </span><br>
+                            <span>Une agence de communication à Lyon, mais aussi...</span></h2>
+                        </div>
+                        <div class="h3Container coloredBg blue">
+                            <h3>... l'agence de communication située à Lyon qui rend le digital plus accessible.</h3>
+                            <p class="secondAppearance">Vous souhaitez entamer votre transformation digitale, mais ne savez pas par où commencer ? Nous vous orientons dans tout votre processus : création de site Web, référencement, gestion des réseaux sociaux… Nous sommes présents à chaque étape afin de vous expliquer le pourquoi et le comment de nos différentes prestations. Notre objectif ? Votre indépendance.</p>    
+                        </div>
+                        <div class="h3Container coloredBg pink">
+                            <h3>... une équipe à taille humaine, qui met votre satisfaction au cœur de son processus de travail.</h3>
+                            <div class="flex">
+                                <div class="secondAppearance">
+                                    <p>1</p>
+                                    <h4>Disponibilité</h4>
+                                    <p>Blablabla.</p>
+                                </div>
+                                <div class="secondAppearance">
+                                    <p>1</p>
+                                    <h4>Disponibilité</h4>
+                                    <p>Blablabla.</p>
+                                </div>
+                                <div class="secondAppearance">
+                                    <p>1</p>
+                                    <h4>Disponibilité</h4>
+                                    <p>Blablabla.</p>
+                                </div>
+                                <div class="secondAppearance">
+                                    <p>1</p>
+                                    <h4>Disponibilité</h4>
+                                    <p>Blablabla.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h3Container">
+                            <h3 class="coloredBg green">... deux passionnés à votre service.</h3>
+                        </div>
+
+                    </section>
+
+                    
+
+
+
+                    <!-- Section Contact -->
+              <section class="animatedSection" id="contactSection">
+                <div class="h2Container h2Container__last">
+                  <h2 id="contacth4">Prêt à franchir le pas ?</h2>
+                </div>
+                <p>Nemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos pagos adventans velut mutato repente consilio ad placidiora deverti. Nemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos pagos adventans velut mutato repente consilio ad placidiora deverti.Nemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos.</p>
+                <button class="callToAction contactUs">NOUS CONTACTER</button>
+              </section>
+          </main>
+          <footer>
+            <div id="socialMediaList">
+              <a aria-label="Logo Facebook cliquable" class="social" href="#"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+              <a aria-label="Logo Instagram cliquable" class="social" href="#"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+              <a aria-label="Logo LinkedIn cliquable" class="social" href="#"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+            </div>
+            <p>Agence@2022</p>
+            <ul>
+              <li>00.00.00.00.00</li>
+              <li>141 Avenue Franklin Roosevelt, 69500 BRON</li>
+
+              <li>Mentions légales</li>
+            </ul>
+          </footer>
+
+
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="gsap-shockingly-green/minified/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+        <script src="gsap-shockingly-green/minified/ScrollSmoother.min.js"></script>
+        <!-- <script src="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.js"></script> -->
+        <script src="assets/js/functionManager.js"></script>
+        <script src="assets/js/about.js"></script>
+</body>

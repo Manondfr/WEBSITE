@@ -1,21 +1,29 @@
-gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-const locoScroll = new LocomotiveScroll({
-    el:document.querySelector('[data-scroll-container]'),
-    smooth:true
+gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother);
+
+// const locoScroll = new LocomotiveScroll({
+//     el:document.querySelector('[data-scroll-container]'),
+//     smooth:true
+// });
+
+// locoScroll.on("scroll", ScrollTrigger.update());
+
+// ScrollTrigger.scrollerProxy('[data-scroll-container]', {
+//     scrollTop(value) {
+//       return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+//     }, 
+//     getBoundingClientRect() {
+//       return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+//     },
+//     pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
+//   });
+
+let smoother = ScrollSmoother.create({
+  smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
+  smoothTouch:0.1,
+
+
 });
-
-locoScroll.on("scroll", ScrollTrigger.update());
-
-ScrollTrigger.scrollerProxy('[data-scroll-container]', {
-    scrollTop(value) {
-      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    }, 
-    getBoundingClientRect() {
-      return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-    },
-    pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
-  });
 
 function init() {
     let heroTimeline = gsap.timeline()
@@ -35,6 +43,15 @@ window.addEventListener("load", function(event) {
     init();
 })
 
+document.querySelector("#heroSection__mouseSvg").addEventListener("click", (e) => {
+    // smoother.scrollTo("#servicesSection", true, "top")
+    gsap.to(smoother, {
+      scrollTop: smoother.offset(".h2Container__first", "top"),
+      duration:2.5,
+      ease: "back.out(1.2)"
+    })
+  })
+
 let leavesMoving = gsap.timeline()
 .to(".leaf2", {rotation:2.5, yoyo:true, repeat:-1, duration:7,ease: "sine.inOut", transformOrigin:"left"})
 .to(".leafdim2", {rotation:3, yoyo:true, repeat:-1, duration:6.5,ease: "sine.inOut", transformOrigin:"left"}, 0.5)
@@ -46,7 +63,6 @@ ScrollTrigger.create({
     trigger:"#heroSection video",
     animation:headerChangeColor,
     start:"bottom 50",
-    scroller:"#scrollContainer",
     toggleActions:"play none none reverse"
 })
 
@@ -82,7 +98,6 @@ articles.forEach((article) => {
     animation:h2Typewriting,
     start:"top 80%",
     end:"+=900",
-    scroller:"#scrollContainer",
     pinSpacing:true,
     toggleActions: "restart none none reverse",
 })

@@ -1,0 +1,72 @@
+// VARIABLES //
+// Couleurs
+$background-color: #FDF9F9;
+$text-color:#464646;
+$underline-color:#FFB3B3;
+
+// Typographies
+$primary-typo:'Sitka Heading', Arial;
+$secondary-typo:'Raleway';
+$tertiary-typo:"Segoe UI", Arial;
+
+
+// MIXINS //
+@mixin tabletstyle {
+    @media all and (min-width:443px) {
+        @content;
+    }
+}
+
+@mixin desktopstyle {
+    @media all and (min-width:1024px) {
+        @content;
+    }
+}
+
+// KEYFRAMES //
+@keyframes mouseLine {
+    0% {
+        transform: scale(0);
+        opacity:1;
+    }
+    30% {
+        transform: scale(0.2);
+        opacity:0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity:0.9;
+    }
+}
+
+@keyframes mouse {
+    0% {
+        opacity:0.9;
+        transform:translateY(0);
+    }
+    100% {
+        opacity:1;
+        transform:translateY(2px);
+    }
+}
+
+@keyframes typewriter {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@keyframes movingBackground {
+    0% {
+        transform:translateX(-5px);
+    }
+    100% {
+        transform:translateX(5px);
+    }
+}

@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon_package_v0.16/favicon.ico">    
-    <link rel="stylesheet" href="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.css">
+    <!-- <link rel="stylesheet" href="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.css"> -->
+    <link rel="stylesheet" href="generalStyles.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Orinoco - Ours en peluche tout doux</title>    
@@ -15,30 +16,43 @@
 
 <body>
      <!-- Scrollbar personnalisée -->
-    <div id="scrollContainer" data-scroll-container>
+    <div id="smooth-wrapper">
       <!-- Sticky header -->
-      <div id="scrollTarget">
+      <div id="smooth-content">
         <!-- Div apparition Hero -->
         <div id="animateHero">
 
           <!-- Header -->
-          <header data-scroll data-scroll-sticky data-scroll-target="#scrollTarget">
-              <a href="index.html"><img src="assets/img/logo.png" alt="#" href="services.html"/></a>
+          <header>
+              <a href="index.html"><img src="assets/img/logo.png" alt="#" href="index.html"/></a>
               <nav aria-label="Menu de navigation principal">
-                  <button class="mobileOnly" aria-expanded="false" aria-controls="navigationMenu" aria-label="Bouton de menu de navigation déroulable">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="18" viewBox="0 0 30 18">
-                          <g transform="translate(-379.5 -24)">
-                              <line x2="30" transform="translate(379.5 25.5)" fill="none" stroke="#fff" stroke-width="3"/>
-                              <line x2="30" transform="translate(379.5 40.5)" fill="none" stroke="#fff" stroke-width="3"/>
-                              <line x2="30" transform="translate(379.5 33.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                  <button class="mobileOnly" aria-expanded="false" aria-label="Bouton de menu de navigation déroulable">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+                        <g data-name="Groupe 3560" transform="translate(-372 -11)">
+                          <g>
+                            <line id="line1" data-name="Ligne 86" x2="30" transform="translate(379.5 25.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                            <line id="line2" data-name="Ligne 87" x2="30" transform="translate(379.5 40.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                            <line id="line3" data-name="Ligne 88" x2="30" transform="translate(379.5 33.5)" fill="none" stroke="#fff" stroke-width="3"/>
                           </g>
-                      </svg>                      
+                          <g id="navCircle" transform="translate(372 11)" fill="none">
+                            <circle cx="22.5" cy="22.5" r="22" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+                          </g>
+                        </g>
+                      </svg>
+                      
+                                          
                   </button>
+                  <ul class="dropdownMenu inactive">
+                    <li><a aria-label="Bouton d'accès aux services" href="services.html">Services</a></li>
+                    <li><a aria-label="Bouton d'accès aux réalisations" href="realisations.html">Réalisations</a></li>
+                    <li><a aria-label="Bouton d'accès à la page A propos" href="about.html">A propos</a></li>
+                    <li><a aria-label="Bouton d'accès à la page de contact" href="contact.html">Contact</a></li>
+                  </ul>
                   <ul>
                       <li><a aria-label="Bouton d'accès aux services" href="services.html">Services</a></li>
                       <li><a aria-label="Bouton d'accès aux réalisations" href="realisations.html">Réalisations</a></li>
-                      <li><a aria-label="Bouton d'accès à la page A propos" href="#">A propos</a></li>
-                      <li><a aria-label="Bouton d'accès à la page de contact" href="#">Contact</a></li>
+                      <li><a aria-label="Bouton d'accès à la page A propos" href="about.html">A propos</a></li>
+                      <li><a aria-label="Bouton d'accès à la page de contact" href="contact.html">Contact</a></li>
                   </ul>
               </nav>
           </header>
@@ -86,13 +100,9 @@
 
 
                 <!-- Identité visuelle -->
-                <article class="serviceArticle" id="visualIdentity">
-                  <!-- <svg class="square desktopOnly" xmlns="http://www.w3.org/2000/svg" width="295" height="295" viewBox="0 0 295 295">
-                    <rect id="Rectangle_601" data-name="Rectangle 601" width="295" height="295" fill="#1477ca"/>
-                  </svg>     -->
-                  <img class="square desktopOnly" alt="#" src="assets/img/essaipinkbackground.png">              
-                  <div id="visualIdentityBlock">                    
-                    <h3>Identité <br><span>visuelle</span></h3>
+                <article class="serviceArticle" id="visualIdentity">           
+                  <div class="blackArticle" id="visualIdentityBlock">                    
+                    <h3 class="decale">Identité <br><span>visuelle</span></h3>
                     <div class="h4Wrapper">
                       <div class="h4Container serviceArticle__h4 serviceArticle__h4_1">
                         <hr class="desktopOnly"><h4>Création de logo</h4><hr class="desktopOnly">
@@ -166,7 +176,7 @@
                 </article>
 
                   <!-- Développement Web -->
-                  <article class="serviceArticle">
+                  <article class="serviceArticle blueArticle">
 
                     <!-- <div class="coverArticle"></div> -->
                     <h3>Développement Web</h3>
@@ -221,8 +231,7 @@
                   </article>
 
                 <!-- Référencement -->
-                <article class="serviceArticle">
-                  <div id="seoBlock"> 
+                <article class="serviceArticle blackArticle">
                     <!-- <img src="assets/img/pinkLine.png">                    -->
                     <h3><span>Référencement</span></h3>
                     <div id="seo__h4Container">
@@ -239,14 +248,13 @@
                         <button class="callToAction knowMoreButton desktopOnly">EN SAVOIR PLUS</button>
                       </div>
                       <button class="callToAction knowMoreButton mobileOnly">EN SAVOIR PLUS</button>
-                    </div>
-                  </div>               
+                    </div>             
                 </article>
 
                 <!-- Réseaux sociaux -->
-                <article class="serviceArticle">                
+                <article class="serviceArticle blueArticle">                
                   <div>                    
-                      <h3>Réseaux <br><span>sociaux</span></h3>
+                      <h3 class="decale">Réseaux <br><span>sociaux</span></h3>
                   <div class="h4Wrapper">
                     <div class="h4Container serviceArticle__h4 serviceArticle__h4_1">
                       <hr class="desktopOnly"><h4>Stratégie digitale & Community Management</h4><hr class="desktopOnly">
@@ -298,7 +306,7 @@
                 </article>
 
                 <!-- Développement commercial -->
-                <article class="serviceArticle" id="commercialSection">     
+                <article class="serviceArticle blackArticle" id="commercialSection">     
   
                   <h3><span>Développement commercial</span></h3>
                   <div class="h4Wrapper">
@@ -363,10 +371,6 @@
                     </svg>
                   </div>      
               </article>
-              <!-- <svg class="square2 desktopOnly" xmlns="http://www.w3.org/2000/svg" width="295" height="295" viewBox="0 0 295 295">
-                <rect id="Rectangle_601" data-name="Rectangle 601" width="295" height="295" fill="#F1A0A4"/>
-              </svg>    -->
-              <img class="backgroundSvg square2" src="assets/img/essaibluebackground.png">
             </section>
             <!-- FIN DE LA SECTION PRESTATIONS -->
 
@@ -420,14 +424,16 @@
               <li>Mentions légales</li>
             </ul>
           </footer>
-    <span class="c-scrollbar"></span>
+    <!-- <span class="c-scrollbar"></span> -->
     </div>
     </div>
   </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="gsap-shockingly-green/minified/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
-    <script src="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.js"></script>
+    <script src="gsap-shockingly-green/minified/ScrollSmoother.min.js"></script>
+    <script src="gsap-shockingly-green/minified/DrawSVGPlugin.min.js"></script>
+    <!-- <script src="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.js"></script> -->
     <script src="assets/js/functionManager.js"></script>
     <script src="assets/js/home.js"></script>
 </body>

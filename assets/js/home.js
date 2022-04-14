@@ -1,21 +1,31 @@
-gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-const locoScroll = new LocomotiveScroll({
-    el:document.querySelector('[data-scroll-container]'),
-    smooth:true
+gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
+
+// const locoScroll = new LocomotiveScroll({
+//     el:document.querySelector('[data-scroll-container]'),
+//     smooth:true
+// });
+
+// locoScroll.on("scroll", ScrollTrigger.update());
+
+// ScrollTrigger.scrollerProxy('[data-scroll-container]', {
+//     scrollTop(value) {
+//       return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+//     }, 
+//     getBoundingClientRect() {
+//       return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+//     },
+//     pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
+//   });
+
+let smoother = ScrollSmoother.create({
+  smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
+  smoothTouch:0.1,
+
+
 });
 
-locoScroll.on("scroll", ScrollTrigger.update());
-
-ScrollTrigger.scrollerProxy('[data-scroll-container]', {
-    scrollTop(value) {
-      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    }, 
-    getBoundingClientRect() {
-      return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-    },
-    pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
-  });
+interactWithHamburgerMenu()
 
 function init() {
     let heroTimeline = gsap.timeline()
@@ -25,7 +35,7 @@ function init() {
     .from("a img", {yPercent:-160}, ">")
     .from("nav ul li", {yPercent:-240, stagger:0.1, duration:0.3}, "<0.2")
     .from("#heroSection__mouseSvg", {opacity:0, yoyo:true, repeat:2, duration:0.3}, "<")
-    .from("h1", {y:50, ease:"back(1.5)", duration:0.8}, "<")
+    .from("h1", {y:50, opacity:0, ease:"back(1.5)", duration:0.8}, "<")
     .from("p strong", {opacity:0}, ">")
     .from(".leaf2", {xPercent:-100, duration:0.8}, "<")
     .from(".leafdim2", {xPercent:-100, duration:0.8}, "<")
@@ -37,6 +47,15 @@ window.addEventListener("load", function(event) {
     setTimeout(() => {
         typewriter(0);
     }, 2000)
+})
+
+document.querySelector("#heroSection__mouseSvg").addEventListener("click", (e) => {
+  // smoother.scrollTo("#servicesSection", true, "top")
+  gsap.to(smoother, {
+    scrollTop: smoother.offset("#servicesSection", "top"),
+    duration:2.5,
+    ease: "back.out(1.2)"
+  })
 })
 
 let leavesMoving = gsap.timeline()
@@ -68,7 +87,6 @@ ScrollTrigger.create({
     trigger:"#heroSection video",
     animation:headerChangeColor,
     start:"bottom 50",
-    scroller:"#scrollContainer",
     toggleActions:"play none none reverse"
 })
 
@@ -83,7 +101,6 @@ sections.forEach((section) => {
     animation:h2Typewriting,
     start:"top 50%",
     end:"+=900",
-    scroller:"#scrollContainer",
     pinSpacing:true,
     toggleActions: "restart none none reverse",
 })
@@ -106,7 +123,6 @@ articles.forEach( (article) => {
 
     ScrollTrigger.create({
     trigger:article,
-    scroller:"#scrollContainer",
     animation: tl,
     start:"top bottom",
     end:"center bottom",
@@ -125,7 +141,6 @@ aboutUs.forEach( (about) => {
 
     ScrollTrigger.create({
         trigger:document.querySelector("#about"),
-        scroller:"#scrollContainer",
         animation: tl,
         start:"top bottom",
         scrub:4,
@@ -284,7 +299,6 @@ let textY = gsap.fromTo("#contactSection p", {opacity:0, scale:0.9}, {opacity:1,
 
 ScrollTrigger.create({
   trigger:"#contactSection",
-  scroller:"#scrollContainer",
   animation: textY,
   start:"top bottom",
   scrub:1,
@@ -378,5 +392,5 @@ ScrollTrigger.create({
 
 
 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh();
+// ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+// ScrollTrigger.refresh();

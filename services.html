@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon_package_v0.16/favicon.ico">    
-    <link rel="stylesheet" href="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="generalStyles.css">
     <link rel="stylesheet" href="servicesStyles.css">
-    <!-- <link rel="stylesheet" href="styles.css">s -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Orinoco - Ours en peluche tout doux</title>    
 </head>
 
 <body>
          <!-- Scrollbar personnalisée -->
-         <div id="scrollContainer" data-scroll-container>
+         <div id="smooth-wrapper">
             <!-- Sticky header -->
-            <div id="scrollTarget">
+            <div id="smooth-content">
               <!-- Div apparition Hero -->
                 <div id="animateHero">
 
@@ -359,7 +359,7 @@
 
                     <!-- Section Contact -->
               <section class="animatedSection" id="contactSection">
-                <div class="h2Container">
+                <div class="h2Container h2Container__last">
                   <h2 id="contacth4">Prêt à franchir le pas ?</h2>
                 </div>
                 <p>Nemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos pagos adventans velut mutato repente consilio ad placidiora deverti. Nemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos pagos adventans velut mutato repente consilio ad placidiora deverti.Nemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus fiducia vestri ductante barbaricos.</p>
@@ -387,9 +387,10 @@
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+        <script src="gsap-shockingly-green/minified/ScrollTrigger.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
-        <script src="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.js"></script>
+        <script src="gsap-shockingly-green/minified/ScrollSmoother.min.js"></script>
+        <!-- <script src="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.js"></script> -->
         <script src="assets/js/functionManager.js"></script>
-        <script src="assets/js/services.js"></script> 
+        <script src="assets/js/services.js"></script>
 </body>

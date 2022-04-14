@@ -1,0 +1,203 @@
+@-webkit-keyframes mouseLine {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  30% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0.9;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes mouseLine {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  30% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0.9;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+@-webkit-keyframes mouse {
+  0% {
+    opacity: 0.9;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+}
+
+@keyframes mouse {
+  0% {
+    opacity: 0.9;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+}
+
+@-webkit-keyframes typewriter {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes typewriter {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes movingBackground {
+  0% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+
+@keyframes movingBackground {
+  0% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+
+section {
+  text-align: center;
+}
+
+.h2Container {
+  height: 5vh;
+  margin: 55vh auto 15vh auto;
+}
+
+@media all and (min-width: 443px) {
+  .h2Container {
+    height: 25vh;
+    margin: 65vh auto 15vh auto;
+    position: -webkit-sticky;
+    position: sticky;
+    font-size: 2.2rem;
+  }
+}
+
+.h2Container span {
+  display: block;
+}
+
+.h2Container span:last-child {
+  font-size: 2.1rem;
+}
+
+h3, p {
+  width: 80%;
+  margin: auto;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+h3 {
+  font-size: 1.7rem;
+  font-family: "Sitka Heading", Arial;
+}
+
+.h3Container {
+  margin: 10vh auto;
+  padding: 20vh 0;
+}
+
+.h3Container.blue {
+  background: url("./assets/img/essaibluebackground.png") fixed no-repeat;
+  background-position: 90% 25%;
+  background-size: 30% 80%;
+}
+
+.h3Container p {
+  line-height: 3;
+  margin: 7% auto 0 auto;
+  font-size: 0.8rem;
+}
+
+@media all and (min-width: 443px) {
+  .h3Container p {
+    width: 80%;
+    font-size: 1rem;
+    margin: 40px auto 0 auto;
+    line-height: 3;
+  }
+}
+
+#circle {
+  background: #7aa2af;
+  background: linear-gradient(317deg, red 7%, yellow 100%);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#aboutSection {
+  position: relative;
+}
+
+.flex .secondAppearance {
+  border-radius: 50%;
+  background: url("./assets/img/essaibluebackground.png") fixed no-repeat;
+  background-position: 90% 25%;
+  background-size: 100% 100%;
+}
+/*# sourceMappingURL=aboutStyles.css.map */
