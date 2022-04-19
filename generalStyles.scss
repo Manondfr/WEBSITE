@@ -22,6 +22,8 @@
 
 // CSS
 // Général
+
+
 body {
     margin:0;
     padding:0;
@@ -96,7 +98,7 @@ h3 {
 
     & span {
         position:relative;
-        color:#CFD0D1;
+        color:white;
         text-shadow:none;
     }
 
@@ -135,7 +137,6 @@ h3 {
 
 .callToAction {
     background-color: $text-color;
-    padding:10px 15px;
     border:none;
     border-radius: 8px;
     color:white;
@@ -143,13 +144,8 @@ h3 {
     font-size:0.8rem;
     font-weight:600;
     position:relative;
-    overflow:hidden;
-    margin:4vh auto 6vh auto;
-    @include desktopstyle() {
-        margin-top:30px;
-        margin-bottom:35px;
-        font-size:0.9rem;
-    }
+    // overflow:hidden;
+
 
     &.knowMoreButton {
         &:hover {
@@ -158,11 +154,11 @@ h3 {
     
         &::after {
             content:"EN SAVOIR PLUS";
-            background: rgb(20,119,202);
-            background: radial-gradient(circle, mix(white, rgba(20,119,202,1), 70%) 100%, rgba(20,119,202,0.7) 28%);
-            padding:10px 15px;
+            background: lighten($color: $text-color, $amount: 80%);
             cursor:pointer;
             border-radius: 8px;
+            border:$text-color solid 1px;
+            box-shadow: rgba(0,0,0,.4) 0px 5px 6px;
             color:black;
             font-weight:600;
             letter-spacing:2px;
@@ -183,12 +179,37 @@ h3 {
     
         &::after {
             content:"NOUS CONTACTER";
-            background: rgb(20,119,202);
-            background: radial-gradient(circle, mix(white, rgba(20,119,202,1), 70%) 100%, rgba(20,119,202,0.7) 28%);
-            padding:10px 15px;
+            background: lighten($color: $text-color, $amount: 80%);
             cursor:pointer;
             border-radius: 8px;
             color:black;
+            font-weight:600;
+            border:$text-color solid 1px;
+            box-shadow: rgba(0,0,0,.4) 0px 5px 6px;
+            letter-spacing:2px;
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            opacity:var(--opacity);
+            transform: translateY(var(--translate))   rotateX(var(--rotate));;
+        }
+    }
+
+    &.submit {
+        &:hover {
+            opacity:0.8
+        }
+    
+        &::after {
+            content:"ENVOYER";
+            background: lighten($color: $text-color, $amount: 80%);
+            cursor:pointer;
+            border-radius: 8px;
+            color:black;
+            border:$text-color solid 1px;
+            box-shadow: rgba(0,0,0,.4) 0px 5px 6px;
             font-weight:600;
             letter-spacing:2px;
             position:absolute;
@@ -259,14 +280,15 @@ h3 {
 // Header
 header {
     display:flex;
-    margin:20px 40px 25vh 40px;
     margin:20px 40px 10vh 40px;
-    justify-content:space-between;
+    // justify-content:space-between;
     font-weight:900;
 
     @include desktopstyle() {
-        width:66vw;
+        // width:66vw;
         margin:20px 40px 25vh 40px;
+        position:relative;
+        z-index:100;
     }
 
     & button {
@@ -280,8 +302,8 @@ header {
         @include tabletstyle() {
             width:600px;
             text-align:center;
-            position:sticky;
             z-index:10;
+            margin:auto;
         }
     } 
     
@@ -295,6 +317,7 @@ header {
                 letter-spacing:0.5px;
                 text-transform: uppercase;
                 z-index:1;
+                padding-left:0;
             }
             @include desktopstyle() {
                 font-size:1.2em;
@@ -303,7 +326,7 @@ header {
             text-decoration: none;
             color:white;
             position:relative;
-            padding:0 5px;
+            // padding:0 5px;
             z-index:1;            
         
             &:hover {
@@ -334,6 +357,7 @@ header {
     img {
         max-width:50px;
         z-index:4;
+        position: absolute;
     }
     
 

@@ -5,14 +5,14 @@
 article {    
     & p {
         width:90%;
-        margin:7% auto 0 auto;
+        // margin:7% auto 0 auto;
         line-height:3;
         font-size:0.9rem;
         @include tabletstyle() {
-            width:90%;
+            width:93%;
             font-size:1rem;
             margin: 0px auto 0 40px;
-            line-height:2.5;
+            line-height:2.3;
             letter-spacing: 0.7px;
         }
     }
@@ -27,6 +27,28 @@ article {
             position:relative;
     }
 }
+}
+
+.callToAction {
+    margin:4vh auto 6vh auto;
+    padding:10px 15px;
+    @include desktopstyle() {
+        margin-top:30px;
+        margin-bottom:35px;
+        font-size:0.9rem;
+    }
+
+    &.knowMoreButton {  
+        &::after {
+            padding:9px 5px;
+        }
+    }
+
+    &.contactUs {  
+        &::after {
+            padding:9px 5px;
+        }
+    }
 }
 
 
@@ -47,12 +69,13 @@ h2 {
 h3 {
     font-size:2rem;
     @include desktopstyle() {
-        font-size: 1.4rem;
-        margin: 40px auto 20px auto;
+        font-size: 1.15rem;
+        margin: 20px auto 0px auto;
     }
 }
+
 h4 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     // margin: 0 20px 0 20px;
     @include desktopstyle() {
         // margin: auto 20px;
@@ -85,19 +108,38 @@ h4 {
 
     &__first {
         margin-top:65vh;
+
+        &::before {
+            content:url("assets/img/essaigreyline.png");
+            position:absolute;
+            height:5px;
+            left:-40%;
+            width:10%;
+            // height:5px;
+            // width:inherit;
+            // left:30%;
+            // top:-20px;
+        }
     }
 
-    &::before {
-        content:url("assets/img/essaigreyline.png");
-        position:absolute;
-        height:5px;
-        left:-40%;
-        width:10%;
-        // height:5px;
-        // width:inherit;
-        // left:30%;
-        // top:-20px;
+    &__second {
+        margin-top:65vh;
+
+        &::before {
+            content:url("assets/img/essaigreyline3.png");
+            filter: saturate(110%);
+            position:absolute;
+            height:5px;
+            left:-40%;
+            width:10%;
+            // height:5px;
+            // width:inherit;
+            // left:30%;
+            // top:-20px;
+        }
     }
+
+
 
     &__last::before {
         left:50%;
@@ -126,13 +168,13 @@ article {
     & h3 {
         font-family : $primary-typo;
         text-shadow: none;
-        color:white;
+        // color:white;
         
     }
 
     & h3 + p {
         width:85%;
-        margin:auto;
+        margin: 0 auto;
     }
 }
 
@@ -166,17 +208,17 @@ article img {
     }
 
     & .back {
-        border:yellow solid 1Px;
+
         position: absolute;
         top:0;
         transform: rotateY(-180deg) ;
-        background: linear-gradient(hsla(0, 0%, 0%, 0.72), hsla(0, 0%, 0%, 0.82));
+        background: linear-gradient(hsla(0, 0%, 0%, 0.52), hsla(0, 0%, 0%, 0.62));
         border-radius: 1.6rem;
 
         &   .number {
-            font-size:4rem;
+            font-size:3.2rem;
             line-height:initial;
-            margin:0 auto;
+            margin:5px auto 0 auto;
             font-weight:800;
             font-family: $primary-typo;
         }
@@ -197,21 +239,28 @@ article img {
         font-size:0.95rem;
     }
     
-    & h4, p {
+    & h4 {
+        margin:0 auto 5px auto;
+    }
+
+    & p {
         margin:0 auto;
-        color:white;
+    }
+
+    & h4, p {
+        // color:white;
         // line-height:2.8;
         text-align: center;
     }
   }
   
   .container {
-    --rX: 0;
+    --rX: 0; 
     --rY: 0;
     --bX: 50%;
     --bY: 80%;
   
-    width: 27vw;
+    width: 25vw;
     // height: 65vh;
 height:60vh;
     border: 1px solid var(--background-color);
@@ -228,27 +277,46 @@ height:60vh;
 
     background-position: var(--bX) var(--bY);
     background-size: 40rem auto;
-    box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%, .2);
+    box-shadow: 0px 5px 10px hsla(0, 0%, 0%, .4);
+    
   
     transition: transform .6s 1s;
 
     &.visualIdentity {
-        background: linear-gradient(hsla(0, 0%, 0%, 0.72), hsla(0, 0%, 0%, 0.82)), url("/assets/img/CAHIER.png");
+        background:  url("/assets/img/pinkbackground2.jpg");
         background-position: var(--bX) var(--bY);
         background-size: 40rem auto;
     }
 
     &.webDevelopment {
-        background: linear-gradient(hsla(0, 0%, 0%, 0.72), hsla(0, 0%, 0%, 0.82)), url("/assets/img/macbook3.png");
-        background-repeat: no-repeat;
+        background:  url("/assets/img/ESSAI12.png");
         background-position: var(--bX) var(--bY);
-        background-size: 35rem auto;
+        background-size: 40rem auto;
+        filter:  hue-rotate(200deg) saturate(150%) brightness(150%);
+        // background-repeat: no-repeat;
+        // background-position: var(--bX) var(--bY);
+        // background-size: 35rem auto;
     }
 
     // &:hover {
     //     filter:drop-shadow(20px 20px 20px #000);
     // }
   }
+
+  .container--1 {
+    filter: hue-rotate(210deg) saturate(100%);
+  }
+
+  .container--2 {
+    filter: hue-rotate(210deg) saturate(100%);
+  }
+
+  .container--3 {
+    // filter: hue-rotate(220deg) saturate(130%);
+    // filter: hue-rotate(320deg) saturate(100%);
+    filter: hue-rotate(210deg) saturate(100%);
+  }
+  
   
   .container::before,
   .container::after {
@@ -256,25 +324,26 @@ height:60vh;
   
     width: 2rem;
     height: 2rem;
-    border: 1px solid white;
+    border: 1.5px solid white;
     position: absolute;
     z-index: -2;
+    // border-radius:1.6rem;
   
-    opacity: .3;
+    opacity: .7;
     transition: .3s;
   }
   
   .container::before {
-    top: 2rem;
-    right: 2rem;
+    top: 1.5rem;
+    right: 1.5rem;
   
     border-bottom-width: 0;
     border-left-width: 0;
   }
   
   .container::after {
-    bottom: 2rem;
-    left: 2rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
   
     border-top-width: 0;
     border-right-width: 0;
@@ -287,8 +356,8 @@ height:60vh;
   
   .wrap:hover .container::before,
   .wrap:hover .container::after {
-    width: calc(100% - 4rem);
-    height: calc(100% - 4rem);
+    width: calc(100% - 2.6rem);
+    height: calc(100% - 2.6rem);
   }
 
   .wrapper {

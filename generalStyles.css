@@ -208,7 +208,7 @@ h3 {
 
 h3 span {
   position: relative;
-  color: #CFD0D1;
+  color: white;
   text-shadow: none;
 }
 
@@ -250,7 +250,6 @@ h3.decale span {
 
 .callToAction {
   background-color: #464646;
-  padding: 10px 15px;
   border: none;
   border-radius: 8px;
   color: white;
@@ -258,16 +257,6 @@ h3.decale span {
   font-size: 0.8rem;
   font-weight: 600;
   position: relative;
-  overflow: hidden;
-  margin: 4vh auto 6vh auto;
-}
-
-@media all and (min-width: 1024px) {
-  .callToAction {
-    margin-top: 30px;
-    margin-bottom: 35px;
-    font-size: 0.9rem;
-  }
 }
 
 .callToAction.knowMoreButton:hover {
@@ -276,11 +265,12 @@ h3.decale span {
 
 .callToAction.knowMoreButton::after {
   content: "EN SAVOIR PLUS";
-  background: #1477ca;
-  background: radial-gradient(circle, #b9d6ef 100%, rgba(20, 119, 202, 0.7) 28%);
-  padding: 10px 15px;
+  background: white;
   cursor: pointer;
   border-radius: 8px;
+  border: #464646 solid 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 6px;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 6px;
   color: black;
   font-weight: 600;
   letter-spacing: 2px;
@@ -300,12 +290,38 @@ h3.decale span {
 
 .callToAction.contactUs::after {
   content: "NOUS CONTACTER";
-  background: #1477ca;
-  background: radial-gradient(circle, #b9d6ef 100%, rgba(20, 119, 202, 0.7) 28%);
-  padding: 10px 15px;
+  background: white;
   cursor: pointer;
   border-radius: 8px;
   color: black;
+  font-weight: 600;
+  border: #464646 solid 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 6px;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 6px;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: var(--opacity);
+  -webkit-transform: translateY(var(--translate)) rotateX(var(--rotate));
+          transform: translateY(var(--translate)) rotateX(var(--rotate));
+}
+
+.callToAction.submit:hover {
+  opacity: 0.8;
+}
+
+.callToAction.submit::after {
+  content: "ENVOYER";
+  background: white;
+  cursor: pointer;
+  border-radius: 8px;
+  color: black;
+  border: #464646 solid 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 6px;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 6px;
   font-weight: 600;
   letter-spacing: 2px;
   position: absolute;
@@ -386,18 +402,15 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 20px 40px 25vh 40px;
   margin: 20px 40px 10vh 40px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   font-weight: 900;
 }
 
 @media all and (min-width: 1024px) {
   header {
-    width: 66vw;
     margin: 20px 40px 25vh 40px;
+    position: relative;
+    z-index: 100;
   }
 }
 
@@ -412,9 +425,8 @@ header button {
   header nav {
     width: 600px;
     text-align: center;
-    position: -webkit-sticky;
-    position: sticky;
     z-index: 10;
+    margin: auto;
   }
 }
 
@@ -435,6 +447,7 @@ header ul {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     z-index: 1;
+    padding-left: 0;
   }
 }
 
@@ -448,7 +461,6 @@ header ul li, header ul a {
   text-decoration: none;
   color: white;
   position: relative;
-  padding: 0 5px;
   z-index: 1;
 }
 
@@ -484,6 +496,7 @@ header ul li::after, header ul a::after {
 header img {
   max-width: 50px;
   z-index: 4;
+  position: absolute;
 }
 
 #animateHero {

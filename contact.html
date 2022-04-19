@@ -1,0 +1,114 @@
+<!-- Métas (à revoir) -->
+<!doctype html>
+<html lang="FR">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A remplir">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon_package_v0.16/favicon.ico">    
+    <link rel="stylesheet" href="generalStyles.css">
+    <link rel="stylesheet" href="contactStyles.css"> 
+    <!-- <link rel="stylesheet" href="servicesStyles.css"> -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Orinoco - Ours en peluche tout doux</title>    
+</head>
+
+<body>
+    <!-- Scrollbar personnalisée -->
+    <div id="smooth-wrapper">
+        <!-- Sticky header -->
+        <div id="smooth-content">
+            <!-- Div apparition Hero -->
+            <div id="animateHero">
+
+                <!-- Header -->
+                <header>
+                    <a href="index.html"><img src="assets/img/logo.png" alt="#" href="index.html"/></a>
+                    <nav aria-label="Menu de navigation principal">
+                        <button class="mobileOnly" aria-expanded="false" aria-label="Bouton de menu de navigation déroulable">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+                            <g data-name="Groupe 3560" transform="translate(-372 -11)">
+                                <g>
+                                    <line id="line1" data-name="Ligne 86" x2="30" transform="translate(379.5 25.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                                    <line id="line2" data-name="Ligne 87" x2="30" transform="translate(379.5 40.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                                    <line id="line3" data-name="Ligne 88" x2="30" transform="translate(379.5 33.5)" fill="none" stroke="#fff" stroke-width="3"/>
+                                </g>
+                                <g id="navCircle" transform="translate(372 11)" fill="none">
+                                    <circle cx="22.5" cy="22.5" r="22" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+                                </g>
+                            </g>
+                        </svg>
+                        </button>
+                        <ul class="dropdownMenu inactive">
+                            <li><a aria-label="Bouton d'accès aux services" href="services.html">Services</a></li>
+                            <li><a aria-label="Bouton d'accès aux réalisations" href="realisations.html">Réalisations</a></li>
+                            <li><a aria-label="Bouton d'accès à la page A propos" href="about.html">A propos</a></li>
+                            <li><a aria-label="Bouton d'accès à la page de contact" href="contact.html">Contact</a></li>
+                        </ul>
+                        <ul>
+                            <li><a class="black" aria-label="Bouton d'accès aux services" href="services.html">Services</a></li>
+                            <li><a class="black" aria-label="Bouton d'accès aux réalisations" href="realisations.html">Réalisations</a></li>
+                            <li><a aria-label="Bouton d'accès à la page A propos" href="about.html">A propos</a></li>
+                            <li><a aria-label="Bouton d'accès à la page de contact" href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <!-- Fin du header -->
+
+                    <!-- Section Hero -->
+                    <section id="heroSection">                
+                        <!-- Loader --> <div id="heroSection__videoCover"></div> 
+                        <video src="assets/videos/try.mp4" id="heroSection__video" preload autoplay loop muted>
+                            <p>Votre navigateur ne prend pas en charge les vidéos.</p>
+                        </video> 
+                        <img class="backgroundSvg desktopOnly" id="leaves" src="assets/img/laves2.png">
+                    </section>            
+                    <!-- Fin de la section Hero --> 
+                    <div id="formDiv">
+                        <h1>Convaincu(e) ? C'est parti, dites-nous tout ! <br>
+                            Nous vous répondrons dans les plus brefs délais.</h1> 
+                        <form method="POST">
+                            <div class="formInputs">
+                                <div>
+                                    <label for="firstName">Prénom *</label><input class="formInputs__input" id="firstName" name="firstName" size="40%" pattern="[a-zA-ZÀ-ÿ- ]+" minlength="2" required aria-required="true"/>
+                                </div>
+                                <div>
+                                    <label for="lastName">Nom *</label><input class="formInputs__input" id="lastName" name="lastName" size="40%" pattern="[a-zA-ZÀ-ÿ- ]+" minlength="2" required aria-required="true"/>
+                                </div>
+                                <div>
+                                    <label for="email">Mail *</label><input class="formInputs__input" id="email" name="email" type="email" pattern="[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" size="94%" required aria-required="true" />
+                                </div>
+                                <div>
+                                    <label for="phone">Téléphone *</label><input class="formInputs__input" id="phone" name="phone" size="40%"  pattern="[0-9]" minlength="10" required aria-required="true" />
+                                </div>
+                                <div>
+                                    <label for="company">Société *</label><input class="formInputs__input" id="company" name="company" size="40%"/>
+                                </div>
+                                <div>
+                                    <label for="message">Message *</label>
+                                    <textarea cols="87%" rows="5"></textarea>
+                                </div>
+
+                            </div>
+                            <div id="button">
+                                <button class="callToAction knowMoreButton" type="submit">ENVOYER</button>
+                            </div>
+                        </form>   
+                    </div>           
+
+
+    
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="gsap-shockingly-green/minified/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+    <script src="gsap-shockingly-green/minified/ScrollSmoother.min.js"></script>
+    <!-- <script src="locomotivescroll/locomotive-scroll-master/dist/locomotive-scroll.js"></script> -->
+    <script src="assets/js/functionManager.js"></script>
+    <script src="assets/js/services.js"></script>
+</body>

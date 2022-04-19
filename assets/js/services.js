@@ -1,28 +1,9 @@
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother);
 
-// const locoScroll = new LocomotiveScroll({
-//     el:document.querySelector('[data-scroll-container]'),
-//     smooth:true
-// });
-
-// locoScroll.on("scroll", ScrollTrigger.update());
-
-// ScrollTrigger.scrollerProxy('[data-scroll-container]', {
-//     scrollTop(value) {
-//       return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-//     }, 
-//     getBoundingClientRect() {
-//       return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-//     },
-//     pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
-//   });
-
 let smoother = ScrollSmoother.create({
   smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
   smoothTouch:0.1,
-
-
 });
 
 function init() {
@@ -44,7 +25,6 @@ window.addEventListener("load", function(event) {
 })
 
 document.querySelector("#heroSection__mouseSvg").addEventListener("click", (e) => {
-    // smoother.scrollTo("#servicesSection", true, "top")
     gsap.to(smoother, {
       scrollTop: smoother.offset(".h2Container__first", "top"),
       duration:2.5,
@@ -69,29 +49,16 @@ ScrollTrigger.create({
 
 const services = document.querySelectorAll(".roundService");
 
-services.forEach(service => {
-    if (window.matchMedia("(min-width: 1024px)").matches) {
-        const serviceRound = service.querySelector(".roundService__circle");
-        const hoverService = gsap.timeline({paused:true})
-        .to(serviceRound, {scale:1.1, border: "dashed 2px rgba(255,179,179,0.6)", backgroundColor: "rgba(253,249,249,0.5)", duration:0.2})
-        .to(serviceRound.querySelector("img"), {"filter": "grayscale(0%)", "-webkit-filter": "grayscale(100%)", duration:0.2}, 0.1)
-        .fromTo(service.querySelector("p"), {opacity:0, scale:0.9}, {opacity:1, scale:1, duration:0.5}, 0.2)
-
-        service.addEventListener("mouseenter", () => hoverService.play());
-        service.addEventListener("mouseleave", () => hoverService.reverse());
-      }
-
-    service.addEventListener("click", function() {
-        console.log("click")
-    })
-})
-
 
 let articles = document.querySelectorAll("article");
 
 articles.forEach((article) => {
     let heading = article.querySelector("h2");
-    let h2Typewriting = gsap.fromTo(heading, {text:""}, {text:heading.textContent, duration:1, ease:"power.InOut"});
+    let h2Typewriting = gsap.timeline()
+    // .fromTo(article.querySelector(".h2Container"), {x:-100}, {x:0, transformOrigin:"left", duration:0.5}, "<")
+    .fromTo(heading, {text:""}, {text:heading.textContent, duration:1, ease:"power.InOut"})
+    .fromTo(article.querySelectorAll(".wrap"), {y:50, opacity:0}, {y:0, opacity:1, duration:2, ease:"back", stagger:0.1}, "<0.2")
+
 
     ScrollTrigger.create({
     trigger:article,
@@ -119,56 +86,8 @@ const buttons = {
 };
 
 
-// TRY CARROUSEL
+// TILT EFFECT
 
-// function initCardEvents() {
-// 	const currentCardEl = document.querySelector(".current--card");
-//     console.log(currentCardEl);
-// 	currentCardEl.addEventListener("mouseover", updateCard);
-// 	currentCardEl.addEventListener("pointerout", (e) => {
-// 		resetCardTransforms(e);
-// 	});
-// }
-
-// function updateCard(e) {
-// 	console.log("hey");
-//     const card = e.currentTarget.parentElement;
-// 	const box = card.getBoundingClientRect();
-// 	const centerPosition = {
-// 		x: box.left + box.width / 2,
-// 		y: box.top + box.height / 2,
-// 	};
-//     console.log(card);
-//     console.log(centerPosition);
-// 	let angle = Math.atan2(e.pageX - centerPosition.x, 0) * (35 / Math.PI);
-//     console.log(angle);
-// 	gsap.to(card, {
-// 			// "--current-card-rotation-offset": `${angle}deg`,
-//             rotateY:`${angle/2}deg`,
-//             duration:1.5,
-//             ease: "back.out(1.7)"
-// 	});
-//     console.log(card);
-// 	// const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
-// 	// gsap.set(currentInfoEl, {
-// 	// 	rotateY: `${angle}deg`,
-// 	// });
-// }
-
-// function resetCardTransforms(e) {
-// 	const card = e.currentTarget.parentElement;
-// 	// const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
-// 	gsap.to(card, {
-//         rotateY:0,
-//         duration:1,
-//         ease: "back.out(1.7)"
-// 	});
-// 	// gsap.set(currentInfoEl, {
-// 	// 	rotateY: 0,
-// 	// });
-// }
-
-// initCardEvents();
 
 class parallaxTiltEffect {
 
@@ -200,20 +119,20 @@ class parallaxTiltEffect {
       let Y;
   
       if (this.tiltEffect === "reverse") {
-        X = ((offsetX - (this.w/2)) / 3) / 8;
-        Y = (-(offsetY - (this.h/2)) / 3) / 8;
+        X = ((offsetX - (this.w/2)) / 3) / 20;
+        Y = (-(offsetY - (this.h/2)) / 3) / 20;
       }
   
       else if (this.tiltEffect === "normal") {
-        X = (-(offsetX - (this.w/2)) / 3) / 8;
-        Y = ((offsetY - (this.h/2)) / 3) / 8;
+        X = (-(offsetX - (this.w/2)) / 3) / 20;
+        Y = ((offsetY - (this.h/2)) / 3) / 20;
       }
       
       gsap.timeline()
       .to(this.element, {rotateY : X.toFixed(2), rotateX: Y.toFixed(2)})
 
-      this.setProperty('--bY', (80 - (X/4).toFixed(2)) + '%');
-      this.setProperty('--bX', (50 - (Y/4).toFixed(2)) + '%');
+      // this.setProperty('--bY', (80 - (X/4).toFixed(2)) + '%');
+      // this.setProperty('--bX', (50 - (Y/4).toFixed(2)) + '%');
       this.setProperty("filter", "drop-shadow(20px 20px 20px #000);")
     }
   
@@ -442,6 +361,14 @@ class parallaxTiltEffect {
   })
 
 
+  
+  ScrollTrigger.create({
+    trigger:"body",
+    start:"top top",
+    end:"bottom bottom",
+    pin:"header",
+    pinSpacing:false,
+  })
 
   // Survol boutons Know More
 const items = document.querySelectorAll(".callToAction");
@@ -449,7 +376,7 @@ const items = document.querySelectorAll(".callToAction");
 items.forEach((item) => {
     const tl = gsap
     .timeline({ paused: true })
-    .to(item, {color:"#464646", duration:0.1})
+    // .to(item, {color:"#464646", duration:0.1})
     .fromTo(item, {
         "--opacity": 0,
     }, {"--opacity": 1, color:"black", y:-3, duration:0.2}, "<")
@@ -458,8 +385,5 @@ items.forEach((item) => {
   item.addEventListener("mouseleave", () => tl.reverse());
 })
 
-
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh(); 
 
 

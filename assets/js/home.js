@@ -21,8 +21,6 @@ gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
 let smoother = ScrollSmoother.create({
   smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
   smoothTouch:0.1,
-
-
 });
 
 interactWithHamburgerMenu()
@@ -113,6 +111,7 @@ articles.forEach( (article) => {
     console.log(article);
     let tl = gsap.timeline()
         .fromTo(article, {yPercent:30, scale:0.9, opacity:0}, {yPercent:0, scale:1, opacity:1, duration:1, stagger:0.1})
+        
         // .from(article.querySelector("h3"), {opacity:0}, "<0.1")
         // .from(article.querySelectorAll("h4"), {opacity:0, y:-5}, "<")
         // .from(article.querySelectorAll("p"), {opacity:0}, "<")
@@ -303,6 +302,15 @@ ScrollTrigger.create({
   start:"top bottom",
   scrub:1,
   toggleActions: "play none none reverse",
+  })
+
+
+  ScrollTrigger.create({
+    trigger:"body",
+    start:"top top",
+    end:"bottom bottom",
+    pin:"header",
+    pinSpacing:false,
   })
 
 

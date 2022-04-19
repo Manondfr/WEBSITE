@@ -90,9 +90,31 @@ h3 {
     position: relative;
 }
 
-.flex .secondAppearance {
+.flex > .secondAppearance p:first-child {
     border-radius: 50%;
-    background: url('./assets/img/essaibluebackground.png') fixed no-repeat;
+    background: url('./assets/img/essaipinkbackground.png') fixed no-repeat;
     background-position: 90% 25%;
     background-size: 100% 100%;
+}
+
+.callToAction {
+    margin:4vh auto 6vh auto;
+    padding:10px 15px;
+    @include desktopstyle() {
+        margin-top:30px;
+        margin-bottom:35px;
+        font-size:0.9rem;
+    }
+
+    &.knowMoreButton {  
+        &::after {
+            padding:9px 5px;
+        }
+    }
+
+    &.contactUs {  
+        &::after {
+            padding:9px 5px;
+        }
+    }
 }
