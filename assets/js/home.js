@@ -164,6 +164,9 @@ items.forEach((item) => {
 })
 
 
+// Partie About
+const aboutPart = document.querySelectorAll(".aboutFlex")
+
 // Essai carrousel
 let touchstartX = 0
 let touchendX = 0

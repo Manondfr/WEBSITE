@@ -281,6 +281,9 @@ article:nth-child(4) {
     z-index:-10;
     // background-color:black;
     // color:white;
+    background: url('./assets/img/essaibluebackground.png') fixed no-repeat, url('./assets/img/essaibluebackground.png') fixed no-repeat ;
+    background-position: 100% 80%, -10% 40%;
+    background-size: 30% 30%, 30% 30%;
 
     & .aboutFlex {
         height:100vh;
@@ -291,6 +294,8 @@ article:nth-child(4) {
             margin-right:10%;
             margin-bottom: unset;
         }
+
+        
 
 
 
@@ -327,11 +332,49 @@ article:nth-child(4) {
         & .texte {
             width:100%;
             @include desktopstyle() {
-                width:80%;
-                border-top: black solid 1px;
-                border-bottom: black solid 1px;
+                width:90%;
+                // border-top: black solid 1px;
+                // border-bottom: black solid 1px;
+                padding: 20% auto;
             }
 
+            &--1 {
+                margin-left:15%;
+            }
+
+            &--2 {
+                margin-right:15%;
+            }
+
+            &::before,
+            &::after {
+              content: "";
+            
+              width: 2rem;
+              height: 2rem;
+              border: 1.5px solid $text-color;
+              position: absolute;
+              z-index: -2;
+            
+              opacity: .7;
+              transition: .3s;
+            }
+            
+            &::before {
+              top: 0;
+              right: -10%;
+            
+              border-bottom-width: 0;
+              border-left-width: 0;
+            }
+            
+            &::after {
+              bottom: 0;
+              left: -10%;
+            
+              border-top-width: 0;
+              border-right-width: 0;
+            }
         }
     }
 
@@ -339,7 +382,12 @@ article:nth-child(4) {
 }
 
 .aboutTitle {
-    font-weight: 800;
+    font-weight: 700;
     font-size:1.3rem;
+    font-variant: small-caps;
+    position:relative;
+    margin-bottom:5%;
+    font-family: $secondary-typo;
+
 }
 

@@ -403,6 +403,9 @@ article:nth-child(4) p {
 #about {
   position: relative;
   z-index: -10;
+  background: url("./assets/img/essaibluebackground.png") fixed no-repeat, url("./assets/img/essaibluebackground.png") fixed no-repeat;
+  background-position: 100% 80%, -10% 40%;
+  background-size: 30% 30%, 30% 30%;
 }
 
 #about .aboutFlex {
@@ -466,14 +469,51 @@ article:nth-child(4) p {
 
 @media all and (min-width: 1024px) {
   #about .aboutFlex .texte {
-    width: 80%;
-    border-top: black solid 1px;
-    border-bottom: black solid 1px;
+    width: 90%;
+    padding: 20% auto;
   }
 }
 
+#about .aboutFlex .texte--1 {
+  margin-left: 15%;
+}
+
+#about .aboutFlex .texte--2 {
+  margin-right: 15%;
+}
+
+#about .aboutFlex .texte::before, #about .aboutFlex .texte::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  border: 1.5px solid #464646;
+  position: absolute;
+  z-index: -2;
+  opacity: .7;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#about .aboutFlex .texte::before {
+  top: 0;
+  right: -10%;
+  border-bottom-width: 0;
+  border-left-width: 0;
+}
+
+#about .aboutFlex .texte::after {
+  bottom: 0;
+  left: -10%;
+  border-top-width: 0;
+  border-right-width: 0;
+}
+
 .aboutTitle {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.3rem;
+  font-variant: small-caps;
+  position: relative;
+  margin-bottom: 5%;
+  font-family: "Raleway";
 }
 /*# sourceMappingURL=styles.css.map */
