@@ -166,7 +166,7 @@ h1 {
   font-variant: small-caps;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   h1 {
     line-height: 3;
     padding: 0;
@@ -176,6 +176,12 @@ h1 {
 }
 
 @media all and (min-width: 1024px) {
+  h1 {
+    font-size: 1.4em;
+  }
+}
+
+@media all and (min-width: 1201px) {
   h1 {
     font-size: 1.5em;
   }
@@ -232,7 +238,13 @@ h3.decale span {
   }
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 769px) {
+  .mobileOnly {
+    display: none;
+  }
+}
+
+@media all and (min-width: 1201px) {
   .mobileOnly {
     display: none;
   }
@@ -403,11 +415,17 @@ header {
   display: -ms-flexbox;
   display: flex;
   margin: 20px 40px 10vh 40px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-weight: 900;
 }
 
 @media all and (min-width: 1024px) {
   header {
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
     margin: 20px 40px 25vh 40px;
     position: relative;
     z-index: 100;
@@ -421,11 +439,16 @@ header button {
   z-index: 4;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 769px) {
   header nav {
     width: 600px;
     text-align: center;
     z-index: 10;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  header nav {
     margin: auto;
   }
 }
@@ -434,7 +457,7 @@ header ul {
   display: none;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 769px) {
   header ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -451,7 +474,7 @@ header ul {
   }
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 769px) {
   header ul {
     font-size: 1.2em;
   }
@@ -513,12 +536,29 @@ header img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: red solid 1px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
   text-align: left;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   #heroSection {
     text-align: center;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  #heroSection {
+    height: unset;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    position: unset;
   }
 }
 
@@ -551,7 +591,7 @@ header img {
   text-shadow: 5px 2px rgba(0, 0, 0, 0.6);
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   #heroSection p strong {
     font-size: 4em;
     padding: 0;
@@ -563,6 +603,13 @@ header img {
 @media all and (min-width: 1024px) {
   #heroSection p strong {
     text-shadow: 10px 5px rgba(0, 0, 0, 0.6);
+    letter-spacing: 20px;
+    font-size: 5.5em;
+  }
+}
+
+@media all and (min-width: 1201px) {
+  #heroSection p strong {
     font-size: 8em;
     letter-spacing: 30px;
   }
@@ -607,6 +654,12 @@ header img {
   margin-top: 5px;
 }
 
+@media all and (min-width: 481px) {
+  #heroSection__mobileLine {
+    display: none;
+  }
+}
+
 #heroSection__mobileLineContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -620,7 +673,7 @@ header img {
   padding-top: 20px;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   #heroSection__mobileLineContainer {
     display: block;
     padding: 0;
@@ -664,7 +717,7 @@ header img {
   line-height: 2.5;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   #contactSection .h2Container + p {
     width: 70%;
     line-height: 3;
@@ -811,9 +864,10 @@ footer ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  display: none;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   .dropdownMenu {
     display: none;
   }

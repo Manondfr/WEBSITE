@@ -166,6 +166,12 @@ items.forEach((item) => {
 
 // Partie About
 const aboutPart = document.querySelectorAll(".aboutFlex")
+const aboutTitle = document.querySelectorAll(".aboutTitle");
+
+aboutPart.forEach((part) => {
+  const tl = gsap.timeline()
+  .to
+})
 
 // Essai carrousel
 let touchstartX = 0

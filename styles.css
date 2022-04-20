@@ -153,7 +153,7 @@ article {
   margin-bottom: 300px;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   article {
     width: 73%;
     height: 100vh;
@@ -166,7 +166,7 @@ article p {
   font-size: 0.8rem;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   article p {
     width: 50%;
     font-size: 1rem;
@@ -326,7 +326,7 @@ article p {
   margin: 55vh auto 15vh auto;
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   .h2Container {
     height: 25vh;
     margin: 75vh auto 15vh auto;
@@ -356,7 +356,7 @@ article p {
   }
 }
 
-@media all and (min-width: 443px) {
+@media all and (min-width: 481px) {
   article:nth-child(4) #seo__h4Container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -511,6 +511,7 @@ article:nth-child(4) p {
 .aboutTitle {
   font-weight: 700;
   font-size: 1.3rem;
+  letter-spacing: 2px;
   font-variant: small-caps;
   position: relative;
   margin-bottom: 5%;

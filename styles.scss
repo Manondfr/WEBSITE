@@ -5,7 +5,7 @@
 h2 {
     text-shadow: 5px 2px 3px rgba(0,0,0,0.3);
     font-size : 3rem;
-    @include desktopstyle() {
+    @include Lstyle() {
         font-size:9em;
         text-shadow: 10px 5px 4px rgba(0,0,0,0.3);
     }
@@ -14,7 +14,7 @@ h2 {
 h3 {
     text-transform: uppercase;
     font-size:1.7rem;
-    @include desktopstyle() {
+    @include Lstyle() {
         font-size:2rem;
     }
 }
@@ -22,7 +22,7 @@ h3 {
 h4 {
     font-size:1.1rem;
     margin: 0 20px 0 20px;
-    @include desktopstyle() {
+    @include Lstyle() {
         margin: auto 20px;
         font-size: 1.3rem;
     }
@@ -38,7 +38,7 @@ article {
     border:transparent solid 1px;
     margin:auto;
     margin-bottom:300px;
-    @include tabletstyle() {
+    @include Sstyle() {
         width:73%;
         height:100vh;
     }
@@ -47,7 +47,7 @@ article {
         margin:7% auto 0 auto;
         line-height:3;        
         font-size:0.8rem;
-        @include tabletstyle() {
+        @include Sstyle() {
             width:50%;
             font-size:1rem;
             margin: 40px auto 0 auto;
@@ -60,7 +60,7 @@ article {
 .callToAction {
     margin:4vh auto 6vh auto;
     padding:10px 15px;
-    @include desktopstyle() {
+    @include Lstyle() {
         margin-top:30px;
         margin-bottom:35px;
         font-size:0.9rem;
@@ -86,7 +86,7 @@ article {
     border:white outset 3px;
     padding-bottom:15px;
     width:88vw;
-    @include desktopstyle() {
+    @include Lstyle() {
         padding-bottom : unset;
         width:73vw;
         height:80vh;
@@ -149,7 +149,7 @@ article {
 .h4Container {
     text-align: center;
     margin-top:-5vh;
-    @include desktopstyle() {
+    @include Lstyle() {
         display:flex;
         align-items: center;
         margin-top:-15px;
@@ -170,13 +170,13 @@ article {
 
     & .serviceArticle__paragraph {
         width:88vw;
-        @include desktopstyle() {
+        @include Lstyle() {
             width:73vw;
         }
 
         & p {
             width:90%;
-            @include desktopstyle() {
+            @include Lstyle() {
                 width:50%;
             }
         }
@@ -185,7 +185,7 @@ article {
 
 .h4Wrapper {
     width:88vw;
-    @include desktopstyle() {
+    @include Lstyle() {
         width:73vw;
     }
 
@@ -197,7 +197,7 @@ article {
 
 //Section prestations
 #servicesSection {    
-    @include desktopstyle() {
+    @include Lstyle() {
         position:relative;
         margin-top:25vh; 
     }
@@ -206,7 +206,7 @@ article {
 .h2Container {
     height:5vh;
     margin: 55vh auto 15vh auto;
-    @include tabletstyle() {
+    @include Sstyle() {
         height:25vh;
         margin:75vh auto 15vh auto;
         position:sticky;
@@ -225,7 +225,7 @@ article {
 
     & .backgroundSvg {
         top: 60%;
-        @include desktopstyle() {
+        @include Lstyle() {
             width:700px;
             left:-45%;
         }
@@ -236,7 +236,7 @@ article {
 // Référencement
 article:nth-child(4) {
     & #seo__h4Container {
-        @include tabletstyle() {
+        @include Sstyle() {
             display:flex;
             justify-content: space-around;
             width:73vw;
@@ -258,7 +258,7 @@ article:nth-child(4) {
         line-height:1.3;
         font-weight:700;
         margin:auto;
-        @include desktopstyle() {
+        @include Lstyle() {
             width:120px;
             letter-spacing:2px;
             flex:1;
@@ -289,7 +289,7 @@ article:nth-child(4) {
         height:100vh;
         display:flex;
         align-items:center;
-        @include desktopstyle() {
+        @include Lstyle() {
             margin-left:10%;
             margin-right:10%;
             margin-bottom: unset;
@@ -304,7 +304,7 @@ article:nth-child(4) {
             max-height:31%;
             z-index:-6;
             filter : opacity(20%);
-            @include desktopstyle() {
+            @include Lstyle() {
                 position:initial;
                 max-height:85%;
                 opacity:1;
@@ -314,7 +314,7 @@ article:nth-child(4) {
             &:nth-child(1) {
                 left:-200px;
                 max-height:30%;
-                @include desktopstyle() {
+                @include Lstyle() {
                     max-height: 85%;;
                 }
             }
@@ -331,7 +331,7 @@ article:nth-child(4) {
 
         & .texte {
             width:100%;
-            @include desktopstyle() {
+            @include Lstyle() {
                 width:90%;
                 // border-top: black solid 1px;
                 // border-bottom: black solid 1px;
@@ -384,6 +384,7 @@ article:nth-child(4) {
 .aboutTitle {
     font-weight: 700;
     font-size:1.3rem;
+    letter-spacing: 2px;
     font-variant: small-caps;
     position:relative;
     margin-bottom:5%;

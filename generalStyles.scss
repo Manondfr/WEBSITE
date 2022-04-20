@@ -64,13 +64,16 @@ h1 {
     line-height:2.5;
     position:relative;
     font-variant:small-caps;
-    @include tabletstyle {
+    @include Sstyle {
         line-height: 3;
         padding:0;
         font-weight:600;
         font-size:1.3em;
     }
-    @include desktopstyle() {
+    @include Lstyle() {
+        font-size: 1.4em;
+    }
+    @include XLstyle() {
         font-size: 1.5em;
     }
 }
@@ -92,7 +95,7 @@ h3 {
     margin-right:3px;
     margin-top:8vh;
     margin-bottom:6vh;    
-    @include desktopstyle() {
+    @include Lstyle() {
         line-height:1.7;
     }
 
@@ -104,7 +107,7 @@ h3 {
 
 
     &.decale {
-        @include desktopstyle() {
+        @include Lstyle() {
             position:relative;
             text-align:left;
             margin-left:40px;
@@ -114,7 +117,7 @@ h3 {
     
         & span {
             left:5px;
-            @include desktopstyle() {
+            @include Lstyle() {
                 left:70px;
             }
         }
@@ -124,13 +127,16 @@ h3 {
 
 // Classes
 .mobileOnly {
-    @include tabletstyle() {
+    @include Mstyle() {
+        display:none;
+    }
+    @include XLstyle() {
         display:none;
     }
 }
 .desktopOnly {
     display:none;
-    @include desktopstyle() {
+    @include Lstyle() {
         display: initial;
     }
 }
@@ -238,7 +244,7 @@ h3 {
         cursor:pointer;
         height:14px;
         width:14px;
-        @include desktopstyle() {
+        @include Lstyle() {
             height:17px;
             width:17px;
         }
@@ -281,11 +287,12 @@ h3 {
 header {
     display:flex;
     margin:20px 40px 10vh 40px;
-    // justify-content:space-between;
+    justify-content:space-between;
     font-weight:900;
 
-    @include desktopstyle() {
+    @include Lstyle() {
         // width:66vw;
+        justify-content: unset;
         margin:20px 40px 25vh 40px;
         position:relative;
         z-index:100;
@@ -299,17 +306,19 @@ header {
     }    
     & nav
     {
-        @include tabletstyle() {
+        @include Mstyle() {
             width:600px;
             text-align:center;
             z-index:10;
+        }
+        @include Lstyle() {
             margin:auto;
         }
     } 
     
         & ul {
             display:none;
-            @include tabletstyle() {
+            @include Mstyle() {
                 display: flex;
                 list-style-type: none;
                 justify-content: space-between;
@@ -319,7 +328,7 @@ header {
                 z-index:1;
                 padding-left:0;
             }
-            @include desktopstyle() {
+            @include Mstyle() {
                 font-size:1.2em;
             }
         & li, a {
@@ -372,9 +381,20 @@ header {
     color:white;
     display:flex;
     flex-direction:column;
+    justify-content: center;
+    border:red solid 1px;
+    height:100vh;
+    position:absolute;
+    top:0;
     text-align:left;
-    @include tabletstyle() {
+    @include Sstyle() {
         text-align: center;
+        // height:100vh;
+    }
+    @include Lstyle {
+        height:unset;
+        justify-content: unset;
+        position: unset;
     }
     &__videoCover {
         z-index:5;
@@ -404,14 +424,18 @@ header {
         position:relative;
         margin:auto;
         text-shadow: 5px 2px rgba(0,0,0, 0.6);
-        @include tabletstyle() {
+        @include Sstyle() {
             font-size:4em;
             padding:0;
             letter-spacing:10px;
             text-shadow: 6px 3px rgba(0,0,0, 0.6);
         }
-        @include desktopstyle() {
+        @include Lstyle() {
             text-shadow: 10px 5px rgba(0,0,0, 0.6);
+            letter-spacing: 20px;
+            font-size:5.5em;
+        }
+        @include XLstyle() {
             font-size:8em;
             letter-spacing:30px;
         }
@@ -446,12 +470,16 @@ header {
     }
     &__mobileLine {
         margin-top:5px;
+        @include Sstyle {
+            display:none;
+        }
+
         &Container {
             display:flex;
             justify-content: space-between;
             align-items:center;
             padding-top:20px;
-            @include tabletstyle() {
+            @include Sstyle() {
                 display: block;
                 padding:0;
             }
@@ -495,7 +523,7 @@ header {
             width:88%;
             margin:0 auto;
             line-height:2.5;
-            @include tabletstyle() {
+            @include Sstyle() {
                 width:70%;
                 line-height:3;
             }
@@ -506,7 +534,7 @@ header {
 
     & .contactUs {
         margin-top:0;
-        @include desktopstyle() {
+        @include Lstyle() {
             margin-top:30px;
         }
     }
@@ -520,7 +548,7 @@ header {
     // text-shadow: 5px 2px 3px rgba(0,0,0,0.3);
     font-size : 2rem;
     text-shadow: none;
-    @include desktopstyle() {
+    @include Lstyle() {
         font-size:4rem;
         // text-shadow: 10px 5px 4px rgba(0,0,0,0.3);
         text-shadow: none;
@@ -563,7 +591,7 @@ footer {
         color:white;
         margin:20px 0 0 0;
         padding:0;
-        @include desktopstyle() {
+        @include Lstyle() {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
@@ -571,7 +599,7 @@ footer {
 
         & li {
             margin:5px 0px;
-            @include desktopstyle() {
+            @include Lstyle() {
                 padding:0;
                 margin:0;
             }
@@ -587,7 +615,7 @@ footer {
     width:50%;
     padding-top:20px;
     padding-bottom:20px;
-    @include desktopstyle() {
+    @include Lstyle() {
         width:10%;
     }
 }
@@ -614,7 +642,8 @@ footer {
     border:blue solid 1Px;
     transform: translateY(-100%);
     display:flex;
-    @include tabletstyle() {
+    display: none;
+    @include Sstyle() {
         display: none;
     }
 
