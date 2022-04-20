@@ -203,12 +203,13 @@ h3 {
   line-height: 1.3;
   margin-right: 3px;
   margin-top: 8vh;
-  margin-bottom: 6vh;
+  margin-bottom: 75px;
 }
 
 @media all and (min-width: 1024px) {
   h3 {
     line-height: 1.7;
+    margin-bottom: 6vh;
   }
 }
 
@@ -218,6 +219,11 @@ h3 span {
   text-shadow: none;
 }
 
+h3.decale {
+  margin-top: -38px;
+  margin-bottom: 75px;
+}
+
 @media all and (min-width: 1024px) {
   h3.decale {
     position: relative;
@@ -225,11 +231,8 @@ h3 span {
     margin-left: 40px;
     top: -60px;
     margin-top: unset;
+    margin-bottom: unset;
   }
-}
-
-h3.decale span {
-  left: 5px;
 }
 
 @media all and (min-width: 1024px) {

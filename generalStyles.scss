@@ -94,9 +94,10 @@ h3 {
     line-height:1.3;
     margin-right:3px;
     margin-top:8vh;
-    margin-bottom:6vh;    
+    margin-bottom:75px;
     @include Lstyle() {
         line-height:1.7;
+        margin-bottom:6vh; 
     }
 
     & span {
@@ -107,16 +108,21 @@ h3 {
 
 
     &.decale {
+        // position:relative;
+        // top:-88px;
+        margin-top:-38px;
+        margin-bottom:75px;
         @include Lstyle() {
             position:relative;
             text-align:left;
             margin-left:40px;
             top:-60px;
             margin-top: unset;
+            margin-bottom:unset;
         }
     
         & span {
-            left:5px;
+            // left:5px;
             @include Lstyle() {
                 left:70px;
             }

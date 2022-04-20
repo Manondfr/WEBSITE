@@ -108,7 +108,13 @@
 
 h2 {
   text-shadow: 5px 2px 3px rgba(0, 0, 0, 0.3);
-  font-size: 3rem;
+  font-size: 2.5rem;
+}
+
+@media all and (min-width: 769px) {
+  h2 {
+    font-size: 3rem;
+  }
 }
 
 @media all and (min-width: 1024px) {
@@ -153,7 +159,7 @@ article {
   margin-bottom: 300px;
 }
 
-@media all and (min-width: 481px) {
+@media all and (min-width: 769px) {
   article {
     width: 73%;
     height: 100vh;
@@ -323,10 +329,10 @@ article p {
 
 .h2Container {
   height: 5vh;
-  margin: 55vh auto 15vh auto;
+  margin: 100vh auto 15vh auto;
 }
 
-@media all and (min-width: 481px) {
+@media all and (min-width: 769px) {
   .h2Container {
     height: 25vh;
     margin: 75vh auto 15vh auto;
@@ -346,7 +352,14 @@ article p {
 }
 
 #visualIdentity .backgroundSvg {
-  top: 60%;
+  display: none;
+}
+
+@media all and (min-width: 769px) {
+  #visualIdentity .backgroundSvg {
+    display: initial;
+    top: 60%;
+  }
 }
 
 @media all and (min-width: 1024px) {
