@@ -40,10 +40,11 @@ article {
     z-index:-2;
     border:transparent solid 1px;
     margin:auto;
-    margin-bottom:300px;
-    @include Mstyle() {
+    margin-bottom:50px;
+    @include Lstyle() {
         width:73%;
         height:100vh;
+        margin-bottom:300px;
     }
 
     & p {
@@ -202,18 +203,27 @@ article {
 
 .h2Container {
     height:5vh;
-    margin: 100vh auto 15vh auto;
+    margin: 20vh auto 0 auto;
     @include Mstyle() {
         height:25vh;
-        margin:75vh auto 15vh auto;
         position:sticky;
+    }
+
+    &--first {
+        margin: 100vh auto 15vh auto;
+        @include Lstyle() {
+            margin:75vh auto 15vh auto;
+        }
     }
 }
 
 // Identité visuelle
 #visualIdentity {
     background-image: url("/assets/img/background.png") no-repeat center;
-    height:80vh;  
+    @include Mstyle {
+        height:80vh;  
+    }
+
 
     &Block {
         position:relative;
@@ -237,7 +247,7 @@ article {
 // Référencement
 article:nth-child(4) {
     & #seo__h4Container {
-        @include Sstyle() {
+        @include Mstyle() {
             display:flex;
             justify-content: space-around;
             width:73vw;
@@ -282,9 +292,12 @@ article:nth-child(4) {
     z-index:-10;
     // background-color:black;
     // color:white;
-    background: url('./assets/img/essaibluebackground.png') fixed no-repeat, url('./assets/img/essaibluebackground.png') fixed no-repeat ;
-    background-position: 100% 80%, -10% 40%;
-    background-size: 30% 30%, 30% 30%;
+    @include Lstyle() {
+        background: url('./assets/img/essaibluebackground.png') fixed no-repeat, url('./assets/img/essaibluebackground.png') fixed no-repeat ;
+        background-position: 100% 80%, -10% 40%;
+        background-size: 30% 30%, 30% 30%;
+    }
+
 
     & .aboutFlex {
         height:100vh;
@@ -332,33 +345,44 @@ article:nth-child(4) {
 
         & .texte {
             width:100%;
+            @include Sstyle() {
+                width:80%;
+                margin:auto;
+            }
             @include Lstyle() {
                 width:90%;
+                margin:unset;
                 // border-top: black solid 1px;
                 // border-bottom: black solid 1px;
                 padding: 20% auto;
             }
 
             &--1 {
-                margin-left:15%;
+                @include Mstyle() {
+                    margin-left:15%;
+                }
             }
 
             &--2 {
-                margin-right:15%;
+                @include Mstyle() {
+                    margin-right:15%;
+                }
+
             }
 
             &::before,
             &::after {
-              content: "";
-            
-              width: 2rem;
-              height: 2rem;
-              border: 1.5px solid $text-color;
-              position: absolute;
-              z-index: -2;
-            
-              opacity: .7;
-              transition: .3s;
+              @include Lstyle {
+                content: "";
+                width: 2rem;
+                height: 2rem;
+                border: 1.5px solid $text-color;
+                position: absolute;
+                z-index: -2;
+                
+                opacity: .7;
+                transition: .3s;
+              }
             }
             
             &::before {
@@ -385,11 +409,13 @@ article:nth-child(4) {
 .aboutTitle {
     font-weight: 700;
     font-size:1.3rem;
-    letter-spacing: 2px;
     font-variant: small-caps;
     position:relative;
-    margin-bottom:5%;
     font-family: $secondary-typo;
+    @include Mstyle() {
+        margin-bottom:5%;
+        letter-spacing: 2px;
+    }
 
 }
 

@@ -156,13 +156,14 @@ article {
   z-index: -2;
   border: transparent solid 1px;
   margin: auto;
-  margin-bottom: 300px;
+  margin-bottom: 50px;
 }
 
-@media all and (min-width: 769px) {
+@media all and (min-width: 1024px) {
   article {
     width: 73%;
     height: 100vh;
+    margin-bottom: 300px;
   }
 }
 
@@ -329,21 +330,35 @@ article p {
 
 .h2Container {
   height: 5vh;
-  margin: 100vh auto 15vh auto;
+  margin: 20vh auto 0 auto;
 }
 
 @media all and (min-width: 769px) {
   .h2Container {
     height: 25vh;
-    margin: 75vh auto 15vh auto;
     position: -webkit-sticky;
     position: sticky;
   }
 }
 
+.h2Container--first {
+  margin: 100vh auto 15vh auto;
+}
+
+@media all and (min-width: 1024px) {
+  .h2Container--first {
+    margin: 75vh auto 15vh auto;
+  }
+}
+
 #visualIdentity {
   background-image: url("/assets/img/background.png") no-repeat center;
-  height: 80vh;
+}
+
+@media all and (min-width: 769px) {
+  #visualIdentity {
+    height: 80vh;
+  }
 }
 
 #visualIdentityBlock {
@@ -369,7 +384,7 @@ article p {
   }
 }
 
-@media all and (min-width: 481px) {
+@media all and (min-width: 769px) {
   article:nth-child(4) #seo__h4Container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -416,9 +431,14 @@ article:nth-child(4) p {
 #about {
   position: relative;
   z-index: -10;
-  background: url("./assets/img/essaibluebackground.png") fixed no-repeat, url("./assets/img/essaibluebackground.png") fixed no-repeat;
-  background-position: 100% 80%, -10% 40%;
-  background-size: 30% 30%, 30% 30%;
+}
+
+@media all and (min-width: 1024px) {
+  #about {
+    background: url("./assets/img/essaibluebackground.png") fixed no-repeat, url("./assets/img/essaibluebackground.png") fixed no-repeat;
+    background-position: 100% 80%, -10% 40%;
+    background-size: 30% 30%, 30% 30%;
+  }
 }
 
 #about .aboutFlex {
@@ -480,31 +500,45 @@ article:nth-child(4) p {
   width: 100%;
 }
 
+@media all and (min-width: 481px) {
+  #about .aboutFlex .texte {
+    width: 80%;
+    margin: auto;
+  }
+}
+
 @media all and (min-width: 1024px) {
   #about .aboutFlex .texte {
     width: 90%;
+    margin: unset;
     padding: 20% auto;
   }
 }
 
-#about .aboutFlex .texte--1 {
-  margin-left: 15%;
+@media all and (min-width: 769px) {
+  #about .aboutFlex .texte--1 {
+    margin-left: 15%;
+  }
 }
 
-#about .aboutFlex .texte--2 {
-  margin-right: 15%;
+@media all and (min-width: 769px) {
+  #about .aboutFlex .texte--2 {
+    margin-right: 15%;
+  }
 }
 
-#about .aboutFlex .texte::before, #about .aboutFlex .texte::after {
-  content: "";
-  width: 2rem;
-  height: 2rem;
-  border: 1.5px solid #464646;
-  position: absolute;
-  z-index: -2;
-  opacity: .7;
-  -webkit-transition: .3s;
-  transition: .3s;
+@media all and (min-width: 1024px) {
+  #about .aboutFlex .texte::before, #about .aboutFlex .texte::after {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    border: 1.5px solid #464646;
+    position: absolute;
+    z-index: -2;
+    opacity: .7;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
 }
 
 #about .aboutFlex .texte::before {
@@ -524,10 +558,15 @@ article:nth-child(4) p {
 .aboutTitle {
   font-weight: 700;
   font-size: 1.3rem;
-  letter-spacing: 2px;
   font-variant: small-caps;
   position: relative;
-  margin-bottom: 5%;
   font-family: "Raleway";
+}
+
+@media all and (min-width: 769px) {
+  .aboutTitle {
+    margin-bottom: 5%;
+    letter-spacing: 2px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

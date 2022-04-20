@@ -378,6 +378,11 @@ header {
 
 }
 
+ #line1, #line2, #line3 {
+    stroke: white;
+    fill:white;
+}
+
 // Section hero
 #animateHero {
     visibility: hidden;
@@ -529,7 +534,7 @@ header {
             width:88%;
             margin:0 auto;
             line-height:2.5;
-            @include Sstyle() {
+            @include Lstyle() {
                 width:70%;
                 line-height:3;
             }

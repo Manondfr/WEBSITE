@@ -79,7 +79,10 @@ let leavesMoving = gsap.timeline()
 // .from("p", {y: 70}, 0)
 // .from("#visualIdentityBlock video", {xPercent:10, ease:"linear"}, 0)
 
-let headerChangeColor = gsap.to("nav a", {color: "#464646"});
+let headerChangeColor;
+
+window.matchMedia("(min-width: 769px)").matches ? headerChangeColor = gsap.to("nav a", {color: "#464646"}) : headerChangeColor = gsap.timeline().to("#line1", {stroke:"#464646", fill:"#464646"}).to("#line2", {stroke:"#464646", fill:"#464646"}, "<").to("#line3", {stroke:"#464646", fill:"#464646"}, "<");
+
 
 ScrollTrigger.create({
     trigger:"#heroSection video",

@@ -525,6 +525,11 @@ header img {
   position: absolute;
 }
 
+#line1, #line2, #line3 {
+  stroke: white;
+  fill: white;
+}
+
 #animateHero {
   visibility: hidden;
   overflow: hidden;
@@ -720,7 +725,7 @@ header img {
   line-height: 2.5;
 }
 
-@media all and (min-width: 481px) {
+@media all and (min-width: 1024px) {
   #contactSection .h2Container + p {
     width: 70%;
     line-height: 3;
